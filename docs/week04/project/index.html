@@ -268,7 +268,10 @@
 <li><a class="reference internal" href="#getting-the-code">Getting the code</a></li>
 <li><a class="reference internal" href="#what-s-new-in-the-code">What’s new in the code</a></li>
 <li><a class="reference internal" href="#requirements">Requirements</a></li>
-<li><a class="reference internal" href="#suggested-endpoints-parameters">Suggested Endpoints/Parameters</a></li>
+<li><a class="reference internal" href="#suggested-endpoints-parameters">Suggested Endpoints/Parameters</a><ul>
+<li><a class="reference internal" href="#reportdocument-structure">ReportDocument Structure</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#database-setup">Database Setup</a></li>
 <li><a class="reference internal" href="#walkthrough-on-creating-the-location-data">Walkthrough on Creating the Location Data</a><ul>
 <li><a class="reference internal" href="#adding-boundary-geometries">Adding Boundary Geometries</a></li>
@@ -286,8 +289,7 @@
 <span id="week4-project"></span><h1>Week 4 - Project Week: Zika Mission Control Part 2<a class="headerlink" href="#week-4-project-week-zika-mission-control-part-2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="project">
 <h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><a class="reference external" href="../../_static/images/zika_mission_briefing_2.pdf">Mission Briefing 2</a></div></blockquote>
+<p><a class="reference external" href="../../_static/images/zika_mission_briefing_2.pdf">Mission Briefing 2</a></p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -333,8 +335,8 @@ The below command destroys all non committed changes in your local branch and re
 <p>Use TDD when implementing these requirements</p>
 <ol class="arabic simple">
 <li>Build out a <code class="docutils literal notranslate"><span class="pre">/api/report</span></code> endpoint that accepts a POST containing Report JSON in the body.<ul>
-<li>Store the Report created from JSON in PostGIS</li>
-<li>Store the ReportDocument created from JSON in Elasticsearch</li>
+<li>Store the <code class="docutils literal notranslate"><span class="pre">Report</span></code> created from JSON in PostGIS</li>
+<li>Store the <code class="docutils literal notranslate"><span class="pre">ReportDocument</span></code> created from JSON in Elasticsearch</li>
 </ul>
 </li>
 <li>Show Zika report data for a certain date on a map via OpenLayers (reports grouped by state for a certain date)</li>
@@ -364,6 +366,15 @@ The below command destroys all non committed changes in your local branch and re
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">To index all of the reports in PostGIS into Elasticsearch use the following command: <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-XPOST</span> <span class="pre">http://localhost:8080/api/_cluster/reindex</span></code></p>
+</div>
+<div class="section" id="reportdocument-structure">
+<h3>ReportDocument Structure<a class="headerlink" href="#reportdocument-structure" title="Permalink to this headline">¶</a></h3>
+<p>You’ll need to create a <code class="docutils literal notranslate"><span class="pre">ReportDocument</span></code> class to model <code class="docutils literal notranslate"><span class="pre">Report</span></code> data to be stored in Elasticsearch. There are a few things to keep in mind when doing so:</p>
+<ul class="simple">
+<li>The <code class="docutils literal notranslate"><span class="pre">ReportDocument</span></code> class should have an <code class="docutils literal notranslate"><span class="pre">id</span></code> proprty of type <code class="docutils literal notranslate"><span class="pre">String</span></code>, annotated with <code class="docutils literal notranslate"><span class="pre">&#64;Id</span></code>. For a given <code class="docutils literal notranslate"><span class="pre">Report</span></code> object, the corresponding <code class="docutils literal notranslate"><span class="pre">ReportDocument</span></code> <em>will not</em> have the same identifier, since ES documents have hashes as identifiers. You should keep track of the <code class="docutils literal notranslate"><span class="pre">Report</span></code> object’s identifier in a new field named <code class="docutils literal notranslate"><span class="pre">reportId</span></code> in <code class="docutils literal notranslate"><span class="pre">ReportDocument</span></code>.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">dataField</span></code> values of <code class="docutils literal notranslate"><span class="pre">Report</span></code> objects look like this: <code class="docutils literal notranslate"><span class="pre">gbs_reported_zika_confirmed</span></code>. For better searching within ES, it’s necessary to convert underscores to spaces. Do this in the <code class="docutils literal notranslate"><span class="pre">ReportDocument</span></code> constructor when setting the <code class="docutils literal notranslate"><span class="pre">dataField</span></code> value.</li>
+<li>Similarly, it will be easier to search by date if we store a new field <code class="docutils literal notranslate"><span class="pre">stringDate</span></code> on our <code class="docutils literal notranslate"><span class="pre">ReportDocument</span></code>. Use the <code class="docutils literal notranslate"><span class="pre">SimpleDateFormat</span></code> class to create a string representing the report’s <code class="docutils literal notranslate"><span class="pre">date</span></code> field, in the format <code class="docutils literal notranslate"><span class="pre">yyyy-MM-dd</span></code>. Similarly, you’ll want a <code class="docutils literal notranslate"><span class="pre">findByStringDate</span></code> method in your <code class="docutils literal notranslate"><span class="pre">ReportDocumentReporistory</span></code> for searching by date.</li>
+</ul>
 </div>
 </div>
 <div class="section" id="database-setup">

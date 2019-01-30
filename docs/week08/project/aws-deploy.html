@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Week 8 - Project Week: Deploying to AWS &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-logo.svg" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#slides">Slides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Security, Test-driven development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Integration testing, dependency injection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#studio">Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: Postgres, Spring Data, JPA, Hibernate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#studio">Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: AJAX, Open Layers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#additional-resources">Additional Resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/project/index.html">Week 2 - Project Week: Zika Mission Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-hints">Project Hints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#setup-project">Setup Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#setup-postgres">Setup Postgres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#turning-in-your-work">Turning In Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#bonus-missions">Bonus Missions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: RESTful web services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2 Swagger REST framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Intro to Elasticsearch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: More Elasticsearch, Integrating ES with Spring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: ES2015, ESLint, OpenLayers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/project/index.html">Week 4 - Project Week: Zika Mission Control Part 2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#getting-the-code">Getting the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#what-s-new-in-the-code">What’s new in the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#suggested-endpoints-parameters">Suggested Endpoints/Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#database-setup">Database Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#walkthrough-on-creating-the-location-data">Walkthrough on Creating the Location Data</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day1/index.html">Week 5 - Day 1: Intro to DevOps/AWS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#studio">Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day2/index.html">Week 5 - Day 2: More with AWS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day3/index.html">Week 5 - Day 3: 12 Factor Apps and Auto Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#studio">Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day4/index.html">Week 5 - Day 4: Gradle, Continuous Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day5/index.html">Week 5 - Day 5: Sonarqube</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#retro">Retro</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/project/index.html">Week 6 - Project Week: Zika Mission Control Part 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#new-stuff">New Stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#debrief">Debrief</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#bonus-missions">Bonus Missions</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Week 8 - Project Week: Zika Mission Control Part 4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#normalizing-data">Normalizing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#integrating-geoserver">Integrating GeoServer</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html">Week 9 - Day 3: Intro to Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day3/index.html#studio">Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day4/index.html">Week 9 - Day 4: OAuth2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day5/index.html">Week 9 - Day 5: Certificates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#retro">Retro</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Week 8 - Project Week: Deploying to AWS</a><ul>
+<li><a class="reference internal" href="#docker-commands">Docker Commands</a></li>
+<li><a class="reference internal" href="#create-postgis-container">Create PostGIS Container</a></li>
+<li><a class="reference internal" href="#create-geoserver-container">Create GeoServer Container</a></li>
+<li><a class="reference internal" href="#create-elasticsearch-container">Create Elasticsearch Container</a></li>
+<li><a class="reference internal" href="#enable-cors-in-geoserver">Enable CORS in GeoServer</a></li>
+<li><a class="reference internal" href="#populate-container-postgis-database">Populate Container PostGIS Database</a><ul>
+<li><a class="reference internal" href="#deploying-to-aws">Deploying to AWS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bonus-mission">Bonus Mission</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="week-8-project-week-deploying-to-aws">
+<span id="week8-project-deploy"></span><h1>Week 8 - Project Week: Deploying to AWS<a class="headerlink" href="#week-8-project-week-deploying-to-aws" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">cloud/geoserver_userdata.sh</span></code> is provided to create a GeoServer instance in AWS</p>
+<p>Before getting started, <strong>be sure that your Boundless virtual machine is not running</strong>. We will be using the same port as the VM with one of our Docker containers, so if it is running there will be conflicts. It is not enough to pause the VM; you must shut it down completely or select <em>Save State</em>.</p>
+<div class="section" id="docker-commands">
+<h2>Docker Commands<a class="headerlink" href="#docker-commands" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> see list of <strong>running</strong> containers</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code> see lisf of all containers, including ones that failed or were stopped</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span> <span class="pre">&lt;container-name</span> <span class="pre">or</span> <span class="pre">id&gt;</span></code> starts the container</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span> <span class="pre">&lt;container-name</span> <span class="pre">or</span> <span class="pre">id&gt;</span></code> stops the container</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">restart</span> <span class="pre">&lt;container-name</span> <span class="pre">or</span> <span class="pre">id&gt;</span></code> restarts the container</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">&lt;container-name</span> <span class="pre">or</span> <span class="pre">id&gt;</span></code> removes the container</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> shows list of images that you have downloaded. containers are created from images</li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span> <span class="pre">rm</span> <span class="pre">&lt;image-name</span> <span class="pre">or</span> <span class="pre">id&gt;</span></code> removes an image</li>
+<li>For more info and more commands please see <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/docker/">the Docker CLI docs</a></li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If your containers start crashing with exit code 137, it’s because they are out of memory. You need to incrase the memory given to Docker by going to Peferences, Advanced. See screen shot below.</p>
+</div>
+<div class="figure" id="id1">
+<img alt="../../_images/docker-memory.png" src="../../_images/docker-memory.png" />
+<p class="caption"><span class="caption-text">Docker Memory Configuration</span></p>
+</div>
+</div>
+<div class="section" id="create-postgis-container">
+<h2>Create PostGIS Container<a class="headerlink" href="#create-postgis-container" title="Permalink to this headline">¶</a></h2>
+<p>First create a file <code class="docutils literal notranslate"><span class="pre">env.list</span></code> in the root of your <code class="docutils literal notranslate"><span class="pre">zika-cdc-dashboard</span></code> project folder, with the same contents as <a class="reference external" href="https://gist.github.com/chrisbay/d74442a8e8707111472a742832d76796">our envlist file</a>.</p>
+<p>Next run this command to create a PostGIS container referencing <code class="docutils literal notranslate"><span class="pre">env.list</span></code> from above. We have to use a Docker instance of PostGIS so that our GeoServer Docker instance and our local web application can both connect to PostGIS.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker run --name &quot;PostGIS&quot; -p 5432:5432 -d -t --env-file ./env.list kartoza/PostGIS:9.4-2.1
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">In <code class="docutils literal notranslate"><span class="pre">env.list</span></code> you’ll see that the <code class="docutils literal notranslate"><span class="pre">POSTGRES_DBNAME</span></code> environment variable is set to <code class="docutils literal notranslate"><span class="pre">zika</span></code>. This variable is supposed to set the name of our PostGIS-enabled database within the container to be <code class="docutils literal notranslate"><span class="pre">zika</span></code>. However, a bug in the Dockerfile for this image ignores the name, creating a database named <code class="docutils literal notranslate"><span class="pre">gis</span></code>.</p>
+</div>
+<p>Verify that the container is running by running <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>.</p>
+</div>
+<div class="section" id="create-geoserver-container">
+<h2>Create GeoServer Container<a class="headerlink" href="#create-geoserver-container" title="Permalink to this headline">¶</a></h2>
+<p>We are going to link the PostGIS and GeoServer containers. That tells docker that these containers need to be able to communicate.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker run --name &quot;geoserver&quot; --link PostGIS:PostGIS -p 8080:8080 -d -t kartoza/geoserver
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If the <code class="docutils literal notranslate"><span class="pre">PostGIS</span></code> docker image is not running when starting the geoserver, the link will fail.</p>
+</div>
+<p>When its container is running, you can access this GeoServer instance the same way in which you previously accessed GeoServer locally when running the Boundless virtual machine. It will be running on port 8080 (try <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/geoserver</span></code>) with credientials <strong>admin / geoserver</strong>.</p>
+</div>
+<div class="section" id="create-elasticsearch-container">
+<h2>Create Elasticsearch Container<a class="headerlink" href="#create-elasticsearch-container" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker run --name &quot;es&quot; -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot;  -e &quot;xpack.security.enabled=false&quot; docker.elastic.co/elasticsearch/elasticsearch:5.6.0
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If Docker has no more than 2G of memory allocated for container use, you may have issues with the <code class="docutils literal notranslate"><span class="pre">elasticsearch</span></code> container crashing due to lack of memory. If this happens, increase memorgy to at least 3G by going to <em>Docker &gt; Preferences &gt; Advanced</em>.</p>
+</div>
+</div>
+<div class="section" id="enable-cors-in-geoserver">
+<h2>Enable CORS in GeoServer<a class="headerlink" href="#enable-cors-in-geoserver" title="Permalink to this headline">¶</a></h2>
+<p>You’ll be making requests to the GeoServer container from a port other than the one on which GeoServer is running, which means CORS will come into play. Let’s enable cross-origin requests within GeoServer.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You may want to wait until you actually see a <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a> error in your browser’s JavaScript console before performing these steps.</p>
+</div>
+<p>Open a shell within the Docker container and install a text editor (you can also install <code class="docutils literal notranslate"><span class="pre">nano</span></code> instead of <code class="docutils literal notranslate"><span class="pre">vim</span></code> if you want)::</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker exec -it geoserver bash
+root@2992f761f41e:/usr/local/tomcat# apt-get update
+root@2992f761f41e:/usr/local/tomcat# apt-get install vim
+</pre></div>
+</div>
+<p>Open the GeoServer <code class="docutils literal notranslate"><span class="pre">web.xml</span></code> for editing::</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>root@2992f761f41e:# vi /usr/local/tomcat/conf/web.xml
+</pre></div>
+</div>
+<p>Add the following XML just within the opening <code class="docutils literal notranslate"><span class="pre">&lt;web-app&gt;</span></code> tag:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;filter&gt;</span>
+  <span class="nt">&lt;filter-name&gt;</span>CorsFilter<span class="nt">&lt;/filter-name&gt;</span>
+  <span class="nt">&lt;filter-class&gt;</span>org.apache.catalina.filters.CorsFilter<span class="nt">&lt;/filter-class&gt;</span>
+<span class="nt">&lt;/filter&gt;</span>
+<span class="nt">&lt;filter-mapping&gt;</span>
+  <span class="nt">&lt;filter-name&gt;</span>CorsFilter<span class="nt">&lt;/filter-name&gt;</span>
+  <span class="nt">&lt;url-pattern&gt;</span>/*<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;/filter-mapping&gt;</span>
+</pre></div>
+</div>
+<p>Save the file and exit. Then exit the docker container shell.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>root@2992f761f41e:# exit
+</pre></div>
+</div>
+<p>Stop and start the <code class="docutils literal notranslate"><span class="pre">geoserver</span></code> container:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker stop geoserver
+$ docker start geoserver
+</pre></div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">XHR``requests</span> <span class="pre">from</span> <span class="pre">your</span> <span class="pre">local</span> <span class="pre">zika</span> <span class="pre">app</span> <span class="pre">running</span> <span class="pre">on</span> <span class="pre">``http://localhost:9090</span></code> will be accepted by our GeoServer instance. If you don’t set that up, you will see <code class="docutils literal notranslate"><span class="pre">CORS</span></code> errors in the js console.</p>
+</div>
+<div class="section" id="populate-container-postgis-database">
+<h2>Populate Container PostGIS Database<a class="headerlink" href="#populate-container-postgis-database" title="Permalink to this headline">¶</a></h2>
+<p>We need to load the report and location data into the <code class="docutils literal notranslate"><span class="pre">PostGIS</span></code> docker container.  We will copy over the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files to the container and execute psql copy commands.</p>
+<ul class="simple">
+<li>First, let’s change the paths referenced in the <code class="docutils literal notranslate"><span class="pre">/src/main/resources/data.sql</span></code> file to be <code class="docutils literal notranslate"><span class="pre">'/tmp/locations.csv'</span></code> and <code class="docutils literal notranslate"><span class="pre">'/tmp/all_reports.csv'</span></code></li>
+<li>Then copy the files to the <code class="docutils literal notranslate"><span class="pre">PostGIS</span></code> contianer:</li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker cp locations.csv PostGIS:/tmp
+$ docker cp all_reports.csv PostGIS:/tmp
+</pre></div>
+</div>
+<p>Verify that the files made it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker exec -it PostGIS ls -l /tmp
+</pre></div>
+</div>
+<p>Remember that <code class="docutils literal notranslate"><span class="pre">data.sql</span></code> makes use of the <code class="docutils literal notranslate"><span class="pre">unaccent</span></code> function, which is part of the <code class="docutils literal notranslate"><span class="pre">unaccent</span></code> Postgres extension. While our Docker image came with the PostGIS extension installed, the <code class="docutils literal notranslate"><span class="pre">unaccent</span></code> extention is <strong>not</strong> present. Let’s fix that.</p>
+<p>Also <code class="docutils literal notranslate"><span class="pre">data.sql</span></code> will not actually be executed by Spring Data. If you rename it to <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> and edit property <code class="docutils literal notranslate"><span class="pre">spring.jpa.hibernate.ddl-auto</span></code> in <code class="docutils literal notranslate"><span class="pre">application.properties</span></code>. If <code class="docutils literal notranslate"><span class="pre">spring.jpa.hibernate.ddl-auto</span></code> is either <code class="docutils literal notranslate"><span class="pre">create</span></code> or <code class="docutils literal notranslate"><span class="pre">create-drop</span></code>, then <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> will run. After you database has been initialized you can change the value to <code class="docutils literal notranslate"><span class="pre">validate</span></code>. More here on <a class="reference external" href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html">Spring Data - Database Initialization</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Stop all instances of Postgres on your local machine. Stop the Postgress App in the top bar and stop the service being managed by <code class="docutils literal notranslate"><span class="pre">brew</span></code>. The only Postgres we want running is the one inside of the Docker container. If you get an error below that the <code class="docutils literal notranslate"><span class="pre">gis</span></code> database doesn’t exist, then you are connected to the wrong Postgres instance.</p>
+</div>
+<p>Fire up <code class="docutils literal notranslate"><span class="pre">psql</span></code>, note the password for <code class="docutils literal notranslate"><span class="pre">zika_app_user</span></code> is <code class="docutils literal notranslate"><span class="pre">somethingsensible</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ psql -h localhost -p 5432 -U zika_app_user -d gis
+</pre></div>
+</div>
+<p>And then install the extension:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># create extension unaccent;
+</pre></div>
+</div>
+<p>Exit <code class="docutils literal notranslate"><span class="pre">psql</span></code>.</p>
+<div class="section" id="deploying-to-aws">
+<h3>Deploying to AWS<a class="headerlink" href="#deploying-to-aws" title="Permalink to this headline">¶</a></h3>
+<p>To deploy GeoServer on AWS you will be using a <code class="docutils literal notranslate"><span class="pre">t2.small</span></code> CentOS machine.</p>
+<p>Paste the contents of shell script <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/zika-cdc-dashboard/blob/week8-starter/cloud/geoserver_userdata.sh">geoserver_userdata.sh</a> into the “Advanced Details” details section of “Configure Instance” to create the instace.  The script installs Apache Tomcat, downloads the Boundless Suite WAR, and deploys the geoserver WAR the Apache Tomcat server.  The deployed geoserver can be reached on <code class="docutils literal notranslate"><span class="pre">http://{your</span> <span class="pre">IP}:8080/geoserver</span></code>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Remember the default username for Geoserver is <code class="docutils literal notranslate"><span class="pre">admin</span></code> and the default password is <code class="docutils literal notranslate"><span class="pre">geoserver</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="bonus-mission">
+<h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>When you complete all of these instructions, check out the <a class="reference external" href="https://github.com/ngageoint/elasticgeo">ElasticGeo Plugin</a>. It is an Elasticsearch plugin that allows you to integrate Elasticsearch into Geoserver. The great thing is that you can do Elasticsearch queries directly through Geoserver via WFS calls. Here are the setup instructions and instructions on how to make the calls: <a class="reference external" href="https://github.com/ngageoint/elasticgeo/blob/master/gs-web-elasticsearch/doc/index.rst">ElasticGeo Instructions</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/week08/project/aws-deploy.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
