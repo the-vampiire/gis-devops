@@ -7,7 +7,7 @@ Week 4 - Project Week: Zika Mission Control Part 2
 Project
 =======
 
- `Mission Briefing 2 <../../_static/images/zika_mission_briefing_2.pdf>`_
+`Mission Briefing 2 <../../_static/images/zika_mission_briefing_2.pdf>`_
 
 Overview
 ========
@@ -52,8 +52,8 @@ Use TDD when implementing these requirements
 
 1. Build out a ``/api/report`` endpoint that accepts a POST containing Report JSON in the body.
 
-   * Store the Report created from JSON in PostGIS
-   * Store the ReportDocument created from JSON in Elasticsearch
+   * Store the ``Report`` created from JSON in PostGIS
+   * Store the ``ReportDocument`` created from JSON in Elasticsearch
 
 2. Show Zika report data for a certain date on a map via OpenLayers (reports grouped by state for a certain date)
 3. When a feature is clicked show the related report data (like in week 2 zika project)
@@ -81,6 +81,15 @@ Suggested Endpoints/Parameters
 .. note::
 
     To index all of the reports in PostGIS into Elasticsearch use the following command: ``$ curl -XPOST http://localhost:8080/api/_cluster/reindex``
+
+ReportDocument Structure
+------------------------
+
+You'll need to create a ``ReportDocument`` class to model ``Report`` data to be stored in Elasticsearch. There are a few things to keep in mind when doing so:
+
+* The ``ReportDocument`` class should have an ``id`` proprty of type ``String``, annotated with ``@Id``. For a given ``Report`` object, the corresponding ``ReportDocument`` *will not* have the same identifier, since ES documents have hashes as identifiers. You should keep track of the ``Report`` object's identifier in a new field named ``reportId`` in ``ReportDocument``.
+* The ``dataField`` values of ``Report`` objects look like this: ``gbs_reported_zika_confirmed``. For better searching within ES, it's necessary to convert underscores to spaces. Do this in the ``ReportDocument`` constructor when setting the ``dataField`` value.
+* Similarly, it will be easier to search by date if we store a new field ``stringDate`` on our ``ReportDocument``. Use the ``SimpleDateFormat`` class to create a string representing the report's ``date`` field, in the format ``yyyy-MM-dd``. Similarly, you'll want a ``findByStringDate`` method in your ``ReportDocumentReporistory`` for searching by date.
 
 Database Setup
 ==============
