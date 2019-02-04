@@ -269,7 +269,7 @@
 <li><a class="reference internal" href="#setup">Setup</a><ul>
 <li><a class="reference internal" href="#change-virtualbox-port-mapping">Change VirtualBox Port Mapping</a></li>
 <li><a class="reference internal" href="#change-tomcat-port">Change Tomcat Port</a></li>
-<li><a class="reference internal" href="#add-foreign-keys-to-reports">Add foreign keys to reports</a></li>
+<li><a class="reference internal" href="#add-foreign-keys-to-reports">Add Foreign Keys to Reports</a></li>
 <li><a class="reference internal" href="#database-and-layer-setup">Database and Layer Setup</a></li>
 </ul>
 </li>
@@ -392,7 +392,7 @@
 <p>Before we can run our Spring app, we need to configure Tomcat to run on a port other than 8080. Recall that we set up the GeoServer container to bind to port 8080 on our localhost. We can easily adjust the port that Tomcat/Spring Boot will run on by adding <code class="docutils literal notranslate"><span class="pre">server.port=9090</span></code> to <code class="docutils literal notranslate"><span class="pre">application.properties</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You may also need to change the port referenced in <code class="docutils literal notranslate"><span class="pre">script.js</span></code>. <code class="docutils literal notranslate"><span class="pre">url:</span> <span class="pre">'http://localhost:9090/api/es/report/?date=2016-03-05'</span></code>. Another solution for this is to use a relative path <code class="docutils literal notranslate"><span class="pre">url:</span> <span class="pre">'/api/es/report/?date=2016-03-05'</span></code></p>
+<p class="last">You may also need to change the port referenced in <code class="docutils literal notranslate"><span class="pre">script.js</span></code>. <code class="docutils literal notranslate"><span class="pre">url:</span> <span class="pre">'http://localhost:9090/api/es/report/?date=2016-03-05'</span></code>. Another solution for this is to use a relative path <code class="docutils literal notranslate"><span class="pre">url:</span> <span class="pre">'/api/es/report/?date=2016-03-05'</span></code>.</p>
 </div>
 <p>Start up your Spring app. Verify that the app started up cleanly.</p>
 <div class="admonition warning">
@@ -401,7 +401,7 @@
 </div>
 </div>
 <div class="section" id="add-foreign-keys-to-reports">
-<h3>Add foreign keys to reports<a class="headerlink" href="#add-foreign-keys-to-reports" title="Permalink to this headline">¶</a></h3>
+<h3>Add Foreign Keys to Reports<a class="headerlink" href="#add-foreign-keys-to-reports" title="Permalink to this headline">¶</a></h3>
 <p>We want to set up explicit relationships between reports and locations in the database. To do this, we’ve created an endpoint to help us. Calling this endpoint will result in a <code class="docutils literal notranslate"><span class="pre">Location</span></code> object being found for each <code class="docutils literal notranslate"><span class="pre">Report</span></code> object, and being attached to the report via the <code class="docutils literal notranslate"><span class="pre">state</span></code> field. This creates a reference/foreign key relationship.</p>
 <p>Start up your Spring app and hit the endpoint from the command line:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST http://localhost:9090/api/report/assignStates

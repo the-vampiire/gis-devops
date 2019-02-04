@@ -11,6 +11,8 @@ Before getting started, **be sure that your Boundless virtual machine is not run
 Docker Commands
 ---------------
 
+We will be containerizing the components of our application using Docker containers. To that end, here's a quick reference of commonly-used Docker commands.
+
 * ``docker ps`` see list of **running** containers
 * ``docker ps -a`` see lisf of all containers, including ones that failed or were stopped
 * ``docker start <container-name or id>`` starts the container
@@ -21,7 +23,7 @@ Docker Commands
 * ``docker image rm <image-name or id>`` removes an image
 * For more info and more commands please see `the Docker CLI docs <https://docs.docker.com/engine/reference/commandline/docker/>`_
 
-.. warning::
+.. tip::
 
   If your containers start crashing with exit code 137, it's because they are out of memory. You need to incrase the memory given to Docker by going to Peferences, Advanced. See screen shot below.
 
@@ -36,7 +38,9 @@ First create a file ``env.list`` in the root of your ``zika-cdc-dashboard`` proj
 
 Next run this command to create a PostGIS container referencing ``env.list`` from above. We have to use a Docker instance of PostGIS so that our GeoServer Docker instance and our local web application can both connect to PostGIS. ::
 
-  $ docker run --name "PostGIS" -p 5432:5432 -d -t --env-file ./env.list kartoza/PostGIS:9.4-2.1
+  $ docker run --name "postgis" -p 5432:5432 -d -t --env-file ./env.list kartoza/postgis:9.4-2.1
+
+This runs a container that has a PostGIS database (Postgres version 9.4 / PostGIS version 2.1) using the `kargoza/postgis image <https://hub.docker.com/r/kartoza/postgis/>`_.
 
 .. warning::
 
@@ -49,21 +53,20 @@ Create GeoServer Container
 
 We are going to link the PostGIS and GeoServer containers. That tells docker that these containers need to be able to communicate. ::
 
-  $ docker run --name "geoserver" --link PostGIS:PostGIS -p 8080:8080 -d -t kartoza/geoserver
+  $ docker run --name "geoserver" --link postgis:postgis -p 8080:8080 -d -t kartoza/geoserver
 
 .. warning::
 
-  If the ``PostGIS`` docker image is not running when starting the geoserver, the link will fail.
+  If the ``postgis`` docker image is not running when starting the geoserver, the link will fail.
 
 When its container is running, you can access this GeoServer instance the same way in which you previously accessed GeoServer locally when running the Boundless virtual machine. It will be running on port 8080 (try ``http://localhost:8080/geoserver``) with credientials **admin / geoserver**.
-
 
 Create Elasticsearch Container
 ------------------------------
 
 ::
 
-  $ docker run --name "es" -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node"  -e "xpack.security.enabled=false" docker.elastic.co/elasticsearch/elasticsearch:5.6.0
+  $ docker run --name es -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "cluster.name=elasticsearch" elasticsearch:6.5.4
 
 .. warning::
 
@@ -113,28 +116,22 @@ Now ``XHR``requests from your local zika app running on ``http://localhost:9090`
 Populate Container PostGIS Database
 -----------------------------------
 
-We need to load the report and location data into the ``PostGIS`` docker container.  We will copy over the ``.csv`` files to the container and execute psql copy commands.
+We need to load the report and location data into the ``postgis`` docker container.  We will copy over the ``.csv`` files to the container and execute psql copy commands.
 
 * First, let's change the paths referenced in the ``/src/main/resources/data.sql`` file to be ``'/tmp/locations.csv'`` and ``'/tmp/all_reports.csv'``
-* Then copy the files to the ``PostGIS`` contianer:
+* Then copy the files to the ``postgis`` contianer:
 
 ::
 
-  $ docker cp locations.csv PostGIS:/tmp
-  $ docker cp all_reports.csv PostGIS:/tmp
+  $ docker cp locations.csv postgis:/tmp
+  $ docker cp all_reports.csv postgis:/tmp
 
 
 Verify that the files made it: ::
 
-  $ docker exec -it PostGIS ls -l /tmp
+  $ docker exec -it postgis ls -l /tmp
 
 Remember that ``data.sql`` makes use of the ``unaccent`` function, which is part of the ``unaccent`` Postgres extension. While our Docker image came with the PostGIS extension installed, the ``unaccent`` extention is **not** present. Let's fix that.
-
-Also ``data.sql`` will not actually be executed by Spring Data. If you rename it to ``import.sql`` and edit property ``spring.jpa.hibernate.ddl-auto`` in ``application.properties``. If ``spring.jpa.hibernate.ddl-auto`` is either ``create`` or ``create-drop``, then ``import.sql`` will run. After you database has been initialized you can change the value to ``validate``. More here on `Spring Data - Database Initialization <https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html>`_
-
-.. warning::
-
-  Stop all instances of Postgres on your local machine. Stop the Postgress App in the top bar and stop the service being managed by ``brew``. The only Postgres we want running is the one inside of the Docker container. If you get an error below that the ``gis`` database doesn't exist, then you are connected to the wrong Postgres instance.
 
 Fire up ``psql``, note the password for ``zika_app_user`` is ``somethingsensible``: ::
 
@@ -145,6 +142,12 @@ And then install the extension: ::
   # create extension unaccent;
 
 Exit ``psql``.
+
+Also, ``data.sql`` will not actually be executed by Spring Data. To have it automatically executed by Spring on startup, rename it to ``import.sql`` Then edit the property ``spring.jpa.hibernate.ddl-auto`` in ``application.properties`` to be ``create``. After your database has been initialized you can change the value to ``validate`` or ``update``. More here on `Spring Data - Database Initialization <https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html>`_
+
+.. warning::
+
+  Stop all instances of Postgres on your local machine. The only Postgres we want running is the one inside of the Docker container. If you get an error below that the ``gis`` database doesn't exist, then you are connected to the wrong Postgres instance.
 
 Deploying to AWS
 ================

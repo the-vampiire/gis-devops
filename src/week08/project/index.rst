@@ -59,14 +59,6 @@ Next, create a ``ReportController`` class with the following contents:
       @Autowired
       private ReportDocumentRepository reportDocumentRepository;
 
-
-      @PostMapping
-      @ResponseStatus(HttpStatus.OK)
-      public ResponseEntity<ReportDTO> saveNewReport(@RequestBody ReportDTO reportDTO) {
-
-          return new ResponseEntity<ReportDTO>(reportDTO, HttpStatus.CREATED);
-      }
-
       @PostMapping(value = "/assignStates")
       public ResponseEntity<String> assignStates() {
 
@@ -113,7 +105,7 @@ Add a getter and setter for this field too.
 Setup
 =====
 
-Now let's move closer to integrating GeoServer. We need to do a few setup tasks first. 
+Now let's move closer to integrating GeoServer. We need to do a few setup tasks first.
 
 Change VirtualBox Port Mapping
 ------------------------------
@@ -134,13 +126,13 @@ Before we can run our Spring app, we need to configure Tomcat to run on a port o
 
 .. note::
 
-  You may also need to change the port referenced in ``script.js``. ``url: 'http://localhost:9090/api/es/report/?date=2016-03-05'``. Another solution for this is to use a relative path ``url: '/api/es/report/?date=2016-03-05'``
+  You may also need to change the port referenced in ``script.js``. ``url: 'http://localhost:9090/api/es/report/?date=2016-03-05'``. Another solution for this is to use a relative path ``url: '/api/es/report/?date=2016-03-05'``.
 
 Start up your Spring app. Verify that the app started up cleanly.
 
-.. warning:: From now on, your Spring Boot app will be hosted at ``localhost:9090``. Be sure to use the new port when viewing your app! 
+.. warning:: From now on, your Spring Boot app will be hosted at ``localhost:9090``. Be sure to use the new port when viewing your app!
 
-Add foreign keys to reports
+Add Foreign Keys to Reports
 ---------------------------
 
 We want to set up explicit relationships between reports and locations in the database. To do this, we've created an endpoint to help us. Calling this endpoint will result in a ``Location`` object being found for each ``Report`` object, and being attached to the report via the ``state`` field. This creates a reference/foreign key relationship.
@@ -210,11 +202,6 @@ Following the `OpenLayers example <https://openlayers.org/en/latest/examples/vec
 .. warning::
 
   For the geometries in your layer to be rendered properly on the map, the spatial reference systems (SRS) must match. You can control the SRS that is used to generate the returned features using the ``srsName`` parameter when create the request in OpenLayers.
-
-Update Report POST Endpoint
----------------------------
-
-There is a controller in ``ReportController`` called ``saveNewReport`` that saves creates a new report object and saves it in both data stores (PostgreSQL and Elasticsearch). Update this method so that it looks up and assigns the corresponding ``Location`` object (if one exists) for the given report.
 
 Bonus Mission
 -------------
