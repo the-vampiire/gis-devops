@@ -96,6 +96,10 @@ Add the following XML just within the opening ``<web-app>`` tag:
   <filter>
     <filter-name>CorsFilter</filter-name>
     <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+    <init-param>
+      <param-name>cors.allowed.origins</param-name>
+      <param-value>*</param-value>
+    </init-param>
   </filter>
   <filter-mapping>
     <filter-name>CorsFilter</filter-name>
