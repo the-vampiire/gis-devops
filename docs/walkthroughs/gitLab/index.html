@@ -263,8 +263,10 @@
 <li><a class="reference internal" href="#">Walkthrough: Git and Gitlab</a><ul>
 <li><a class="reference internal" href="#setup">Setup</a></li>
 <li><a class="reference internal" href="#follow-along-as-we">Follow Along as we…</a></li>
-<li><a class="reference internal" href="#part-1">Part 1</a></li>
-<li><a class="reference internal" href="#part-2">Part 2</a></li>
+<li><a class="reference internal" href="#part-1-instructor-steps">Part 1 - Instructor Steps</a></li>
+<li><a class="reference internal" href="#part-1-student-steps">Part 1 - Student Steps</a></li>
+<li><a class="reference internal" href="#part-2-instructor-steps">Part 2 - Instructor Steps</a></li>
+<li><a class="reference internal" href="#part-2-student-steps">Part 2 - Student Steps</a></li>
 </ul>
 </li>
 </ul>
@@ -276,6 +278,7 @@
   <div class="section" id="walkthrough-git-and-gitlab">
 <span id="walkthrough-gitlab"></span><h1>Walkthrough: Git and Gitlab<a class="headerlink" href="#walkthrough-git-and-gitlab" title="Permalink to this headline">¶</a></h1>
 <p>Follow along with the instructor as we review Git and Gitlab.</p>
+<p>We will be using Git, and GitLab almost everyday throughout this class. This walkthrough will show you some of the basics. Primarily creating new projects, creating new branches, creating merge requests for branches, and resolving merge conflicts.</p>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -286,44 +289,93 @@
 <div class="section" id="follow-along-as-we">
 <h2>Follow Along as we…<a class="headerlink" href="#follow-along-as-we" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="part-1">
-<h2>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-1-instructor-steps">
+<h2>Part 1 - Instructor Steps<a class="headerlink" href="#part-1-instructor-steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>The instructor will create a new project on Gitlab for this walkthrough</li>
-<li>Instructor will add a file to the repo using a branch and a Merge Request</li>
-<li>In your terminal, clone that repo</li>
+</ol>
+<img alt="../../_images/gitlab-create-new-project.png" src="../../_images/gitlab-create-new-project.png" />
+<img alt="../../_images/gitlab-create-new-project2.png" src="../../_images/gitlab-create-new-project2.png" />
+<ol class="arabic simple" start="2">
+<li>Instructor will add a file to the repo using a branch and a Maerge Request</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>First the instructor will need to create new branch</li>
+</ul>
+<img alt="../../_images/gitlab-create-new-branch.png" src="../../_images/gitlab-create-new-branch.png" />
+<ul class="simple">
+<li>Then the instructor will have to add a new file</li>
+</ul>
+<img alt="../../_images/gitlab-create-new-file.png" src="../../_images/gitlab-create-new-file.png" />
+<ul class="simple">
+<li>Then the instructor will need to commit and push this new file</li>
+</ul>
+<img alt="../../_images/gitlab-add-commit-push.png" src="../../_images/gitlab-add-commit-push.png" />
+<ul class="simple">
+<li>Then the instructor will create a new merge request</li>
+</ul>
+<img alt="../../_images/gitlab-merge-request-button.png" src="../../_images/gitlab-merge-request-button.png" />
+<img alt="../../_images/gitlab-merge-request-form1.png" src="../../_images/gitlab-merge-request-form1.png" />
+<p>The first part of this form tells us we are merging the new_file branch into the master branch. With every merge a commit is made, so you have the option to change the commit title, or message. There are other options in the Merge Request form such as assigning this merge request to a coworker, or fellow student. Nothing needs to be changed for now, so the instructor can scroll down to the submit merge request button.</p>
+<img alt="../../_images/gitlab-merge-request-form2.png" src="../../_images/gitlab-merge-request-form2.png" />
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Instructor will merge the new request into the master branch</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Since there aren’t any merge conflicts this can be done automatically by clicking the merge button</li>
+</ul>
+<img alt="../../_images/gitlab-merge.png" src="../../_images/gitlab-merge.png" />
+<ul class="simple">
+<li>After our merge has completed we can see our master branch now contains my_new_file.txt the file added in the branch of the merge request</li>
+</ul>
+<img alt="../../_images/gitlab-merged-to-master.png" src="../../_images/gitlab-merged-to-master.png" />
+</div></blockquote>
+</div>
+<div class="section" id="part-1-student-steps">
+<h2>Part 1 - Student Steps<a class="headerlink" href="#part-1-student-steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In your terminal, clone the repo your instructor created</li>
 <li>Create a new branch. Example: blakes-branch</li>
 <li>Checkout the new branch</li>
-<li>Creat a new file that includes your name in the filename. Example: blake.txt</li>
+<li>Create a new file that includes your name in the filename. Example: blake.txt</li>
 <li>Stage and commit your change</li>
 <li>Push your branch to origin</li>
 <li>Go to gitlab.com and create a Merge Request for your branch</li>
 <li>Have another student merge your Merge Request</li>
 <li>Checkout master locally</li>
-<li>Do a get pull to see your changes now in master</li>
+<li>Do a git pull to see your changes now in master</li>
 </ol>
 </div>
-<div class="section" id="part-2">
-<h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-2-instructor-steps">
+<h2>Part 2 - Instructor Steps<a class="headerlink" href="#part-2-instructor-steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>The instructor will create a new branch that incluedes a roster.txt file</li>
-<li>That branch will be merge into master</li>
-<li>Everyone in the class should pull to get the commit containing that file</li>
+<li>The instructor will create a new branch that includes a roster.txt file</li>
 </ol>
 <blockquote>
-<div><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Instructor should do these next steps first</p>
-</div>
+<div><img alt="../../_images/gitlab-roster.png" src="../../_images/gitlab-roster.png" />
 </div></blockquote>
-<ol class="arabic simple" start="4">
-<li>Create and switch to a new branch</li>
+<ol class="arabic simple" start="2">
+<li>That branch will be merged into master</li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/gitlab-roster-to-master.png" src="../../_images/gitlab-roster-to-master.png" />
+<img alt="../../_images/gitlab-roster-merged.png" src="../../_images/gitlab-roster-merged.png" />
+</div></blockquote>
+</div>
+<div class="section" id="part-2-student-steps">
+<h2>Part 2 - Student Steps<a class="headerlink" href="#part-2-student-steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Get the updated code by pulling in master <cite>git pull origin master</cite></li>
+<li>Create and switch to a new branch <cite>git checkout -b blakes-roster-branch</cite></li>
 <li>Add your name to the roster.txt file</li>
-<li>Stage, commit, and then push their changes</li>
+<li>Stage, commit, and then push your changes</li>
 <li>You should get a merge conflict</li>
 <li>Resolve the conflict by editing the file that has the conflict</li>
-<li>Run git status in terminal</li>
-<li>Run git add roster.txt to mark the conflict as resolved</li>
+<li>Run <cite>git status</cite> in your terminal</li>
+<li>Run <cite>git add roster.txt</cite> to mark the conflict as resolved</li>
 <li>After resolving your conflicts you can push your changes to origin</li>
 </ol>
 </div>

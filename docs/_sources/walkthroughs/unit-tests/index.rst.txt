@@ -147,12 +147,9 @@ We added some code to our setGasTankLevel method that checks if the new gas tank
 
 This time our test passed, and nothing was printed out to the output log! We have successfully written 4 unit tests in this walkthrough!
 
-
-
-
 .. hint::
 
-  You can open a TODO window by going to **View** then **Tool** then **TODO** this opens a box at the bottom of IntelliJ showing you all the TODOs in the project.
+  You can open a TODO window by going to **View** then **Tool Windows** then seelct **TODO** this opens a box at the bottom of IntelliJ showing you all the TODOs in the project.
 
 
 Resources
