@@ -12,6 +12,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -339,20 +340,20 @@ Create and checkout a new branch named <code class="docutils literal notranslate
 <div class="section" id="outline">
 <h3>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h3>
 <p>Next we need to begin writing the Swagger YAML file. Copy the following code into your <code class="docutils literal notranslate"><span class="pre">swagger.yaml</span></code>.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">swagger</span><span class="p p-Indicator">:</span> <span class="s">&#39;2.0&#39;</span>
-<span class="l l-Scalar l-Scalar-Plain">info</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">This is an example RESTful API</span>
-  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
-  <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">LaunchCart API</span>
-  <span class="l l-Scalar l-Scalar-Plain">termsOfService</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://swagger.io/terms/</span>
-  <span class="l l-Scalar l-Scalar-Plain">contact</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">email</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">your.email@gmail.com</span>
-  <span class="l l-Scalar l-Scalar-Plain">license</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Apache 2.0</span>
-    <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://www.apache.org/licenses/LICENSE-2.0.html</span>
-<span class="l l-Scalar l-Scalar-Plain">tags</span><span class="p p-Indicator">:</span>
-<span class="l l-Scalar l-Scalar-Plain">paths</span><span class="p p-Indicator">:</span>
-<span class="l l-Scalar l-Scalar-Plain">definitions</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">swagger</span><span class="p">:</span> <span class="s">&#39;2.0&#39;</span>
+<span class="nt">info</span><span class="p">:</span>
+  <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">This is an example RESTful API</span>
+  <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
+  <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">LaunchCart API</span>
+  <span class="nt">termsOfService</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">http://swagger.io/terms/</span>
+  <span class="nt">contact</span><span class="p">:</span>
+    <span class="nt">email</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">your.email@gmail.com</span>
+  <span class="nt">license</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Apache 2.0</span>
+    <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">http://www.apache.org/licenses/LICENSE-2.0.html</span>
+<span class="nt">tags</span><span class="p">:</span>
+<span class="nt">paths</span><span class="p">:</span>
+<span class="nt">definitions</span><span class="p">:</span>
 </pre></div>
 </div>
 <p>Start up SpringBoot and navigate to the url <a class="reference external" href="http://localhost:8080/swagger/index.html">http://localhost:8080/swagger/index.html</a>. You should see a SwaggerUI page displayed. It will look something like this:</p>
@@ -382,18 +383,18 @@ Create and checkout a new branch named <code class="docutils literal notranslate
 <div class="section" id="paths">
 <h3>Paths<a class="headerlink" href="#paths" title="Permalink to this headline">¶</a></h3>
 <p>Also, let’s add the <code class="docutils literal notranslate"><span class="pre">GET</span></code> endpoint for <code class="docutils literal notranslate"><span class="pre">/api/carts</span></code> in the <code class="docutils literal notranslate"><span class="pre">paths</span></code> section.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">paths</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">/api/carts</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">get</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">tags</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">paths</span><span class="p">:</span>
+  <span class="nt">/api/carts</span><span class="p">:</span>
+    <span class="nt">get</span><span class="p">:</span>
+      <span class="nt">tags</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cart</span>
-      <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Returns all carts that exist.</span>
-      <span class="l l-Scalar l-Scalar-Plain">operationId</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">getAllCarts</span>
-      <span class="l l-Scalar l-Scalar-Plain">produces</span><span class="p p-Indicator">:</span>
+      <span class="nt">summary</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Returns all carts that exist.</span>
+      <span class="nt">operationId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">getAllCarts</span>
+      <span class="nt">produces</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">application/json</span>
-      <span class="l l-Scalar l-Scalar-Plain">responses</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">200</span><span class="p p-Indicator">:</span>
-          <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">successful operation</span>
+      <span class="nt">responses</span><span class="p">:</span>
+        <span class="nt">200</span><span class="p">:</span>
+          <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">successful operation</span>
 </pre></div>
 </div>
 <p>Now, let’s fill in the schema for the <code class="docutils literal notranslate"><span class="pre">/api/carts</span></code> endpoint. In order to do that, let’s get some example output from our API.</p>
@@ -415,32 +416,32 @@ Create and checkout a new branch named <code class="docutils literal notranslate
 </pre></div>
 </div>
 <p>Using this info, update the <code class="docutils literal notranslate"><span class="pre">/api/carts</span></code> definition to this (not the new <code class="docutils literal notranslate"><span class="pre">schema</span></code> section):</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">paths</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">/api/carts</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">get</span><span class="p p-Indicator">:</span>
-            <span class="l l-Scalar l-Scalar-Plain">tags</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">paths</span><span class="p">:</span>
+    <span class="nt">/api/carts</span><span class="p">:</span>
+        <span class="nt">get</span><span class="p">:</span>
+            <span class="nt">tags</span><span class="p">:</span>
             <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cart</span>
-            <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Returns all carts that exist..</span>
-            <span class="l l-Scalar l-Scalar-Plain">operationId</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">getAllCarts</span>
-            <span class="l l-Scalar l-Scalar-Plain">produces</span><span class="p p-Indicator">:</span>
+            <span class="nt">summary</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Returns all carts that exist..</span>
+            <span class="nt">operationId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">getAllCarts</span>
+            <span class="nt">produces</span><span class="p">:</span>
             <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">application/json</span>
-            <span class="l l-Scalar l-Scalar-Plain">responses</span><span class="p p-Indicator">:</span>
-                <span class="l l-Scalar l-Scalar-Plain">200</span><span class="p p-Indicator">:</span>
-                  <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">successful operation</span>
-                  <span class="l l-Scalar l-Scalar-Plain">schema</span><span class="p p-Indicator">:</span>
-                    <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
-                    <span class="l l-Scalar l-Scalar-Plain">required</span><span class="p p-Indicator">:</span>
+            <span class="nt">responses</span><span class="p">:</span>
+                <span class="nt">200</span><span class="p">:</span>
+                  <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">successful operation</span>
+                  <span class="nt">schema</span><span class="p">:</span>
+                    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+                    <span class="nt">required</span><span class="p">:</span>
                     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">uid</span>
                     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">items</span>
-                    <span class="l l-Scalar l-Scalar-Plain">properties</span><span class="p p-Indicator">:</span>
-                      <span class="l l-Scalar l-Scalar-Plain">uid</span><span class="p p-Indicator">:</span>
-                        <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
-                        <span class="l l-Scalar l-Scalar-Plain">format</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">int32</span>
-                        <span class="l l-Scalar l-Scalar-Plain">example</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">34</span>
-                      <span class="l l-Scalar l-Scalar-Plain">items</span><span class="p p-Indicator">:</span>
-                        <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
-                        <span class="l l-Scalar l-Scalar-Plain">items</span><span class="p p-Indicator">:</span>
-                          <span class="l l-Scalar l-Scalar-Plain">$ref</span><span class="p p-Indicator">:</span> <span class="s">&quot;#/definitions/Item&quot;</span>
+                    <span class="nt">properties</span><span class="p">:</span>
+                      <span class="nt">uid</span><span class="p">:</span>
+                        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+                        <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">int32</span>
+                        <span class="nt">example</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">34</span>
+                      <span class="nt">items</span><span class="p">:</span>
+                        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+                        <span class="nt">items</span><span class="p">:</span>
+                          <span class="nt">$ref</span><span class="p">:</span> <span class="s">&quot;#/definitions/Item&quot;</span>
 </pre></div>
 </div>
 <p>Let’s also add a path for our Items resources.</p>
@@ -519,25 +520,25 @@ Create and checkout a new branch named <code class="docutils literal notranslate
 </div>
 <p>Let’s look at an example that uses path parameters.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">/api/items/{id}</span><span class="p p-Indicator">:</span>
-<span class="l l-Scalar l-Scalar-Plain">get</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">tags</span><span class="p p-Indicator">:</span>
+<span class="nt">get</span><span class="p">:</span>
+  <span class="nt">tags</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item</span>
-  <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Returns an individual</span>
-  <span class="l l-Scalar l-Scalar-Plain">operationId</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">getItem</span>
-  <span class="l l-Scalar l-Scalar-Plain">produces</span><span class="p p-Indicator">:</span>
+  <span class="nt">summary</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Returns an individual</span>
+  <span class="nt">operationId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">getItem</span>
+  <span class="nt">produces</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">application/json</span>
-  <span class="l l-Scalar l-Scalar-Plain">responses</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">200</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">successful operation</span>
-      <span class="l l-Scalar l-Scalar-Plain">schema</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">$ref</span><span class="p p-Indicator">:</span> <span class="s">&quot;#/definitions/Item&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">parameters</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">path</span>
-    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">id</span>
-    <span class="l l-Scalar l-Scalar-Plain">schema</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
-    <span class="l l-Scalar l-Scalar-Plain">required</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">The ID of an item in the system</span>
+  <span class="nt">responses</span><span class="p">:</span>
+    <span class="nt">200</span><span class="p">:</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">successful operation</span>
+      <span class="nt">schema</span><span class="p">:</span>
+        <span class="nt">$ref</span><span class="p">:</span> <span class="s">&quot;#/definitions/Item&quot;</span>
+  <span class="nt">parameters</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">in</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">path</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">id</span>
+    <span class="nt">schema</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+    <span class="nt">required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">The ID of an item in the system</span>
 </pre></div>
 </div>
 <p>You can keep going like this to fully document your API. Now that we know how Swagger works, however, we can use a simpler method to automatically create API documentation using Swagger.</p>

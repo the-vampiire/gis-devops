@@ -417,7 +417,10 @@ var Search = {
    */
   query : function(query) {
     var i;
+<<<<<<< HEAD
     var stopwords = ["a","and","are","as","at","be","but","by","for","if","in","into","is","it","near","no","not","of","on","or","such","that","the","their","then","there","these","they","this","to","was","will","with"];
+=======
+>>>>>>> W1D1 Walkthrough: Unit Tests
 
     // stem the searchterms and add them to the correct list
     var stemmer = new Stemmer();

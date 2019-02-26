@@ -5,5 +5,10 @@ var DOCUMENTATION_OPTIONS = {
     COLLAPSE_INDEX: false,
     FILE_SUFFIX: '.html',
     HAS_SOURCE: true,
+<<<<<<< HEAD
     SOURCELINK_SUFFIX: '.txt'
+=======
+    SOURCELINK_SUFFIX: '.txt',
+    NAVIGATION_WITH_KEYS: false,
+>>>>>>> W1D1 Walkthrough: Unit Tests
 };
