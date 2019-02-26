@@ -45,6 +45,8 @@ Exercises
 Studio
 ------
 
+* :ref:`junit-studio`
+
 Studio Setup
 ++++++++++++
 * In Gitlab fork the `Studio Repository <https://gitlab.com/LaunchCodeTraining/junit-studio>`_
