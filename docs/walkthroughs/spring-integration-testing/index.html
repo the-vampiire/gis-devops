@@ -261,15 +261,21 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Walkthrough: Spring Integration Tests</a><ul>
-<li><a class="reference internal" href="#setup">Setup</a></li>
-<li><a class="reference internal" href="#spring-integration-test-utilities">Spring Integration Test Utilities</a><ul>
-<li><a class="reference internal" href="#class-level-configuration">Class-level Configuration</a></li>
-<li><a class="reference internal" href="#executing-and-verifying-results">Executing and Verifying Results</a></li>
-<li><a class="reference internal" href="#example-usage">Example Usage</a></li>
+<li><a class="reference internal" href="#concept">Concept</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#intergrationtestconfig">IntergrationTestConfig</a></li>
+<li><a class="reference internal" href="#mockmvc">MockMvc</a></li>
+<li><a class="reference internal" href="#memoryrepository">MemoryRepository</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#our-tasks">Our Tasks</a></li>
-<li><a class="reference internal" href="#resources">Resources</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#explore-provided-files">Explore Provided Files</a></li>
+<li><a class="reference internal" href="#write-the-tests">Write The Tests</a></li>
+<li><a class="reference internal" href="#resources">Resources</a><ul>
+<li><a class="reference internal" href="#class-level-configuration">Class-level Configuration</a></li>
+<li><a class="reference internal" href="#executing-and-verifying-results">Executing and Verifying Results</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -280,6 +286,34 @@
       
   <div class="section" id="walkthrough-spring-integration-tests">
 <span id="sit-walkthrough"></span><h1>Walkthrough: Spring Integration Tests<a class="headerlink" href="#walkthrough-spring-integration-tests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="concept">
+<h2>Concept<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>With integration testing our objective is to ensure the technologies work together correctly. In this walkthrough we will focus on our Controller class. We want to make sure that when an HTTP Request is made to a specific endpoint, the HTTP Response that is sent back contains the correct information. This will be verifying that our Controller class handles requests, interacts with the Database, creates a POJO (Java Object), and returns a valid HTTP Response.</p>
+</div>
+<div class="section" id="intergrationtestconfig">
+<h3>IntergrationTestConfig<a class="headerlink" href="#intergrationtestconfig" title="Permalink to this headline">¶</a></h3>
+<p>In order to run our Integration Tests within Spring we need to configure a few tools. In your project you have been provided with an IntegrationTestConfig.java file. This file only does a few things, but is necessary for writing our integration tests.</p>
+<img alt="../../_images/IntegrationTestConfig.png" src="../../_images/IntegrationTestConfig.png" />
+<p>If you are looking for more information you should look up what these different annotations do. The most important to writing our Integration Tests is &#64;AutoConfigureMockMvc. This is Dependency Injection. We are injecting the MockMvc into this interface, and when we inject this interface into our Controller Test we will have access to MockMvc.</p>
+</div>
+<div class="section" id="mockmvc">
+<h3>MockMvc<a class="headerlink" href="#mockmvc" title="Permalink to this headline">¶</a></h3>
+<p>To write these tests we will be working with a new library inside of the Spring testing framework: <strong>MockMvc</strong>.</p>
+<p>The MockMvc library will allow us to make HTTP Requests, and then make assert statements against the returned HTTP Response.</p>
+<img alt="../../_images/integration-test-mockmvc.png" src="../../_images/integration-test-mockmvc.png" />
+<p>In the example picture above. We are using mockMvc to make an HTTP get request to the /car endpoint. Then we are expecting the resulting HTTP Response to have a status code of 200, and the content (HTML/JSON/XML, etc) to contain the string “Mustang”, and contain the string “Camry”. If all three of these conditions are true, this test will pass. If any of those conditions are false, this test will fail.</p>
+</div>
+<div class="section" id="memoryrepository">
+<h3>MemoryRepository<a class="headerlink" href="#memoryrepository" title="Permalink to this headline">¶</a></h3>
+<p>In order to test that our technologies are working together correctly we will need access to the database, so we can fill it with data, and then check our HTTP Responses against that data.</p>
+<p>We will be using a <strong>JPA Repository</strong> to do this. We will talk about JPA Repositories in greater depth later this instruction week.</p>
+<p>What you need to know for today is that we will be using a JPA Repository to put dummy data into our database. Every time we create a POJO (Java Object) we will save it to the JPA Repository so it’s stored in our database. In today’s example we will be workign with CarMemoryRepository which is a class provided for you. You can find this Class in the data folder within your source.</p>
+<p>We will Autowire it into our test file.</p>
+<img alt="../../_images/integration-test-car-memory-repository.png" src="../../_images/integration-test-car-memory-repository.png" />
+</div>
+</div>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -288,8 +322,72 @@
 <li>Open project in Intellij by opening gradle.build file as a project</li>
 </ol>
 </div>
-<div class="section" id="spring-integration-test-utilities">
-<h2>Spring Integration Test Utilities<a class="headerlink" href="#spring-integration-test-utilities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="explore-provided-files">
+<h2>Explore Provided Files<a class="headerlink" href="#explore-provided-files" title="Permalink to this headline">¶</a></h2>
+<p>You are provided with quite a few files already. This project extends the Unit Tests, and TDD tests we worked on in previous lessons. We will be making car objects, and testing them.</p>
+<p>In your test directory you have a models directory that holds a file that is full of unit tests.</p>
+<p>There is also an IntegrationTestConfig.java file, that configures the Integration Tests we will be writing, and there is a CarControllerTest.java file. This is where we will write any integration tests for our CarController. Inside of this file we have an empty test, and we setup MockMvc, and carRepository.</p>
+<p>Exploring our Main directory we have a controller directory, data directory, models directory, and our CarApplication.java file. This is where the logic of our MVC app lives.</p>
+<ul class="simple">
+<li>models - where our Car class lives</li>
+<li>data - where our JPA Repository lives</li>
+<li>controllers - where the controllers for HTTP Requests live</li>
+</ul>
+<p>Looking in our CarController.java file we are provided with 2 routes off of the car mapping.</p>
+<ul class="simple">
+<li>/seedData - a route that allows us to put some data into the database</li>
+<li>/ - the index of our car route that simply returns a template found at “car/index” and adds all the cars found in the database.</li>
+</ul>
+<p>The CarController is what we will be testing with our integration testing.</p>
+</div>
+<div class="section" id="write-the-tests">
+<h2>Write The Tests<a class="headerlink" href="#write-the-tests" title="Permalink to this headline">¶</a></h2>
+<p>Our first test will be for getting a list of all cars by going to the /car route.</p>
+<p>Steps:</p>
+<ul class="simple">
+<li>Add test cars to the database</li>
+<li>Perform GET request to /car</li>
+<li>Check that HTTP Response contains the information it should</li>
+</ul>
+<img alt="../../_images/integration-test-view-list-of-cars.png" src="../../_images/integration-test-view-list-of-cars.png" />
+<p>Let’s run our test.</p>
+<img alt="../../_images/integration-test-view-list-of-cars-result.png" src="../../_images/integration-test-view-list-of-cars-result.png" />
+<p>That test passed! We can move on.</p>
+<p>Our next test is for checking the result of one single car. Instead of a list of all cars in the database, we want to make sure that one car can be returned when we request a car by a specific ID number. This code has not been provided for us. So following Red-Green-Refactor workflow, we will write our test, watch it fail, write the code to make the test pass, and then refactor if necessary.</p>
+<p>Steps:</p>
+<ul class="simple">
+<li>Add test car to database</li>
+<li>Perform GET request to /car/&lt;ID&gt;</li>
+<li>Check that the HTTP Response contains the information it should</li>
+<li>Add code to make test pass</li>
+<li>Refactor code if necessary</li>
+</ul>
+<img alt="../../_images/integration-test-view-by-id.png" src="../../_images/integration-test-view-by-id.png" />
+<p>Let’s run our test.</p>
+<img alt="../../_images/integration-test-view-by-id-result1.png" src="../../_images/integration-test-view-by-id-result1.png" />
+<p>Our test failed. Luckily MockMvc gives us a lot of information when a test fails. It tells us the HTTP Request that was made, and the HTTP Response. Scroll through this output and read it. The image above shows why this test failed. The HTTP Response that was returned had a status code of 404, but our test is expecting a status code of 200. The resource was not found. This usually means the URL is incorrect. In our case it’s because we have not yet created the controller that will handle this endpoint. We will have to write some code for this endpoint.</p>
+<p>We will need to add new code to our CarController.java file to create a new RequestMapping.</p>
+<img alt="../../_images/integration-test-new-request-mapping.png" src="../../_images/integration-test-new-request-mapping.png" />
+<p>In this request mapping we are accessing a path variable. Each car will have a different, and unique ID. A user of this application can request information about a specific car by making an HTTP Request to /car/&lt;car.id&gt; and include in the path the ID number of the car they are requesting. We are using the builtin PathVariable annotation to do this. You will have to import this into the file to use it. Option+enter is the easiest way to do this on a Mac.</p>
+<p>We will use the ID number given to us in the PathVariable to look up the car in the database. Using the Car Repository we want to look up one car, with a specific ID number. The method we are calling doesn’t currently exist, so we will need to add it. In CarMemoryRepository we will need to add a little code.</p>
+<img alt="../../_images/integration-test-car-memory-repository-addition.png" src="../../_images/integration-test-car-memory-repository-addition.png" />
+<p>Now that the method exists, we now have access to this code in our CarController.java file. If you switch back to the file you should see the red text on findById() has changed to black text.</p>
+<p>Let’s run our test.</p>
+<img alt="../../_images/integration-test-view-by-id-result2.png" src="../../_images/integration-test-view-by-id-result2.png" />
+<p>Our test failed again! However the output looks a little different. We are now getting an error in resolving our template: “car/view”, template might not exist. In the code we added to our controller we told it to return a template located in the car folder called view.html. Looking at our project structure we don’t have that file.</p>
+<img alt="../../_images/integration-test-project-structure.png" src="../../_images/integration-test-project-structure.png" />
+<p>We will need to add an additional file, with some HTML to pass this test.</p>
+<img alt="../../_images/integration-test-view-template.png" src="../../_images/integration-test-view-template.png" />
+<p>Now that the route exists. Let’s rerun our test.</p>
+<img alt="../../_images/integration-test-view-by-id-result3.png" src="../../_images/integration-test-view-by-id-result3.png" />
+<p>Finally it passed!</p>
+<p>We wrote a Red test, we added the code necessary to make the test green, and the next step would be to refactor our code if necessary. We won’t refactor together, but it’s something you will be expected to do in your studio today.</p>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#integration-testing">Spring framework</a></li>
+</ul>
 <div class="section" id="class-level-configuration">
 <h3>Class-level Configuration<a class="headerlink" href="#class-level-configuration" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -352,33 +450,6 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="example-usage">
-<h3>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">//make a GET request to /cars/99</span>
-<span class="n">mockMvc</span><span class="o">.</span><span class="na">perform</span><span class="o">(</span><span class="n">get</span><span class="o">(</span><span class="s">&quot;/cars/99&quot;</span><span class="o">))</span>
-    <span class="c1">//expect the HTTP status to be 200 ok</span>
-    <span class="o">.</span><span class="na">andExpect</span><span class="o">(</span><span class="n">status</span><span class="o">().</span><span class="na">isOk</span><span class="o">())</span>
-    <span class="c1">//the HTML returned should contain text &quot;Tesla&quot;</span>
-    <span class="o">.</span><span class="na">andExpect</span><span class="o">(</span><span class="n">content</span><span class="o">(</span><span class="n">string</span><span class="o">(</span><span class="n">containsString</span><span class="o">(</span><span class="s">&quot;Tesla&quot;</span><span class="o">))));</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="our-tasks">
-<h2>Our Tasks<a class="headerlink" href="#our-tasks" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>In Intellij go to test class <code class="docutils literal notranslate"><span class="pre">/src/test/java/org/launchcode/training/CarControllerTests.java</span></code></li>
-<li>Add an integration test for going to the url <code class="docutils literal notranslate"><span class="pre">/car</span></code></li>
-<li>Implement the route <code class="docutils literal notranslate"><span class="pre">/car</span></code> and make the new test pass</li>
-<li>Add an integartion test for going to the url <code class="docutils literal notranslate"><span class="pre">/car/:id</span></code></li>
-<li>Implement the route <code class="docutils literal notranslate"><span class="pre">/car/:id</span></code> and make the new test pass</li>
-</ol>
-</div>
-<div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><a class="reference external" href="https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#integration-testing">Spring framework</a></li>
-</ul>
 </div>
 </div>
 
