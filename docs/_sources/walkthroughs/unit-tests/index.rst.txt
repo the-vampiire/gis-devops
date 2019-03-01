@@ -32,33 +32,33 @@ Configure IntelliJ for Java 8
 
 * Open the Project Structure
 
-.. image:: /_static/images/project-structure.png
+.. image:: /_static/images/unit-tests/project-structure.png
 
 * Set our Project SDK
 
-.. image:: /_static/images/project-sdk.png
+.. image:: /_static/images/unit-tests/project-sdk.png
 
 * Set our Project language level
 
-.. image:: /_static/images/project-language-level.png
+.. image:: /_static/images/unit-tests/project-language-level.png
 
 * Create a new folder for our compiler output
 
-.. image:: /_static/images/new-out-folder-location.png
+.. image:: /_static/images/unit-tests/new-out-folder-location.png
 
-.. image:: /_static/images/new-out-folder.png
+.. image:: /_static/images/unit-tests/new-out-folder.png
 
 * Set our Project compiler output
 
-.. image:: /_static/images/project-compiler-output.png
+.. image:: /_static/images/unit-tests/project-compiler-output.png
 
 * Mark the main directory as Source Root
 
-.. image:: /_static/images/main-directory-as-source-root.png
+.. image:: /_static/images/unit-tests/main-directory-as-source-root.png
 
 * Mark the test directory as Test Sources Root
 
-.. image:: /_static/images/test-directory-as-test-root.png
+.. image:: /_static/images/unit-tests/test-directory-as-test-root.png
 
 Add an Empty Test
 -----------------
@@ -67,39 +67,39 @@ We need to create an empty test so that we can create our testing runtime config
 
 * In CarTest.java add an empty test
 
-.. image:: /_static/images/empty-test.png
+.. image:: /_static/images/unit-tests/empty-test.png
 
 * Add JUnit 4 to your class path (click @Test and then option+enter)
 
-.. image:: /_static/images/junit4-classpath.png
+.. image:: /_static/images/unit-tests/junit4-classpath.png
 
 * Import Test, and AssertEquals
 
-.. image:: /_static/images/import-assertequals.png
+.. image:: /_static/images/unit-tests/import-assertequals.png
 
 Create a New Runtime Configuration
 ---------------------------------- 
 * Click Add configuration
 
-.. image:: /_static/images/add-configuration.png
+.. image:: /_static/images/unit-tests/add-configuration.png
 
 * Click the + icon and select JUnit
 
-.. image:: /_static/images/plus-junit.png
+.. image:: /_static/images/unit-tests/plus-junit.png
 
 * Name the configuration
 * Select the class file where our tests live
 * Apply the configuration
 
-.. image:: /_static/images/name-class-apply-configuration.png
+.. image:: /_static/images/unit-tests/name-class-apply-configuration.png
 
 * Run new configuration by clicking the green arrow
 
-.. image:: /_static/images/run-test-configuration.png
+.. image:: /_static/images/unit-tests/run-test-configuration.png
 
 * View test results 
 
-.. image:: /_static/images/first-test-results.png
+.. image:: /_static/images/unit-tests/first-test-results.png
 
 Currently our one test passes, because it is testing if 10 is the same value as 10 which is true.
 
@@ -107,7 +107,7 @@ Write and Run our Unit Tests
 ----------------------------
 * Write tests
 
-.. image:: /_static/images/completed-tests.png
+.. image:: /_static/images/unit-tests/completed-tests.png
 
 Our first three tests are very similar to one another. They each have a test_car object, and are checking that the gas tank level is correct after instantiating the car, driving the car within the range, and driving the car exceeding the range.
 
@@ -115,7 +115,7 @@ The assertEquals() method takes three parameters: The value we want to test, Wha
 
 Our fourth test is a little different. We are going to perform an action to our car object, and we are expecting the object to throw an error. In this case we are going to attempt to add gas to our car that exceeds the gas tank size.
 
-.. image:: /_static/images/test-expected-exception.png
+.. image:: /_static/images/unit-tests/test-expected-exception.png
 
 We are able to expect an exception to be thrown by adding (expected = IllegalArgumentException.class) after our @Test annotation. This is our way of telling Junit 4 that this test should pass if an IllegalArgumentException is thrown at any point during this test.
 
@@ -127,23 +127,23 @@ Let's add the addGas method to our Car class so we can finish this final test.
 
 * Add the addGas method to Car.java
 
-.. image:: /_static/images/test-add-gas.png
+.. image:: /_static/images/unit-tests/test-add-gas.png
 
 * Run your tests
 
-.. image:: /_static/images/failed-car-test.png
+.. image:: /_static/images/unit-tests/failed-car-test.png
 
 My new test failed! In the output I got an unexpected exception. This test was expecting an IllegalArgumentException, but it got an AssertionError execption. This caused my test to fail. Further down in the output log we can see that our fail() statement printed out the statement about not being able to add more gas to the gastank than is possible.
 
 * Refactor our Car class to throw an exception when too much gas is added to the gas tank
 
-.. image:: /_static/images/test-set-gastank-level.png
+.. image:: /_static/images/unit-tests/test-set-gastank-level.png
 
 We added some code to our setGasTankLevel method that checks if the new gas tank level is greater than the gas tank size, and if it is it throws an IllegalArgumentException.
 
 * Rerun our tests
 
-.. image:: /_static/images/passed-car-test.png
+.. image:: /_static/images/unit-tests/passed-car-test.png
 
 This time our test passed, and nothing was printed out to the output log! We have successfully written 4 unit tests in this walkthrough!
 

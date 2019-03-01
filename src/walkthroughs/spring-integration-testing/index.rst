@@ -19,7 +19,7 @@ IntergrationTestConfig
 
 In order to run our Integration Tests within Spring we need to configure a few tools. In your project you have been provided with an IntegrationTestConfig.java file. This file only does a few things, but is necessary for writing our integration tests.
 
-.. image:: /_static/images/IntegrationTestConfig.png
+.. image:: /_static/images/spring-integration-tests/IntegrationTestConfig.png
 
 If you are looking for more information you should look up what these different annotations do. The most important to writing our Integration Tests is @AutoConfigureMockMvc. This is Dependency Injection. We are injecting the MockMvc into this interface, and when we inject this interface into our Controller Test we will have access to MockMvc.
 
@@ -30,7 +30,7 @@ To write these tests we will be working with a new library inside of the Spring 
 
 The MockMvc library will allow us to make HTTP Requests, and then make assert statements against the returned HTTP Response.
 
-.. image:: /_static/images/integration-test-mockmvc.png
+.. image:: /_static/images/spring-integration-tests/integration-test-mockmvc.png
 
 In the example picture above. We are using mockMvc to make an HTTP get request to the /car endpoint. Then we are expecting the resulting HTTP Response to have a status code of 200, and the content (HTML/JSON/XML, etc) to contain the string "Mustang", and contain the string "Camry". If all three of these conditions are true, this test will pass. If any of those conditions are false, this test will fail.
 
@@ -45,7 +45,7 @@ What you need to know for today is that we will be using a JPA Repository to put
 
 We will Autowire it into our test file.
 
-.. image:: /_static/images/integration-test-car-memory-repository.png
+.. image:: /_static/images/spring-integration-tests/integration-test-car-memory-repository.png
 
 Setup
 -----
@@ -88,11 +88,11 @@ Steps:
 * Perform GET request to /car
 * Check that HTTP Response contains the information it should
 
-.. image:: /_static/images/integration-test-view-list-of-cars.png
+.. image:: /_static/images/spring-integration-tests/integration-test-view-list-of-cars.png
 
 Let's run our test.
 
-.. image:: /_static/images/integration-test-view-list-of-cars-result.png
+.. image:: /_static/images/spring-integration-tests/integration-test-view-list-of-cars-result.png
 
 That test passed! We can move on.
 
@@ -106,42 +106,42 @@ Steps:
 * Add code to make test pass
 * Refactor code if necessary
 
-.. image:: /_static/images/integration-test-view-by-id.png
+.. image:: /_static/images/spring-integration-tests/integration-test-view-by-id.png
 
 Let's run our test.
 
-.. image:: /_static/images/integration-test-view-by-id-result1.png
+.. image:: /_static/images/spring-integration-tests/integration-test-view-by-id-result1.png
 
 Our test failed. Luckily MockMvc gives us a lot of information when a test fails. It tells us the HTTP Request that was made, and the HTTP Response. Scroll through this output and read it. The image above shows why this test failed. The HTTP Response that was returned had a status code of 404, but our test is expecting a status code of 200. The resource was not found. This usually means the URL is incorrect. In our case it's because we have not yet created the controller that will handle this endpoint. We will have to write some code for this endpoint.
 
 We will need to add new code to our CarController.java file to create a new RequestMapping.
 
-.. image:: /_static/images/integration-test-new-request-mapping.png
+.. image:: /_static/images/spring-integration-tests/integration-test-new-request-mapping.png
 
 In this request mapping we are accessing a path variable. Each car will have a different, and unique ID. A user of this application can request information about a specific car by making an HTTP Request to /car/<car.id> and include in the path the ID number of the car they are requesting. We are using the builtin PathVariable annotation to do this. You will have to import this into the file to use it. Option+enter is the easiest way to do this on a Mac.
 
 We will use the ID number given to us in the PathVariable to look up the car in the database. Using the Car Repository we want to look up one car, with a specific ID number. The method we are calling doesn't currently exist, so we will need to add it. In CarMemoryRepository we will need to add a little code.
 
-.. image:: /_static/images/integration-test-car-memory-repository-addition.png
+.. image:: /_static/images/spring-integration-tests/integration-test-car-memory-repository-addition.png
 
 Now that the method exists, we now have access to this code in our CarController.java file. If you switch back to the file you should see the red text on findById() has changed to black text.
 
 Let's run our test.
 
-.. image:: /_static/images/integration-test-view-by-id-result2.png
+.. image:: /_static/images/spring-integration-tests/integration-test-view-by-id-result2.png
 
 Our test failed again! However the output looks a little different. We are now getting an error in resolving our template: "car/view", template might not exist. In the code we added to our controller we told it to return a template located in the car folder called view.html. Looking at our project structure we don't have that file.
 
 
-.. image:: /_static/images/integration-test-project-structure.png
+.. image:: /_static/images/spring-integration-tests/integration-test-project-structure.png
 
 We will need to add an additional file, with some HTML to pass this test.
 
-.. image:: /_static/images/integration-test-view-template.png
+.. image:: /_static/images/spring-integration-tests/integration-test-view-template.png
 
 Now that the route exists. Let's rerun our test.
 
-.. image:: /_static/images/integration-test-view-by-id-result3.png
+.. image:: /_static/images/spring-integration-tests/integration-test-view-by-id-result3.png
 
 Finally it passed!
 
