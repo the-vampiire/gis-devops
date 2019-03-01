@@ -10,21 +10,39 @@ This activity gives you practice writing integration tests in Spring.
 
 We will be building onto this project multiple times throughout this course. You will want to make sure when you have completed a LaunchCart studio that you push your solution to your personal GitLab account!
 
-Getting Started
----------------
-
-Fork the `LaunchCodeTraining/launchcart repo <https://gitlab.com/LaunchCodeTraining/launchcart>`_ and clone it to your laptop. For this project we will start with the ``master`` branch. After forking and cloning, it's a good idea to make a **story branch** to contain your work. 
-
-Example: ``git checkout -b day3-studio`` creates a branch named **launchcart1-studio-solution** and checks it out at the same time.
-
-Your Tasks
-----------
-
-Import the project into IntelliJ and make sure all of the tests pass.
+Project Description
+-------------------
 
 This application is a very basic shopping cart. It has items that can be added to a cart. We can also currently add new items. There are no users, there is only one universal cart, and other basic functionality is missing.
 
 You will add features, writing integration and unit tests as you go, and using a TDD approach.
+
+Your Tasks
+----------
+
+1. Fork and clone the project
+2. Create a new branch for your work
+3. Import the project into IntelliJ
+4. Create a runtime configuration for your tests
+5. Make sure all provided tests pass
+6. Use TDD to write additional tests
+    * Add price to item listing
+    * Add total to cart
+    * Add ability to remove items from the cart
+    * Implement unit test for ItemMemoryRepository
+
+Getting Started
+===============
+
+Fork the `LaunchCodeTraining/launchcart repo <https://gitlab.com/LaunchCodeTraining/launchcart>`_ and clone it to your laptop. For this project we will start with the ``master`` branch. After forking and cloning, it's a good idea to make a **story branch** to contain your work. 
+
+Example: ``git checkout -b launchcart1-studio-solution`` creates a branch named **launchcart1-studio-solution** and checks it out at the same time.
+
+Import the project into IntelliJ by opening the build.gradle file as a project. Remember to check auto-import if it isn't automatically selected for you.
+
+Create runtime configurations for your tests. Look back at the `Unit Tests Walkthrough <../../walkthroughs/unit-tests/>`_ for help with configuring a project for Java 8 and creating runtime configurations.
+
+Finally, before writing your own tests you should make sure all the current tests pass. If they don't, make the changes so the tests will pass.
 
 Add Price To Items Listing
 ==========================

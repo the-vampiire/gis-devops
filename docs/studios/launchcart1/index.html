@@ -261,8 +261,9 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Studio: LaunchCart Part 1</a><ul>
-<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#project-description">Project Description</a></li>
 <li><a class="reference internal" href="#your-tasks">Your Tasks</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li><a class="reference internal" href="#add-price-to-items-listing">Add Price To Items Listing</a></li>
 <li><a class="reference internal" href="#add-total-to-cart">Add Total To Cart</a></li>
 <li><a class="reference internal" href="#add-ability-to-remove-items-from-the-cart">Add Ability To Remove Items From The Cart</a></li>
@@ -283,16 +284,44 @@
 <span id="launchcart-part-1-studio"></span><h1>Studio: LaunchCart Part 1<a class="headerlink" href="#studio-launchcart-part-1" title="Permalink to this headline">¶</a></h1>
 <p>This activity gives you practice writing integration tests in Spring.</p>
 <p>We will be building onto this project multiple times throughout this course. You will want to make sure when you have completed a LaunchCart studio that you push your solution to your personal GitLab account!</p>
-<div class="section" id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>Fork the <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/launchcart">LaunchCodeTraining/launchcart repo</a> and clone it to your laptop. For this project we will start with the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. After forking and cloning, it’s a good idea to make a <strong>story branch</strong> to contain your work.</p>
-<p>Example: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">day3-studio</span></code> creates a branch named <strong>launchcart1-studio-solution</strong> and checks it out at the same time.</p>
+<div class="section" id="project-description">
+<h2>Project Description<a class="headerlink" href="#project-description" title="Permalink to this headline">¶</a></h2>
+<p>This application is a very basic shopping cart. It has items that can be added to a cart. We can also currently add new items. There are no users, there is only one universal cart, and other basic functionality is missing.</p>
+<p>You will add features, writing integration and unit tests as you go, and using a TDD approach.</p>
 </div>
 <div class="section" id="your-tasks">
 <h2>Your Tasks<a class="headerlink" href="#your-tasks" title="Permalink to this headline">¶</a></h2>
-<p>Import the project into IntelliJ and make sure all of the tests pass.</p>
-<p>This application is a very basic shopping cart. It has items that can be added to a cart. We can also currently add new items. There are no users, there is only one universal cart, and other basic functionality is missing.</p>
-<p>You will add features, writing integration and unit tests as you go, and using a TDD approach.</p>
+<ol class="arabic">
+<li><p class="first">Fork and clone the project</p>
+</li>
+<li><p class="first">Create a new branch for your work</p>
+</li>
+<li><p class="first">Import the project into IntelliJ</p>
+</li>
+<li><p class="first">Create a runtime configuration for your tests</p>
+</li>
+<li><p class="first">Make sure all provided tests pass</p>
+</li>
+<li><dl class="first docutils">
+<dt>Use TDD to write additional tests</dt>
+<dd><ul class="first last simple">
+<li>Add price to item listing</li>
+<li>Add total to cart</li>
+<li>Add ability to remove items from the cart</li>
+<li>Implement unit test for ItemMemoryRepository</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="section" id="getting-started">
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
+<p>Fork the <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/launchcart">LaunchCodeTraining/launchcart repo</a> and clone it to your laptop. For this project we will start with the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. After forking and cloning, it’s a good idea to make a <strong>story branch</strong> to contain your work.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">launchcart1-studio-solution</span></code> creates a branch named <strong>launchcart1-studio-solution</strong> and checks it out at the same time.</p>
+<p>Import the project into IntelliJ by opening the build.gradle file as a project. Remember to check auto-import if it isn’t automatically selected for you.</p>
+<p>Create runtime configurations for your tests. Look back at the <a class="reference external" href="../../walkthroughs/unit-tests/">Unit Tests Walkthrough</a> for help with configuring a project for Java 8 and creating runtime configurations.</p>
+<p>Finally, before writing your own tests you should make sure all the current tests pass. If they don’t, make the changes so the tests will pass.</p>
+</div>
 <div class="section" id="add-price-to-items-listing">
 <h3>Add Price To Items Listing<a class="headerlink" href="#add-price-to-items-listing" title="Permalink to this headline">¶</a></h3>
 <p>The page at <code class="docutils literal notranslate"><span class="pre">/item</span></code> that lists all items does not currently list the price of each item. Add this feature.</p>
