@@ -6,35 +6,67 @@
 Walkthrough: PostgreSQL
 =======================
 
-Follow along with the instructor as we work with PostgreSQL
+Setup
+-----
 
-Install Postgres App
---------------------
+* Check that you have postgres installed by typing ``$ postgres --version`` into your terminal
+* Check that you have docker installed by typing ``$ docker --version``
+* Check that you have a running docker container for psql by typing ``$ docker ps -a``
 
-- Go `https://postgresapp.com/ <https://postgresapp.com/>`_
-- Download and open the file
-- Note: this is specifcally for Mac OS
+If you are missing any of the three things above please fix them before we continue with the walkthrough.
 
-Add postgres to your $PATH
-**************************
-
-* Open a terminal
-* Open your ``.bash_profile`` in an editor like nano::
-
-    $ nano ~/.bash_profile
-
-* Paste in this text to your ``~/.bash_profile``::
-
-    # add postgres and it's related commands to path
-    export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-
-* Save your ``~/.bash_profile`` file
-* Open a new terminal and run ``$ postgres --version``
-* You will use the ``postgres`` command on the terminal later in the class
-
+* `Postgres installation steps <../../installations/postgres/>`_
+* `Docker installation steps <../../installations/docker/>`_
+* `Creating a PSQL docker container <../../installations/docker-psql/>`_
 
 Let's Run Some Postgres Commands
 --------------------------------
+
+* Connect to PSQL interactive terminal ``psql -h IP_ADDRESS -p PORT -U USER_NAME -d DATABASE_NAME``
+
+Create a Database
++++++++++++++++++
+
+* ``CREATE DATABASE sports;``
+* ``\l`` -- command to list all databases
+* ``\c sports`` -- command to connect to the new sports database
+
+Create a Schema
++++++++++++++++
+
+* ``CREATE SCHEMA baseball;``
+* ``\dn`` -- command to list all schemas
+
+Create a Table
+++++++++++++++
+
+* ``CREATE TABLE baseball.teams (name varchar(50), league varchar(25), division varchar(25));`` -- create a new table on the baseball schema with three columns: name, league, and division
+* ``\dt baseball.*;`` -- command to list all tables on the baseball schema
+
+Insert Into
++++++++++++
+
+* ``INSERT INTO TABLE baseball.teams(name, league, division) VALUES ('St. Louis Cardinals', 'National', 'Central');``
+* ``SELECT * FROM baseball.teams;``
+
+We can insert as many records as we want with one INSERT INTO statement.
+
+* ``INSERT INTO TABLE baseball.teams(name, league, division) VALUES ('Washington Nationals', 'National', 'East'), ('Chicago Cubs', 'National', 'Central'), ('New York Mets', 'National', 'East'), ('New York Yankees', 'American', 'East');``
+
+Select
+++++++
+
+* ``SELECT * FROM baseball.teams;`` -- SELECT all the columns from all the teams
+* ``SELECT name FROM baseball.teams;`` -- SELECT only the name column from all the teams
+* ``SELECT * FROM baseball.teams WHERE league='National';`` -- SELECT all the columns from all the teams in the 'National' league
+* ``SELECT name, division FROM baseball.teams WHERE league='National';`` -- SELECT only the name, and division columns from teams in the 'National' league
+* ``SELECT * FROM baseball.teams WHERE division='East' AND league='National';`` -- SELECT all the columns from all the teams in the 'East' division, that also are in the 'National' league
+
+Alter Table
++++++++++++
+
+
+
 
 * Open Postgres.app on your mac
 * In the postgres terminal we will run the following commands
@@ -48,7 +80,7 @@ Now For Some SQL Queries
 ------------------------
 * Insert
 * Select
-* delete
+* delete* ``SELECT name FROM baseball.teams WHERE league='National';``
 * Alter table
 
   * ALTER TABLE baseball.teams ADD COLUMN id integer PRIMARY KEY;

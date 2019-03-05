@@ -261,11 +261,16 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Walkthrough: PostgreSQL</a><ul>
-<li><a class="reference internal" href="#install-postgres-app">Install Postgres App</a><ul>
-<li><a class="reference internal" href="#add-postgres-to-your-path">Add postgres to your $PATH</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#let-s-run-some-postgres-commands">Let’s Run Some Postgres Commands</a><ul>
+<li><a class="reference internal" href="#create-a-database">Create a Database</a></li>
+<li><a class="reference internal" href="#create-a-schema">Create a Schema</a></li>
+<li><a class="reference internal" href="#create-a-table">Create a Table</a></li>
+<li><a class="reference internal" href="#insert-into">Insert Into</a></li>
+<li><a class="reference internal" href="#select">Select</a></li>
+<li><a class="reference internal" href="#alter-table">ALTER TABLE</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#let-s-run-some-postgres-commands">Let’s Run Some Postgres Commands</a></li>
 <li><a class="reference internal" href="#now-for-some-sql-queries">Now For Some SQL Queries</a></li>
 </ul>
 </li>
@@ -277,41 +282,70 @@
       
   <div class="section" id="walkthrough-postgresql">
 <span id="postgres-walkthrough"></span><h1>Walkthrough: PostgreSQL<a class="headerlink" href="#walkthrough-postgresql" title="Permalink to this headline">¶</a></h1>
-<p>Follow along with the instructor as we work with PostgreSQL</p>
-<div class="section" id="install-postgres-app">
-<h2>Install Postgres App<a class="headerlink" href="#install-postgres-app" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Go <a class="reference external" href="https://postgresapp.com/">https://postgresapp.com/</a></li>
-<li>Download and open the file</li>
-<li>Note: this is specifcally for Mac OS</li>
+<li>Check that you have postgres installed by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">postgres</span> <span class="pre">--version</span></code> into your terminal</li>
+<li>Check that you have docker installed by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">--version</span></code></li>
+<li>Check that you have a running docker container for psql by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code></li>
 </ul>
-<div class="section" id="add-postgres-to-your-path">
-<h3>Add postgres to your $PATH<a class="headerlink" href="#add-postgres-to-your-path" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p class="first">Open a terminal</p>
-</li>
-<li><p class="first">Open your <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> in an editor like nano:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ nano ~/.bash_profile
-</pre></div>
-</div>
-</li>
-<li><p class="first">Paste in this text to your <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># add postgres and it&#39;s related commands to path
-export PATH=&quot;/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH&quot;
-</pre></div>
-</div>
-</li>
-<li><p class="first">Save your <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> file</p>
-</li>
-<li><p class="first">Open a new terminal and run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">postgres</span> <span class="pre">--version</span></code></p>
-</li>
-<li><p class="first">You will use the <code class="docutils literal notranslate"><span class="pre">postgres</span></code> command on the terminal later in the class</p>
-</li>
+<p>If you are missing any of the three things above please fix them before we continue with the walkthrough.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../installations/postgres/">Postgres installation steps</a></li>
+<li><a class="reference external" href="../../installations/docker/">Docker installation steps</a></li>
+<li><a class="reference external" href="../../installations/docker-psql/">Creating a PSQL docker container</a></li>
 </ul>
-</div>
 </div>
 <div class="section" id="let-s-run-some-postgres-commands">
 <h2>Let’s Run Some Postgres Commands<a class="headerlink" href="#let-s-run-some-postgres-commands" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Connect to PSQL interactive terminal <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-h</span> <span class="pre">IP_ADDRESS</span> <span class="pre">-p</span> <span class="pre">PORT</span> <span class="pre">-U</span> <span class="pre">USER_NAME</span> <span class="pre">-d</span> <span class="pre">DATABASE_NAME</span></code></li>
+</ul>
+<div class="section" id="create-a-database">
+<h3>Create a Database<a class="headerlink" href="#create-a-database" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">DATABASE</span> <span class="pre">sports;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">\l</span></code> – command to list all databases</li>
+<li><code class="docutils literal notranslate"><span class="pre">\c</span> <span class="pre">sports</span></code> – command to connect to the new sports database</li>
+</ul>
+</div>
+<div class="section" id="create-a-schema">
+<h3>Create a Schema<a class="headerlink" href="#create-a-schema" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">SCHEMA</span> <span class="pre">baseball;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">\dn</span></code> – command to list all schemas</li>
+</ul>
+</div>
+<div class="section" id="create-a-table">
+<h3>Create a Table<a class="headerlink" href="#create-a-table" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">baseball.teams</span> <span class="pre">(name</span> <span class="pre">varchar(50),</span> <span class="pre">league</span> <span class="pre">varchar(25),</span> <span class="pre">division</span> <span class="pre">varchar(25));</span></code> – create a new table on the baseball schema with three columns: name, league, and division</li>
+<li><code class="docutils literal notranslate"><span class="pre">\dt</span> <span class="pre">baseball.*;</span></code> – command to list all tables on the baseball schema</li>
+</ul>
+</div>
+<div class="section" id="insert-into">
+<h3>Insert Into<a class="headerlink" href="#insert-into" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">TABLE</span> <span class="pre">baseball.teams(name,</span> <span class="pre">league,</span> <span class="pre">division)</span> <span class="pre">VALUES</span> <span class="pre">('St.</span> <span class="pre">Louis</span> <span class="pre">Cardinals',</span> <span class="pre">'National',</span> <span class="pre">'Central');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code></li>
+</ul>
+<p>We can insert as many records as we want with one INSERT INTO statement.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">TABLE</span> <span class="pre">baseball.teams(name,</span> <span class="pre">league,</span> <span class="pre">division)</span> <span class="pre">VALUES</span> <span class="pre">('Washington</span> <span class="pre">Nationals',</span> <span class="pre">'National',</span> <span class="pre">'East'),</span> <span class="pre">('Chicago</span> <span class="pre">Cubs',</span> <span class="pre">'National',</span> <span class="pre">'Central'),</span> <span class="pre">('New</span> <span class="pre">York</span> <span class="pre">Mets',</span> <span class="pre">'National',</span> <span class="pre">'East'),</span> <span class="pre">('New</span> <span class="pre">York</span> <span class="pre">Yankees',</span> <span class="pre">'American',</span> <span class="pre">'East');</span></code></li>
+</ul>
+</div>
+<div class="section" id="select">
+<h3>Select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code> – SELECT all the columns from all the teams</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">name</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code> – SELECT only the name column from all the teams</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">league='National';</span></code> – SELECT all the columns from all the teams in the ‘National’ league</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">name,</span> <span class="pre">division</span> <span class="pre">FROM</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">league='National';</span></code> – SELECT only the name, and division columns from teams in the ‘National’ league</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">division='East'</span> <span class="pre">AND</span> <span class="pre">league='National';</span></code> – SELECT all the columns from all the teams in the ‘East’ division, that also are in the ‘National’ league</li>
+</ul>
+</div>
+<div class="section" id="alter-table">
+<h3>ALTER TABLE<a class="headerlink" href="#alter-table" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Open Postgres.app on your mac</li>
 <li>In the postgres terminal we will run the following commands</li>
@@ -322,12 +356,13 @@ export PATH=&quot;/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH&
 <li><code class="docutils literal notranslate"><span class="pre">\d</span> <span class="pre">baseball.teams</span></code> - show info about table</li>
 </ul>
 </div>
+</div>
 <div class="section" id="now-for-some-sql-queries">
 <h2>Now For Some SQL Queries<a class="headerlink" href="#now-for-some-sql-queries" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Insert</li>
 <li>Select</li>
-<li>delete</li>
+<li>delete* <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">name</span> <span class="pre">FROM</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">league='National';</span></code></li>
 <li>Alter table<ul>
 <li>ALTER TABLE baseball.teams ADD COLUMN id integer PRIMARY KEY;</li>
 </ul>
