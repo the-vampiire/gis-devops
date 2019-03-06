@@ -6,6 +6,10 @@ __pycache__
 .pyc
 __pycache__/
 pdf/
+<<<<<<< HEAD
 
 # Paul's build script
 build-serve.sh
+=======
+build-serve.sh
+>>>>>>> Add build-serve.sh to .gitignore
