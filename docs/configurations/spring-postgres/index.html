@@ -261,7 +261,10 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">Configuration: Spring &amp; Postgres</a></li>
+<li><a class="reference internal" href="#">Configuration: Spring &amp; Postgres</a><ul>
+<li><a class="reference internal" href="#add-spring-data-to-our-dependencies">Add Spring Data to our dependencies</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -272,13 +275,18 @@
 <span id="spring-postgres"></span><h1>Configuration: Spring &amp; Postgres<a class="headerlink" href="#configuration-spring-postgres" title="Permalink to this headline">¶</a></h1>
 <p>One of the many benefits of Spring is that it contains a vast amount of tools we can leverage while building our web applicatoins. One of these tools is Spring Data JPA. Spring Data JPA has some code that will connect to our database, and perform basic operations by using methods attached to the JPA Repository.</p>
 <p>JPA Repositories make it very easy for us to work with various data stores including SQL data stores like Postgres, and NoSQL data stores like ElasticSearch.</p>
-<p>To get our web applicatoin to work with JPA Repository we need to do a couple of things.</p>
+<p>To get our web application to work with JPA Repository we need to do a couple of things.</p>
 <ol class="arabic simple">
 <li>Include Spring Data in our dependencies (this class uses the build.gradle file to manage our dependencies)</li>
 <li>Configure our database connection information in our application.properties file</li>
 <li>Map our classes to our tables using Hibernate</li>
 <li>Extend the JPA Repository interface</li>
 </ol>
+<div class="section" id="add-spring-data-to-our-dependencies">
+<h2>Add Spring Data to our dependencies<a class="headerlink" href="#add-spring-data-to-our-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Open your build.gradle file.</p>
+<img alt="../../_images/project-viewer-build-gradle.png" src="../../_images/project-viewer-build-gradle.png" />
+</div>
 </div>
 
 
