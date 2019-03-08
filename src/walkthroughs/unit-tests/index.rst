@@ -63,12 +63,13 @@ Create a New Runtime Configuration
 
 Checkout the `runtime configuration <../../configurations/runtime-configuration/>`_ guide for a step-by-step guide for getting your runtime configuration created
 
-* Add a new configuration
-* Name the configuration
-* Select the class file for our tests
-* Apply the configuration
-* Run new configuration by clicking the green arrow
-* View test results 
+As a reminder from the runtime configuration article you will need to
+  * Add a new configuration
+  * Name the configuration
+  * Select the class file for our tests
+  * Apply the configuration
+  * Run new configuration by clicking the green arrow
+  * View test results 
 
 .. image:: /_static/images/unit-tests/first-test-results.png
 
