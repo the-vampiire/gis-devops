@@ -30,35 +30,16 @@ Fork, Clone, and Open Project in IntelliJ
 Configure IntelliJ for Java 8
 -----------------------------
 
-* Open the Project Structure
+Before we can write any unit tests we need to configure this project for Java 8.
 
-.. image:: /_static/images/unit-tests/project-structure.png
+Check out the `Configure IntelliJ <../../configurations/intellij/>`_ article for detailed steps.
 
-* Set our Project SDK
-
-.. image:: /_static/images/unit-tests/project-sdk.png
-
-* Set our Project language level
-
-.. image:: /_static/images/unit-tests/project-language-level.png
-
-* Create a new folder for our compiler output
-
-.. image:: /_static/images/unit-tests/new-out-folder-location.png
-
-.. image:: /_static/images/unit-tests/new-out-folder.png
-
-* Set our Project compiler output
-
-.. image:: /_static/images/unit-tests/project-compiler-output.png
-
-* Mark the main directory as Source Root
-
-.. image:: /_static/images/unit-tests/main-directory-as-source-root.png
-
-* Mark the test directory as Test Sources Root
-
-.. image:: /_static/images/unit-tests/test-directory-as-test-root.png
+As a reminder from that configuration article you will need to 
+  * Set our Project SDK
+  * Set our Project language level
+  * Set our Project compiler output
+  * Mark the main directory as Source Root
+  * Mark the test directory as Test Sources Root
 
 Add an Empty Test
 -----------------
@@ -79,29 +60,19 @@ We need to create an empty test so that we can create our testing runtime config
 
 Create a New Runtime Configuration
 ---------------------------------- 
-* Click Add configuration
 
-.. image:: /_static/images/unit-tests/add-configuration.png
+Checkout the `runtime configuration <../../configurations/runtime-configuration/>`_ guide for a step-by-step guide for getting your runtime configuration created
 
-* Click the + icon and select JUnit
-
-.. image:: /_static/images/unit-tests/plus-junit.png
-
+* Add a new configuration
 * Name the configuration
-* Select the class file where our tests live
+* Select the class file for our tests
 * Apply the configuration
-
-.. image:: /_static/images/unit-tests/name-class-apply-configuration.png
-
 * Run new configuration by clicking the green arrow
-
-.. image:: /_static/images/unit-tests/run-test-configuration.png
-
 * View test results 
 
 .. image:: /_static/images/unit-tests/first-test-results.png
 
-Currently our one test passes, because it is testing if 10 is the same value as 10 which is true.
+Currently our one test passes, because emptyTest is our only test, and it's checking if 10 is 10, which is true.
 
 Write and Run our Unit Tests
 ----------------------------
