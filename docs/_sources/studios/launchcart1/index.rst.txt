@@ -53,6 +53,8 @@ Before you add code to the application, write a test to verify that item prices 
 
 After you have written your test and the corresponding code passes, run all of the tests and commit.
 
+A TODO is provided for you in ItemControllerTests.java, but ask yourself why does this test go in this file?
+
 Add Total To Cart
 =================
 
@@ -60,9 +62,13 @@ The ``Cart`` class currently does not have the ability to produce a total cost o
 
 Add a ``computeTotal`` method to ``Cart``, writing a unit test to verify its behavior before adding any code to the class itself.
 
+A TODO is provided for you in CartTest.java, but ask yourself why does this test go in this file?
+
 Display the cart total at ``/cart``. Before adding code to the controller and/or view, write an integration test to verify that the total is displayed properly.
 
 After you have written your test(s) and the corresponding code passes, run all of the tests and commit.
+
+A TODO is provided for you in CartControllerTests.java, but ask yourself why does this test go in this file?
 
 .. note::
 
@@ -78,6 +84,8 @@ As always, write your tests before writing any application code. As before, you'
 
 After you have written your tests and they pass, run **all** of the tests and commit.
 
+No TODOs are provided for you. How many tests will you need? Where do those tests need to go?
+
 Implement Unit Test for ItemMemoryRepositoryTests
 =================================================
 
@@ -87,8 +95,6 @@ we can be sure our repository class correctly saves items.
 .. note::
 
     This version of LaunchCart does not use an SQL database. Use this test as a way to get familair with how Items and Carts are persisted for this project.
-
-
 
 Bonus Missions
 --------------

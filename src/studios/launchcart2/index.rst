@@ -27,8 +27,8 @@ Each section outlines one task or group of tasks you need to complete.
 Refactor to Use Hiberante (Keep Existing Functionality)
 =======================================================
 
-1. Set Up A Postgres DB
-2. Configure the App To Use the Database (controllers, entities, repositories, tests)
+1. `Set Up A Postgres DB <../../installations/docker-psql/>`_
+2. `Configure the App To Use the Database <../../walkthroughs/spring-data-jpa-hibernate/>`_ (controllers, entities, repositories, tests)
 3. Get the tests to pass
 4. Commit your changes
 
