@@ -203,6 +203,14 @@ We want to add data about this report to our map dashboard. Here is an example o
         </li>
     </ul>
 
+For starters let's add an empty <ul></ul> tag to our index.html file.
+
+.. code-block:: html
+
+    <ul id="airports">
+    </ul>
+
+
 JavaScript Template Literals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -224,9 +232,9 @@ Update the Map onclick code to display. For each feature at a certain pixel, we 
 .. code-block:: javascript
 
     map.on('click', function(event) {
-        $('#airport-list').empty();
+        $('#airports').empty();
         map.forEachFeatureAtPixel(event.pixel, function(feature,layer) {
-            $('#airport-list').append(`
+            $('#airports').append(`
                 <li>
                     <h3>${feature.get('locationType')}</h3>
                     <p>ICAO: ${feature.get('icao')}</p><p>Location: ${feature.get('dataField')}, ${feature.get('country')}</p>

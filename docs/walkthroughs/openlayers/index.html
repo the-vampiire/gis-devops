@@ -459,6 +459,11 @@ the below code to <code class="docutils literal notranslate"><span class="pre">s
 <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </pre></div>
 </div>
+<p>For starters let’s add an empty &lt;ul&gt;&lt;/ul&gt; tag to our index.html file.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;airports&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
 <p>For the next feature we will need to use <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Javascript Template Literals</a>. Template literals example below.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Jasmine&#39;</span><span class="p">;</span>
 <span class="kr">const</span> <span class="o">=</span> <span class="sb">`Template literals start and end with ticks and you can includes variables like so. Hello </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">.</span>
@@ -468,9 +473,9 @@ the below code to <code class="docutils literal notranslate"><span class="pre">s
 </div>
 <p>Update the Map onclick code to display. For each feature at a certain pixel, we want to add that feature to the list below the map. OpenLayers will handle some of this work for us via <code class="docutils literal notranslate"><span class="pre">map.forEachFeatureAtPixel()</span></code>. Remember that the features in this case are airports and we are styling them to be displayed as red circles:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#airport-list&#39;</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#airports&#39;</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span>
     <span class="nx">map</span><span class="p">.</span><span class="nx">forEachFeatureAtPixel</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">pixel</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">,</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#airport-list&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="sb">`</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#airports&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="sb">`</span>
 <span class="sb">            &lt;li&gt;</span>
 <span class="sb">                &lt;h3&gt;</span><span class="si">${</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;locationType&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/h3&gt;</span>
 <span class="sb">                &lt;p&gt;ICAO: </span><span class="si">${</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;icao&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/p&gt;&lt;p&gt;Location: </span><span class="si">${</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;dataField&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
