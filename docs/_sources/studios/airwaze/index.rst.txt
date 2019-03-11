@@ -19,26 +19,18 @@ What is PostGIS?
 
 `PostGIS <https://postgis.net/>`_ is a spatial database extension for PostgreSQL object-relational database. PostGIS adds support for geographic objects in Postgresql. This includes features such as georgraphic data types, location functions, and location based querying.
 
-Install PostGIS on your Computer
-================================
+Install PostGIS Container
+=========================
 
-- Make sure your Postgresql server is running. Remember we used https://postgresapp.com/ to install Postgresql, which automatically created a service that we can start and stop via its UI in the menu bar.
-- To install the PostGIS extension, run the below commands in terminal
-
-  - Note that this makes the extension available on your computer, but you will need to run additional commands to enable them in a specific database. More on that in the Enable Extension section.
-
-  ::
-
-    $ brew update
-    $ brew install postgis
+If you don't already have a PostGIS container installed checkout the `installation guide <../../installations/docker-postgis/>`_
 
 Create a Database for the Airwaze Data
 ======================================
-Run ``psql`` CLI by double clicking on the ``postgres`` database in the Postgresql app.
 
-Open the Postgres UI and double click on the ``postgres`` db to open a ``psql`` command prompt.
+Connect to the PostGIS Container
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image :: /_static/images/postgresapp-db-icon.png
+Run ``$ psql -h 127.0.0.1 -U psq_user -d postgres`` to access the PSQL CLI.
 
 Run the Create Command
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -53,7 +45,9 @@ Also create a database for your tests::
 
 Enable Geospatial Extensions in the Airwaze Database
 =====================================================
-Now we want to install the geospatial extensions to Postgres for the ``airwaze`` db. Open the Postgres UI and double click on the ``airwaze`` db to open a ``psql`` command prompt connected to the ``airwaze`` db::
+Now we want to install the geospatial extensions to Postgres for the ``airwaze`` db. 
+
+From the PSQL CLI run ``\c airwaze`` to connect to the airwaze database::
 
     airwaze=# CREATE EXTENSION postgis;
     airwaze=# CREATE EXTENSION postgis_topology;
@@ -95,8 +89,18 @@ This application uses Spring Boot and Spring Data.  When the project boots up, *
 The ``import.sql`` file in this project contains SQL statements that import CSV data into SQL tables. Please take a minute to review ``import.sql`` and the two ``.csv`` files.
 
 - Review the ``import.sql`` file in the airwaze project
-- Be sure that the ``import.sql`` points to **your** local copies of the ``airports.csv`` and ``routes.csv``. It needs to be the "full path" to each file on your local computer.
-- You will need to change the path value for both files listed. ``/Users/YOUR-USERNAME/YOUR-PATH/airwaze-studio/routes.csv``
+
+We are using a PostGIS docker container. Althought it is installed on our computer, docker is a virtualization/containerization tool, so our PostGIS container is unaware of any other files on our computer. We will need to COPY our CSV files to a location our PostGIS container can work with.
+
+Luckily docker gives us an easy way to do this.
+
+- From the root directory of airwaze-studio run ``$ docker cp Airports.csv postgis:/tmp``
+- And also run ``$ docker cp routes.csv postgis:/tmp``
+
+The ``cp`` command in docker stands for copy. We are copying the two CSV files into a directory called /tmp inside of our container.
+
+- Be sure that the ``import.sql`` points to the copies of ``airports.csv`` and ``routes.csv`` in your container.
+- You shouldn't need to change anything in the import.sql file. ``/tmp/routes.csv``
 - Open the ``csv`` files to see what data is being imported for routes and airports
 
 Run the Application and Populate the Database

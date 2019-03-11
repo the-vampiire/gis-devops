@@ -4,10 +4,11 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Studio: Airwaze &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <title>Docker Installation: PostGIS &#8212; LaunchCode: GIS DevOps  documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/launchcode.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
@@ -260,26 +261,14 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">Studio: Airwaze</a><ul>
-<li><a class="reference internal" href="#set-up-project">Set Up Project</a></li>
-<li><a class="reference internal" href="#what-is-postgis">What is PostGIS?</a></li>
-<li><a class="reference internal" href="#install-postgis-container">Install PostGIS Container</a></li>
-<li><a class="reference internal" href="#create-a-database-for-the-airwaze-data">Create a Database for the Airwaze Data</a><ul>
-<li><a class="reference internal" href="#connect-to-the-postgis-container">Connect to the PostGIS Container</a></li>
-<li><a class="reference internal" href="#run-the-create-command">Run the Create Command</a></li>
+<li><a class="reference internal" href="#">Docker Installation: PostGIS</a><ul>
+<li><a class="reference internal" href="#installation-steps-mac">Installation Steps: Mac</a><ul>
+<li><a class="reference internal" href="#create-env-list">Create env.list</a></li>
+<li><a class="reference internal" href="#shutdown-other-psql-containers">Shutdown Other PSQL containers</a></li>
+<li><a class="reference internal" href="#create-container">Create Container</a></li>
+<li><a class="reference internal" href="#connect-to-psql">Connect to psql</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#enable-geospatial-extensions-in-the-airwaze-database">Enable Geospatial Extensions in the Airwaze Database</a></li>
-<li><a class="reference internal" href="#create-users-and-grant-access-rights">Create Users and Grant Access Rights</a></li>
-<li><a class="reference internal" href="#now-let-s-use-the-new-database">Now Let’s Use the New Database</a></li>
-<li><a class="reference internal" href="#review-import-sql-and-csv-files">Review import.sql and CSV files</a></li>
-<li><a class="reference internal" href="#run-the-application-and-populate-the-database">Run the Application and Populate the Database</a></li>
-<li><a class="reference internal" href="#review-the-tables-and-data-in-postgis">Review the Tables and Data in Postgis</a></li>
-<li><a class="reference internal" href="#review-airportcontroller">Review AirportController</a></li>
-<li><a class="reference internal" href="#tasks">Tasks</a></li>
-<li><a class="reference internal" href="#bonus-missions">Bonus Missions</a></li>
-<li><a class="reference internal" href="#solution-screen-shot">Solution Screen Shot</a></li>
-<li><a class="reference internal" href="#resources">Resources</a></li>
 </ul>
 </li>
 </ul>
@@ -288,172 +277,63 @@
       </div>
     <div class="col-md-9 content">
       
-  <div class="section" id="studio-airwaze">
-<span id="airwaze-studio"></span><h1>Studio: Airwaze<a class="headerlink" href="#studio-airwaze" title="Permalink to this headline">¶</a></h1>
-<p>Your goal is to add an additional layer that shows flight routes and display it on the map.  This time we will incorporate our map into a Spring Boot project. We will store geographic data in our Postgresql database. Some starter code has been provided for you.</p>
-<div class="section" id="set-up-project">
-<h2>Set Up Project<a class="headerlink" href="#set-up-project" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Fork and clone this <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/airwaze-studio">Gitlab project</a>.</li>
-<li>Then open the project in IntelliJ</li>
-<li>Create a story branch <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">day5-solution</span></code></li>
-</ul>
-</div>
-<div class="section" id="what-is-postgis">
-<h2>What is PostGIS?<a class="headerlink" href="#what-is-postgis" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://postgis.net/">PostGIS</a> is a spatial database extension for PostgreSQL object-relational database. PostGIS adds support for geographic objects in Postgresql. This includes features such as georgraphic data types, location functions, and location based querying.</p>
-</div>
-<div class="section" id="install-postgis-container">
-<h2>Install PostGIS Container<a class="headerlink" href="#install-postgis-container" title="Permalink to this headline">¶</a></h2>
-<p>If you don’t already have a PostGIS container installed checkout the <a class="reference external" href="../../installations/docker-postgis/">installation guide</a></p>
-</div>
-<div class="section" id="create-a-database-for-the-airwaze-data">
-<h2>Create a Database for the Airwaze Data<a class="headerlink" href="#create-a-database-for-the-airwaze-data" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="connect-to-the-postgis-container">
-<h3>Connect to the PostGIS Container<a class="headerlink" href="#connect-to-the-postgis-container" title="Permalink to this headline">¶</a></h3>
-<p>Run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">psql</span> <span class="pre">-h</span> <span class="pre">127.0.0.1</span> <span class="pre">-U</span> <span class="pre">psq_user</span> <span class="pre">-d</span> <span class="pre">postgres</span></code> to access the PSQL CLI.</p>
-</div>
-<div class="section" id="run-the-create-command">
-<h3>Run the Create Command<a class="headerlink" href="#run-the-create-command" title="Permalink to this headline">¶</a></h3>
-<p>Then in the postgres termainl run this to create a new database:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>postgres=# CREATE DATABASE airwaze;
-</pre></div>
-</div>
-<p>Also create a database for your tests:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>postgres=# CREATE DATABASE airwaze_test;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="enable-geospatial-extensions-in-the-airwaze-database">
-<h2>Enable Geospatial Extensions in the Airwaze Database<a class="headerlink" href="#enable-geospatial-extensions-in-the-airwaze-database" title="Permalink to this headline">¶</a></h2>
-<p>Now we want to install the geospatial extensions to Postgres for the <code class="docutils literal notranslate"><span class="pre">airwaze</span></code> db.</p>
-<p>From the PSQL CLI run <code class="docutils literal notranslate"><span class="pre">\c</span> <span class="pre">airwaze</span></code> to connect to the airwaze database:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>airwaze=# CREATE EXTENSION postgis;
-airwaze=# CREATE EXTENSION postgis_topology;
-airwaze=# CREATE EXTENSION fuzzystrmatch;
-airwaze=# CREATE EXTENSION postgis_tiger_geocoder;
-</pre></div>
-</div>
-<p>Make sure that everything installed correctly by running this query
-- Remember to do that for your test database <code class="docutils literal notranslate"><span class="pre">airwaze_test</span></code> as well!:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>airwaze=# SELECT POSTGIS_FULL_VERSION();
-</pre></div>
-</div>
-</div>
-<div class="section" id="create-users-and-grant-access-rights">
-<h2>Create Users and Grant Access Rights<a class="headerlink" href="#create-users-and-grant-access-rights" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Create users <code class="docutils literal notranslate"><span class="pre">airwaze_user</span></code> and <code class="docutils literal notranslate"><span class="pre">airwaze_test_user</span></code></li>
-<li>Grant the users access to only what they need <code class="docutils literal notranslate"><span class="pre">airwaze_user</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">airwaze</span></code> and <code class="docutils literal notranslate"><span class="pre">airwaze_test_user</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">airewaze_test</span></code></li>
-<li>For hints on above, go look at Week 1 Day 4 Walkthrough</li>
-<li>After you have created the users, you need to grant special <code class="docutils literal notranslate"><span class="pre">superuser</span></code> rights because we are going to be running a file with <code class="docutils literal notranslate"><span class="pre">postgres</span></code></li>
-</ul>
-</div>
-<div class="section" id="now-let-s-use-the-new-database">
-<h2>Now Let’s Use the New Database<a class="headerlink" href="#now-let-s-use-the-new-database" title="Permalink to this headline">¶</a></h2>
-<p>Notice in <code class="docutils literal notranslate"><span class="pre">application.properties</span></code> and <code class="docutils literal notranslate"><span class="pre">application-test.properties</span></code> that the db configurtion refers to token values like <code class="docutils literal notranslate"><span class="pre">${APP_DB_NAME}</span></code> and <code class="docutils literal notranslate"><span class="pre">${APP_DB_HOST}</span></code>.</p>
-<ul class="simple">
-<li>Define each in environmment variables OR in Intellij run configurations</li>
-<li>Do not commit db config information to source control</li>
-</ul>
-</div>
-<div class="section" id="review-import-sql-and-csv-files">
-<h2>Review import.sql and CSV files<a class="headerlink" href="#review-import-sql-and-csv-files" title="Permalink to this headline">¶</a></h2>
-<p>This application uses Spring Boot and Spring Data.  When the project boots up, <strong>if</strong> you have a <code class="docutils literal notranslate"><span class="pre">src/main/resources/import.sql</span></code> file, it will automatically be executed against your database by hibernate.</p>
-<ul class="simple">
-<li><strong>NOTE</strong> <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> only runs if <code class="docutils literal notranslate"><span class="pre">ddl-auto=create</span> <span class="pre">or</span> <span class="pre">create-drop</span></code> in <code class="docutils literal notranslate"><span class="pre">application.properties</span></code></li>
-<li><a class="reference external" href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html#howto-initialize-a-database-using-hibernate">More information on Spring Data initialization</a></li>
-</ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> file in this project contains SQL statements that import CSV data into SQL tables. Please take a minute to review <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> and the two <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files.</p>
-<ul class="simple">
-<li>Review the <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> file in the airwaze project</li>
-</ul>
-<p>We are using a PostGIS docker container. Althought it is installed on our computer, docker is a virtualization/containerization tool, so our PostGIS container is unaware of any other files on our computer. We will need to COPY our CSV files to a location our PostGIS container can work with.</p>
-<p>Luckily docker gives us an easy way to do this.</p>
-<ul class="simple">
-<li>From the root directory of airwaze-studio run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">Airports.csv</span> <span class="pre">postgis:/tmp</span></code></li>
-<li>And also run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">routes.csv</span> <span class="pre">postgis:/tmp</span></code></li>
-</ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">cp</span></code> command in docker stands for copy. We are copying the two CSV files into a directory called /tmp inside of our container.</p>
-<ul class="simple">
-<li>Be sure that the <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> points to the copies of <code class="docutils literal notranslate"><span class="pre">airports.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">routes.csv</span></code> in your container.</li>
-<li>You shouldn’t need to change anything in the import.sql file. <code class="docutils literal notranslate"><span class="pre">/tmp/routes.csv</span></code></li>
-<li>Open the <code class="docutils literal notranslate"><span class="pre">csv</span></code> files to see what data is being imported for routes and airports</li>
-</ul>
-</div>
-<div class="section" id="run-the-application-and-populate-the-database">
-<h2>Run the Application and Populate the Database<a class="headerlink" href="#run-the-application-and-populate-the-database" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Run the <code class="docutils literal notranslate"><span class="pre">bootRun</span></code> gradle task to build and run the web application</li>
-<li>Make sure there aren’t any errors in the log.</li>
-<li>When the Spring Boot application starts it will execute the <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> file and populate the related tables</li>
-<li>Then go to <code class="docutils literal notranslate"><span class="pre">http://localhost:8080</span></code> in your browser. You should see a map with Mexico on it that includes a map layer for airports as red circles.</li>
-</ul>
-<img alt="../../_images/airwaze-example.png" src="../../_images/airwaze-example.png" />
-</div>
-<div class="section" id="review-the-tables-and-data-in-postgis">
-<h2>Review the Tables and Data in Postgis<a class="headerlink" href="#review-the-tables-and-data-in-postgis" title="Permalink to this headline">¶</a></h2>
-<p>Open a <code class="docutils literal notranslate"><span class="pre">psql</span></code> prompt connected to <code class="docutils literal notranslate"><span class="pre">airwaze</span></code> database and then run these commands one at a time:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>airwaze=# select count(*) from route;
-airwaze=# select count(*) from airport;
-airwaze=# \d
-airwaze=# \d airport
-airwaze=# \d route
-</pre></div>
-</div>
-</div>
-<div class="section" id="review-airportcontroller">
-<h2>Review AirportController<a class="headerlink" href="#review-airportcontroller" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Visit this url in your browser: <a class="reference external" href="http://localhost:8080/airport/">http://localhost:8080/airport/</a>.  Note the trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> is important.</li>
-<li>Then look at the code that returns that data.</li>
-</ul>
-</div>
-<div class="section" id="tasks">
-<h2>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="docker-installation-postgis">
+<span id="docker-postgis"></span><h1>Docker Installation: PostGIS<a class="headerlink" href="#docker-installation-postgis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation-steps-mac">
+<h2>Installation Steps: Mac<a class="headerlink" href="#installation-steps-mac" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>When the map is clicked, list all airports that are at that pixel<ul>
-<li>You will need to add more code to the function <code class="docutils literal notranslate"><span class="pre">map.forEachFeatureAtPixel(event.pixel,</span> <span class="pre">function(feature,layer)</span></code> in <code class="docutils literal notranslate"><span class="pre">resources/static/js/scripts.js</span></code></li>
-</ul>
-</li>
-<li>Create a route endpoint that returns routes for a certain srcId.<ul>
-<li>Example: <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/route/?srcId=12</span></code></li>
-</ul>
-</li>
-<li>When an airport feature is clicked on the map, show the routes for that airport<ul>
-<li>By adding a router layer that only contains routes connected to the clicked airport</li>
-<li>The data for the new layer will be provided by <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/route/?srcId=X</span></code>, where X will be the <code class="docutils literal notranslate"><span class="pre">airportId</span></code> from the feature</li>
-</ul>
-</li>
-<li>Write integration tests for <code class="docutils literal notranslate"><span class="pre">RouteController</span></code> use <code class="docutils literal notranslate"><span class="pre">AirportControllerTests</span></code> as a guide</li>
+<li>Create an env.list file</li>
+<li>Shutdown any other PSQL containers</li>
+<li>Create container</li>
+<li>Connect to psql</li>
 </ol>
-</div>
-<div class="section" id="bonus-missions">
-<h2>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-env-list">
+<h3>Create env.list<a class="headerlink" href="#create-env-list" title="Permalink to this headline">¶</a></h3>
+<p>Before we create our container we first need to create a temporary file that will create our containers first user, and configure the container to listen for requests.</p>
 <ul class="simple">
-<li>Get this to work <strong>without</strong> jQuery. Hints: <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">fetch</a> and <code class="docutils literal notranslate"><span class="pre">document.findElementById</span></code></li>
-<li>Change the style of the dots: color, size, fill in</li>
-<li>Sort airports by alpha order when they are displayed below the map</li>
-<li>Check what kind of feature was clicked when map.onclick runs</li>
-<li>Remove previous route layers when adding a new one</li>
+<li>Create a new file in your terminal <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">nano</span> <span class="pre">env.list</span></code></li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">POSTGRES_USER=psql_user</span></code> to env.list</li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">ALLOW_IP_RANGE=&lt;0.0.0.0/0&gt;</span></code> to env.list</li>
+<li>Save env.list</li>
+</ul>
+<p>This small file will have postgres create a new user named psql_user, and allow all IP addresses to make requests to the container.</p>
+</div>
+<div class="section" id="shutdown-other-psql-containers">
+<h3>Shutdown Other PSQL containers<a class="headerlink" href="#shutdown-other-psql-containers" title="Permalink to this headline">¶</a></h3>
+<p>Before we create and run our new container, let’s make sure we don’t have any other running PSQL containers.</p>
+<ul class="simple">
+<li>From your terminal run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code></li>
+<li>If you have any running containers shut them down with <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">stop</span> <span class="pre">[CONTAINER_NAME/ID]</span></code></li>
 </ul>
 </div>
-<div class="section" id="solution-screen-shot">
-<h2>Solution Screen Shot<a class="headerlink" href="#solution-screen-shot" title="Permalink to this headline">¶</a></h2>
-<p>(Your list of airports can be organized and styled differently)</p>
-<img alt="../../_images/airwaze-solution-example.png" src="../../_images/airwaze-solution-example.png" />
-</div>
-<div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-container">
+<h3>Create Container<a class="headerlink" href="#create-container" title="Permalink to this headline">¶</a></h3>
+<p>We can now create, and run our container with <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--name</span> <span class="pre">&quot;postgis&quot;</span> <span class="pre">-p</span> <span class="pre">5432:5432</span> <span class="pre">-d</span> <span class="pre">-t</span> <span class="pre">--env-file</span> <span class="pre">./env.list</span> <span class="pre">kartoza/postgis:9.4-2.1</span></code></p>
 <ul class="simple">
-<li><a class="reference external" href="https://macwright.org/2015/03/23/geojson-second-bite">Read about constructing GeoJSON</a></li>
-<li><a class="reference external" href="https://openlayers.org/en/latest/examples/">OpenLayers Examples</a></li>
-<li><a class="reference external" href="http://www.acuriousanimal.com/thebookofopenlayers3/chapter02_01_adding_removing_layers.html">Adding and Removing Layers with OpenLayers</a></li>
-<li><a class="reference external" href="http://geojson.io">Validate your GeoJSON!</a></li>
-<li><a class="reference external" href="http://openlayers.org/en/latest/examples/geojson.html">OpenLayers Drawing Examples</a></li>
-<li><a class="reference external" href="http://goessner.net/articles/JsonPath/">JSONPath</a></li>
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> runs a command in a container (in this case it creates the container since it doesn’t already exist)</li>
+<li><code class="docutils literal notranslate"><span class="pre">--name</span></code> allows us to name our container (in this case we are naming our container “postgis”)</li>
+<li><code class="docutils literal notranslate"><span class="pre">-p</span></code> allows us to <em>publish</em> a port (host_port:container_port in this case both are the psql default 5432)</li>
+<li><code class="docutils literal notranslate"><span class="pre">-d</span></code> starts our container in <em>detach</em> mode which means it will run in the background</li>
+<li><code class="docutils literal notranslate"><span class="pre">-t</span></code> allows us to run a terminal command (in this case adding the contents of our env.list file)</li>
+<li><code class="docutils literal notranslate"><span class="pre">--env-file</span> <span class="pre">./env.list</span></code> the type of file, and the file from our computerres</li>
+<li><code class="docutils literal notranslate"><span class="pre">kartoza/postgis:9.4-2.1</span></code> the image of the container (in this case postgres version 9.4, with the postgis extension version 2.1)</li>
 </ul>
+<p>This command creates a container named “postgis” with the postgres:9.4 image, with postgis:2.1 that listens on port 5432, is detached from this command, and we are running a command to add the contents of env.list to our new “postgis” container.</p>
+<p>If you run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code> now you should see a new container named “postgres”.</p>
+</div>
+<div class="section" id="connect-to-psql">
+<h3>Connect to psql<a class="headerlink" href="#connect-to-psql" title="Permalink to this headline">¶</a></h3>
+<p>Now we will want to connect to postgres to make sure it installed correctly. To do this you will need the psql interactive terminal installed on your computer. This comes with every installation of Postgres. You can check that you have this by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">postgres</span> <span class="pre">--version</span></code> to verify postgres is installed on your computer.</p>
+<p>If it isn’t installed you will want to check out <a class="reference external" href="../../installations/postgres/">Postgres Installation</a> to install Postgres.</p>
+<p>Once you have Postgres installed on your local computer, and you have created the new “postgres” container we can connect to our “postgres” container by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">psql</span> <span class="pre">-h</span> <span class="pre">127.0.0.1</span> <span class="pre">-p</span> <span class="pre">5432</span> <span class="pre">-U</span> <span class="pre">psql_user</span> <span class="pre">-d</span> <span class="pre">postgres</span></code> into our terminal. This command will drop you into psql.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">psql</span></code> The command to access the PSQL Interactive Terminal</li>
+<li><code class="docutils literal notranslate"><span class="pre">-h</span> <span class="pre">127.0.0.1</span></code> The ip address of the host we are connecting to (in this case it’s localhost)</li>
+<li><code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">5432</span></code> The port of the machine we are accessing (in this case the psql default)</li>
+<li><code class="docutils literal notranslate"><span class="pre">-U</span> <span class="pre">psql_user</span></code> The user that is requesting access to the database (in this case the user we added with the env.list file)</li>
+<li><code class="docutils literal notranslate"><span class="pre">-d</span> <span class="pre">postgres</span></code> The name of the database we want to access (in this case the default database created by postgres)</li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -470,7 +350,7 @@ airwaze=# \d route
         <br/>
         
 <div id="sourcelink">
-  <a href="../../_sources/studios/airwaze/index.rst.txt"
+  <a href="../../_sources/installations/docker-postgis/index.rst.txt"
      rel="nofollow">Page Source</a>
 </div>
       
