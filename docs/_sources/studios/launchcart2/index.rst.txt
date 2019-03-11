@@ -30,16 +30,38 @@ Refactor to Use Hiberante (Keep Existing Functionality)
 1. `Set Up A Postgres DB <../../installations/docker-psql/>`_
 2. `Configure the App To Use the Database <../../walkthroughs/spring-data-jpa-hibernate/>`_ (controllers, entities, repositories, tests)
 3. Get the tests to pass
+    * Did you add JPA, and PSQL dependencies to build.gradle?
+    * Did you add an application.properties, and application-test.properties?
+    * Did you create the appropriate databases, and users in Postgres?
+    * Did you create IntelliJ environment variables for your runtime configurations?
+    * Did you update your Models?
+    * Did you set @Id and @GeneratedValue?
+    * Did you change your memory repositories to JpaRepositories?
+    * Did you autowire your new JpaRepositories into your controller files, and test files?
+    * Did you update IntegrationTestConfig.java?
+    * Did you update LaunchCartApplicationTests.java?
 4. Commit your changes
+
+.. hint::
+
+    You may have some tests that are unnecessary with our new changes. Are there tests, or testfiles we can remove?
 
 Add newItem to Item Model
 =========================
 
-Let's add a new boolean property to ``Item`` to keep track of whether or not an item is new.
+Let's add a new boolean property to ``Item`` to keep track of whether or not an item is new. Following TDD let's write our test first.
 
-- Modify the ``testNewItemFormCreatesItemAndRedirects`` test within ``ItemControllerTests`` to post an additional parameter, ``newItem``, with value ``"true"``. (TDD FTW)
+- Create a TestItem.java file if it doesn't already exist.
+- Add a test to TestItem.java that creates a new Item, sets its newItem field to true, and then assertTrue that property.
+- Modify the ``testNewItemFormCreatesItemAndRedirects`` test within ``ItemControllerTests`` to post an additional parameter, ``newItem``, with value ``"true"``.
+
+Our new test fails because we haven't made the changes to the Item class to reflect our new tests. Let's fix that.
+
 - Add a boolean field ``newItem`` to ``Item``, along with a getter and setter. Add ``@NotNull`` to the field.
 - Run all of the tests to ensure that they pass
+
+Let's do a little manual (eye) testing as well.
+
 - Add a checkbox to ``templates/item/new.html``::
 
     <div class="form-group">
@@ -48,7 +70,7 @@ Let's add a new boolean property to ``Item`` to keep track of whether or not an 
         <label for="newItem">New Item</label>
     </div>
 
-- Run the app and ensure the New Item form submits, and that the chosen value is properly set in the database.
+- Run the app (bootRun, make sure you have environment variables) and ensure the New Item form submits, and that the chosen value is properly set in the database.
 - Commit!
 
 Bonus Mission

@@ -300,20 +300,45 @@
 <ol class="arabic simple">
 <li><a class="reference external" href="../../installations/docker-psql/">Set Up A Postgres DB</a></li>
 <li><a class="reference external" href="../../walkthroughs/spring-data-jpa-hibernate/">Configure the App To Use the Database</a> (controllers, entities, repositories, tests)</li>
-<li>Get the tests to pass</li>
+<li><dl class="first docutils">
+<dt>Get the tests to pass</dt>
+<dd><ul class="first last">
+<li>Did you add JPA, and PSQL dependencies to build.gradle?</li>
+<li>Did you add an application.properties, and application-test.properties?</li>
+<li>Did you create the appropriate databases, and users in Postgres?</li>
+<li>Did you create IntelliJ environment variables for your runtime configurations?</li>
+<li>Did you update your Models?</li>
+<li>Did you set &#64;Id and &#64;GeneratedValue?</li>
+<li>Did you change your memory repositories to JpaRepositories?</li>
+<li>Did you autowire your new JpaRepositories into your controller files, and test files?</li>
+<li>Did you update IntegrationTestConfig.java?</li>
+<li>Did you update LaunchCartApplicationTests.java?</li>
+</ul>
+</dd>
+</dl>
+</li>
 <li>Commit your changes</li>
 </ol>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">You may have some tests that are unnecessary with our new changes. Are there tests, or testfiles we can remove?</p>
+</div>
 </div>
 <div class="section" id="add-newitem-to-item-model">
 <h3>Add newItem to Item Model<a class="headerlink" href="#add-newitem-to-item-model" title="Permalink to this headline">¶</a></h3>
-<p>Let’s add a new boolean property to <code class="docutils literal notranslate"><span class="pre">Item</span></code> to keep track of whether or not an item is new.</p>
+<p>Let’s add a new boolean property to <code class="docutils literal notranslate"><span class="pre">Item</span></code> to keep track of whether or not an item is new. Following TDD let’s write our test first.</p>
+<ul class="simple">
+<li>Create a TestItem.java file if it doesn’t already exist.</li>
+<li>Add a test to TestItem.java that creates a new Item, sets its newItem field to true, and then assertTrue that property.</li>
+<li>Modify the <code class="docutils literal notranslate"><span class="pre">testNewItemFormCreatesItemAndRedirects</span></code> test within <code class="docutils literal notranslate"><span class="pre">ItemControllerTests</span></code> to post an additional parameter, <code class="docutils literal notranslate"><span class="pre">newItem</span></code>, with value <code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code>.</li>
+</ul>
+<p>Our new test fails because we haven’t made the changes to the Item class to reflect our new tests. Let’s fix that.</p>
+<ul class="simple">
+<li>Add a boolean field <code class="docutils literal notranslate"><span class="pre">newItem</span></code> to <code class="docutils literal notranslate"><span class="pre">Item</span></code>, along with a getter and setter. Add <code class="docutils literal notranslate"><span class="pre">&#64;NotNull</span></code> to the field.</li>
+<li>Run all of the tests to ensure that they pass</li>
+</ul>
+<p>Let’s do a little manual (eye) testing as well.</p>
 <ul>
-<li><p class="first">Modify the <code class="docutils literal notranslate"><span class="pre">testNewItemFormCreatesItemAndRedirects</span></code> test within <code class="docutils literal notranslate"><span class="pre">ItemControllerTests</span></code> to post an additional parameter, <code class="docutils literal notranslate"><span class="pre">newItem</span></code>, with value <code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code>. (TDD FTW)</p>
-</li>
-<li><p class="first">Add a boolean field <code class="docutils literal notranslate"><span class="pre">newItem</span></code> to <code class="docutils literal notranslate"><span class="pre">Item</span></code>, along with a getter and setter. Add <code class="docutils literal notranslate"><span class="pre">&#64;NotNull</span></code> to the field.</p>
-</li>
-<li><p class="first">Run all of the tests to ensure that they pass</p>
-</li>
 <li><p class="first">Add a checkbox to <code class="docutils literal notranslate"><span class="pre">templates/item/new.html</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;form-group&quot;&gt;
     &lt;input type=&quot;checkbox&quot; id=&quot;newItem&quot;
@@ -323,7 +348,7 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Run the app and ensure the New Item form submits, and that the chosen value is properly set in the database.</p>
+<li><p class="first">Run the app (bootRun, make sure you have environment variables) and ensure the New Item form submits, and that the chosen value is properly set in the database.</p>
 </li>
 <li><p class="first">Commit!</p>
 </li>
