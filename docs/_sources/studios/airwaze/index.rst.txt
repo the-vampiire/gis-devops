@@ -132,20 +132,33 @@ Review AirportController
 
 Tasks
 =====
-1. When the map is clicked, list all airports that are at that pixel
+
+1. **Understand provided tests and get them to pass**
+
+   * IntegrationTestConfig
+   * GeoJSONSerializerTest
+   * AirportControllerTest
+   * RouteControllerTest
+   * RouteRepositoryTest
+
+.. hint::
+
+    To pass these tests you will need to create a new Repository, and a new Controller. Read the tests to figure out how to get them to pass.
+
+2. **When the map is clicked, list all airports that are at that pixel**
 
    * You will need to add more code to the function ``map.forEachFeatureAtPixel(event.pixel, function(feature,layer)`` in ``resources/static/js/scripts.js``
 
-2. Create a route endpoint that returns routes for a certain srcId.
+3. **Create a route endpoint that returns routes for a certain srcId**
 
    * Example: ``http://localhost:8080/route/?srcId=12``
 
-3. When an airport feature is clicked on the map, show the routes for that airport
+4. **When an airport feature is clicked on the map, show the routes for that airport**
 
    * By adding a router layer that only contains routes connected to the clicked airport
    * The data for the new layer will be provided by ``http://localhost:8080/route/?srcId=X``, where X will be the ``airportId`` from the feature
 
-4. Write integration tests for ``RouteController`` use ``AirportControllerTests`` as a guide
+5. **Write integration tests for ``RouteController`` use ``AirportControllerTests`` as a guide**
 
 Bonus Missions
 ==============

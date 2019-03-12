@@ -413,20 +413,34 @@ airwaze=# \d route
 <div class="section" id="tasks">
 <h2>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>When the map is clicked, list all airports that are at that pixel<ul>
+<li><strong>Understand provided tests and get them to pass</strong><ul>
+<li>IntegrationTestConfig</li>
+<li>GeoJSONSerializerTest</li>
+<li>AirportControllerTest</li>
+<li>RouteControllerTest</li>
+<li>RouteRepositoryTest</li>
+</ul>
+</li>
+</ol>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">To pass these tests you will need to create a new Repository, and a new Controller. Read the tests to figure out how to get them to pass.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li><strong>When the map is clicked, list all airports that are at that pixel</strong><ul>
 <li>You will need to add more code to the function <code class="docutils literal notranslate"><span class="pre">map.forEachFeatureAtPixel(event.pixel,</span> <span class="pre">function(feature,layer)</span></code> in <code class="docutils literal notranslate"><span class="pre">resources/static/js/scripts.js</span></code></li>
 </ul>
 </li>
-<li>Create a route endpoint that returns routes for a certain srcId.<ul>
+<li><strong>Create a route endpoint that returns routes for a certain srcId</strong><ul>
 <li>Example: <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/route/?srcId=12</span></code></li>
 </ul>
 </li>
-<li>When an airport feature is clicked on the map, show the routes for that airport<ul>
+<li><strong>When an airport feature is clicked on the map, show the routes for that airport</strong><ul>
 <li>By adding a router layer that only contains routes connected to the clicked airport</li>
 <li>The data for the new layer will be provided by <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/route/?srcId=X</span></code>, where X will be the <code class="docutils literal notranslate"><span class="pre">airportId</span></code> from the feature</li>
 </ul>
 </li>
-<li>Write integration tests for <code class="docutils literal notranslate"><span class="pre">RouteController</span></code> use <code class="docutils literal notranslate"><span class="pre">AirportControllerTests</span></code> as a guide</li>
+<li><strong>Write integration tests for ``RouteController`` use ``AirportControllerTests`` as a guide</strong></li>
 </ol>
 </div>
 <div class="section" id="bonus-missions">
