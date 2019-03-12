@@ -309,6 +309,7 @@
 </div>
 <div class="section" id="create-a-database-for-the-airwaze-data">
 <h2>Create a Database for the Airwaze Data<a class="headerlink" href="#create-a-database-for-the-airwaze-data" title="Permalink to this headline">¶</a></h2>
+<p>Make sure the PostGIS container is the only container running that is listening on port 5432. You can check this with <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code></p>
 <div class="section" id="connect-to-the-postgis-container">
 <h3>Connect to the PostGIS Container<a class="headerlink" href="#connect-to-the-postgis-container" title="Permalink to this headline">¶</a></h3>
 <p>Run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">psql</span> <span class="pre">-h</span> <span class="pre">127.0.0.1</span> <span class="pre">-U</span> <span class="pre">psq_user</span> <span class="pre">-d</span> <span class="pre">postgres</span></code> to access the PSQL CLI.</p>

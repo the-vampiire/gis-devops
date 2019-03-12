@@ -27,6 +27,8 @@ If you don't already have a PostGIS container installed checkout the `installati
 Create a Database for the Airwaze Data
 ======================================
 
+Make sure the PostGIS container is the only container running that is listening on port 5432. You can check this with ``$ docker ps -a``
+
 Connect to the PostGIS Container
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
