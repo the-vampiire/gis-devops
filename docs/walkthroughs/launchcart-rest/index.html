@@ -261,6 +261,7 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Walkthrough: LaunchCart REST</a><ul>
+<li><a class="reference internal" href="#concept-rest">Concept: REST</a></li>
 <li><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li><a class="reference internal" href="#what-s-new">What’s New</a></li>
 <li><a class="reference internal" href="#adding-a-rest-controller">Adding a REST Controller</a></li>
@@ -277,11 +278,50 @@
   <div class="section" id="walkthrough-launchcart-rest">
 <span id="id1"></span><h1>Walkthrough: LaunchCart REST<a class="headerlink" href="#walkthrough-launchcart-rest" title="Permalink to this headline">¶</a></h1>
 <p>In this walkthrough, the instructor will guide you through adding some RESTful endpoints to the LaunchCart application.</p>
+<div class="section" id="concept-rest">
+<h2>Concept: REST<a class="headerlink" href="#concept-rest" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>REST stands for:</dt>
+<dd><ul class="first last simple">
+<li>Representational</li>
+<li>State</li>
+<li>Transfer</li>
+</ul>
+</dd>
+</dl>
+<p>Our web application has access to data, and we want to make that data accessible to the user. We are going to pass a <em>representation</em> of that data to the user. The user can make as many changes to their representation of the data as they’d like. If they want to save those changes, they will send back a new representation of their data that reflects their changes. Our web application will then be able to update our data store appropriately based on the new representation sent by the user.</p>
+<p>In this class we will use JSON as the representation of our data, but other ways of representing data include: XML, YAML, TOML, etc.</p>
+<p>We will be using HTTP to send these representational states back and forth as it’s the primary protocol used by web applications.</p>
+<dl class="docutils">
+<dt>There are four HTTP methods we will use in our RESTful APIs:</dt>
+<dd><ul class="first last simple">
+<li>GET</li>
+<li>POST</li>
+<li>PUT</li>
+<li>DELETE</li>
+</ul>
+</dd>
+<dt>The HTTP method defines what the user is trying to do with their representational state.</dt>
+<dd><ul class="first last simple">
+<li>A GET request is asking for an existing resource. The HTTP Response would include a JSON representation of the resource if it exists.</li>
+<li>A POST request is sending a representation (JSON) of a resource that the user would like to save. The HTTP Response needs to acknowledge that the representation of the data was stored successfully.</li>
+<li>A PUT request is sending a representation (JSON) of an existing resource that needs to be updated. The HTTP Response needs to acknolwedge that the changes have been saved, and the resource was updated succssfully.</li>
+<li>A DELETE request is asking that an existing resource needs to be deleted. The HTTP Response needs to acknowledge that the resource was successfully deleted.</li>
+</ul>
+</dd>
+<dt>Takeaways:</dt>
+<dd><ul class="first last simple">
+<li>GET, and a DELETE requests don’t need to include a representation of the resource in the HTTP Request. The resource that needs to be retrieved, or deleted is indicated by the URL.</li>
+<li>POST, and PUT requests require a representatoin of the resouce to be included in the HTTP Request. The HTTP Response may, or may not include a JSON representation of the data that was saved/updated. The HTTP Response would include a JSON representation of the resource if it exists.</li>
+</ul>
+</dd>
+</dl>
+</div>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>From the same <code class="docutils literal notranslate"><span class="pre">launchcart</span></code> <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/launchcart">project/repository</a>  that you used previously, check out the <code class="docutils literal notranslate"><span class="pre">rest-walkthrough</span></code> branch. Then create a story branch.:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout rest-walkthrough
-$ git checkout -b rest-walkthrough-solution
+<p>From the same <code class="docutils literal notranslate"><span class="pre">launchcart</span></code> <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/launchcart">project/repository</a>  that you used previously, check out the <code class="docutils literal notranslate"><span class="pre">rest-walkthrough-starter</span></code> branch. Then create a story branch.:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout rest-walkthrough-starter
+$ git checkout -b rest-walkthrough-starter-solution
 </pre></div>
 </div>
 <p>If you haven’t already, install the Rested browser plugin: <a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/rested/">Firefox</a> | <a class="reference external" href="https://chrome.google.com/webstore/detail/rested/eelcnbccaccipfolokglfhhmapdchbfg">Chrome</a>. We’ll use this to manually query our REST API. If you are familiar with <a class="reference external" href="https://curl.haxx.se/">cURL</a> then you may also use that tool to query the API.</p>
@@ -294,7 +334,7 @@ $ git checkout -b rest-walkthrough-solution
 <p>A good way to see what has been added in a branch is to you use the <strong>comparison</strong> feature of Gitlab.</p>
 <p>Example: View the <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/launchcart/branches">launchcart branches</a> and notice the <strong>Compare</strong> button next to each branch.</p>
 <p>This can also be done in the terminal using <cite>git</cite>:</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>$ git diff launchcart2 rest-walkthrough
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>$ git diff launchcart2 rest-walkthrough-starter
 </pre></div>
 </div>
 </div>

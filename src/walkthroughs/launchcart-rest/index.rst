@@ -8,13 +8,47 @@ Walkthrough: LaunchCart REST
 
 In this walkthrough, the instructor will guide you through adding some RESTful endpoints to the LaunchCart application.
 
+Concept: REST
+=============
+
+REST stands for:
+    * Representational
+    * State
+    * Transfer
+
+Our web application has access to data, and we want to make that data accessible to the user. We are going to pass a *representation* of that data to the user. The user can make as many changes to their representation of the data as they'd like. If they want to save those changes, they will send back a new representation of their data that reflects their changes. Our web application will then be able to update our data store appropriately based on the new representation sent by the user.
+
+In this class we will use JSON as the representation of our data, but other ways of representing data include: XML, YAML, TOML, etc.
+
+We will be using HTTP to send these representational states back and forth as it's the primary protocol used by web applications.
+
+There are four HTTP methods we will use in our RESTful APIs:
+    * GET
+    * POST
+    * PUT
+    * DELETE
+
+The HTTP method defines what the user is trying to do with their representational state.
+    * A GET request is asking for an existing resource. The HTTP Response would include a JSON representation of the resource if it exists.
+
+    * A POST request is sending a representation (JSON) of a resource that the user would like to save. The HTTP Response needs to acknowledge that the representation of the data was stored successfully.
+
+    * A PUT request is sending a representation (JSON) of an existing resource that needs to be updated. The HTTP Response needs to acknolwedge that the changes have been saved, and the resource was updated succssfully.
+
+    * A DELETE request is asking that an existing resource needs to be deleted. The HTTP Response needs to acknowledge that the resource was successfully deleted.
+
+Takeaways:
+    * GET, and a DELETE requests don't need to include a representation of the resource in the HTTP Request. The resource that needs to be retrieved, or deleted is indicated by the URL.
+
+    * POST, and PUT requests require a representatoin of the resouce to be included in the HTTP Request. The HTTP Response may, or may not include a JSON representation of the data that was saved/updated.
+
 Getting Started
 ===============
 
-From the same ``launchcart`` `project/repository <https://gitlab.com/LaunchCodeTraining/launchcart>`_  that you used previously, check out the ``rest-walkthrough`` branch. Then create a story branch.::
+From the same ``launchcart`` `project/repository <https://gitlab.com/LaunchCodeTraining/launchcart>`_  that you used previously, check out the ``rest-walkthrough-starter`` branch. Then create a story branch.::
 
-    $ git checkout rest-walkthrough
-    $ git checkout -b rest-walkthrough-solution
+    $ git checkout rest-walkthrough-starter
+    $ git checkout -b rest-walkthrough-starter-solution
 
 If you haven't already, install the Rested browser plugin: `Firefox <https://addons.mozilla.org/en-
 US/firefox/addon/rested/>`_ | `Chrome <https://chrome.google.com/webstore/detail/rested/eelcnbccacci
@@ -33,7 +67,7 @@ This starter code has some functionality beyond what you added in  :ref:`launchc
 
     This can also be done in the terminal using `git`::
 
-        $ git diff launchcart2 rest-walkthrough
+        $ git diff launchcart2 rest-walkthrough-starter
 
 
 
