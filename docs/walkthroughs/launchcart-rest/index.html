@@ -265,7 +265,26 @@
 <li><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li><a class="reference internal" href="#what-s-new">What’s New</a></li>
 <li><a class="reference internal" href="#adding-a-rest-controller">Adding a REST Controller</a></li>
-<li><a class="reference internal" href="#our-tasks">Our Tasks</a></li>
+<li><a class="reference internal" href="#understanding-our-tests">Understanding our Tests</a><ul>
+<li><a class="reference internal" href="#testgetallitems">testGetAllItems</a></li>
+<li><a class="reference internal" href="#testgetsingleitem">testGetSingleItem</a></li>
+<li><a class="reference internal" href="#testgetnotfounditem">testGetNotFoundItem</a></li>
+<li><a class="reference internal" href="#testpostitem">testPostItem</a></li>
+<li><a class="reference internal" href="#testputitem">testPutItem</a></li>
+<li><a class="reference internal" href="#testputnotfounditem">testPutNotFoundItem</a></li>
+<li><a class="reference internal" href="#testdeleteitem">testDeleteItem</a></li>
+<li><a class="reference internal" href="#testdeletenotfounditem">testDeleteNotFoundItem</a></li>
+<li><a class="reference internal" href="#testfilteritemsbyprice">testFilterItemsByPrice</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#our-tasks">Our Tasks</a><ul>
+<li><a class="reference internal" href="#getitems">getItems</a></li>
+<li><a class="reference internal" href="#getitembyid">getItemById</a></li>
+<li><a class="reference internal" href="#getitembyid-404">getItemById - 404</a></li>
+<li><a class="reference internal" href="#post-put-and-delete-controllers">POST, PUT, and DELETE Controllers</a></li>
+<li><a class="reference internal" href="#refactor-getitems">Refactor getItems</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#bonus-mission">Bonus Mission</a></li>
 </ul>
 </li>
@@ -312,7 +331,7 @@
 <dt>Takeaways:</dt>
 <dd><ul class="first last simple">
 <li>GET, and a DELETE requests don’t need to include a representation of the resource in the HTTP Request. The resource that needs to be retrieved, or deleted is indicated by the URL.</li>
-<li>POST, and PUT requests require a representatoin of the resouce to be included in the HTTP Request. The HTTP Response may, or may not include a JSON representation of the data that was saved/updated. The HTTP Response would include a JSON representation of the resource if it exists.</li>
+<li>POST, and PUT requests require a representatoin of the resouce to be included in the HTTP Request. The HTTP Response may, or may not include a JSON representation of the data that was saved/updated.</li>
 </ul>
 </dd>
 </dl>
@@ -347,22 +366,312 @@ $ git checkout -b rest-walkthrough-starter-solution
 <li>Create a new class in this package named <code class="docutils literal notranslate"><span class="pre">ItemRestController</span></code></li>
 <li>Annotate the class with <code class="docutils literal notranslate"><span class="pre">&#64;RestController</span></code></li>
 </ul>
+<img alt="../../_images/item-rest-controller.png" src="../../_images/item-rest-controller.png" />
 <p>In the <code class="docutils literal notranslate"><span class="pre">test</span></code> module, note that there are two new classes:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">AbstractBaseRestIntegrationTest</span></code> contains a couple of utility methods to handle serializing Java objects for the purposes of testing.</li>
 <li><code class="docutils literal notranslate"><span class="pre">ItemRestControllerTests</span></code> extends <code class="docutils literal notranslate"><span class="pre">AbstractBaseRestIntegrationTest</span></code> and contains the integration tests for the functionality that we’ll be adding. We’ll review this code in class.</li>
 </ul>
 </div>
+<div class="section" id="understanding-our-tests">
+<h2>Understanding our Tests<a class="headerlink" href="#understanding-our-tests" title="Permalink to this headline">¶</a></h2>
+<p>TDD has already been done for us in this walkthrough. Since the tests have already been written, we simply need to write the code to get our tests to pass.</p>
+<p>Let’s look at our tests, so we can understand what code we need to write.</p>
+<div class="section" id="testgetallitems">
+<h3>testGetAllItems<a class="headerlink" href="#testgetallitems" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>HTTP Request:</dt>
+<dd><ul class="first last simple">
+<li>Method: GET</li>
+<li>Endpoint: <code class="docutils literal notranslate"><span class="pre">/api/items</span></code></li>
+<li>JSON: None</li>
+</ul>
+</dd>
+<dt>Server Action:</dt>
+<dd><ol class="first last arabic simple">
+<li>Handle HTTP Request</li>
+<li>Retrieve all item records from the datastore</li>
+<li>Convert item records to item objects</li>
+<li>Create representation of item objects as JSON</li>
+<li>Return HTTP Response with newly created JSON</li>
+</ol>
+</dd>
+<dt>HTTP Response:</dt>
+<dd><ul class="first last simple">
+<li>Status: 200</li>
+<li>JSON: Representation of ALL Item records</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="testgetsingleitem">
+<h3>testGetSingleItem<a class="headerlink" href="#testgetsingleitem" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>HTTP Request:</dt>
+<dd><ul class="first last simple">
+<li>Method: GET</li>
+<li>Endpoint: <code class="docutils literal notranslate"><span class="pre">/api/items/{item_uid}</span></code></li>
+<li>JSON: None</li>
+</ul>
+</dd>
+<dt>Server Action:</dt>
+<dd><ol class="first last arabic simple">
+<li>Handle HTTP Request</li>
+<li>Retrieve item record with uid=item_uid from the datastore</li>
+<li>Convert item record to item object</li>
+<li>Create representation of item object as JSON</li>
+<li>Return HTTP Response with newly created JSON</li>
+</ol>
+</dd>
+<dt>HTTP Response:</dt>
+<dd><ul class="first last simple">
+<li>Status: 200</li>
+<li>JSON: Representation of ONE Item record that matches the item_uid</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="testgetnotfounditem">
+<h3>testGetNotFoundItem<a class="headerlink" href="#testgetnotfounditem" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>HTTP Request:</dt>
+<dd><ul class="first last simple">
+<li>Method: GET</li>
+<li>Endpoint: <code class="docutils literal notranslate"><span class="pre">/api/items/{item_uid}</span></code> – this item_uid doesn’t exist in our datastore</li>
+<li>JSON: None</li>
+</ul>
+</dd>
+<dt>Server Action:</dt>
+<dd><ol class="first last arabic simple">
+<li>Handle HTTP Request</li>
+<li>Recognize item_uid does not exist in datastore</li>
+<li>Return HTTP Response with status 404</li>
+</ol>
+</dd>
+<dt>HTTP Response:</dt>
+<dd><ul class="first last simple">
+<li>Status: 404</li>
+<li>JSON: None</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="testpostitem">
+<h3>testPostItem<a class="headerlink" href="#testpostitem" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>HTTP Request:</dt>
+<dd><ul class="first last simple">
+<li>Method: POST</li>
+<li>Endpoint: <code class="docutils literal notranslate"><span class="pre">/api/items</span></code></li>
+<li>JSON: Representation of an Item object, not including the uid</li>
+</ul>
+</dd>
+<dt>Server Action:</dt>
+<dd><ol class="first last arabic simple">
+<li>Handle HTTP Request</li>
+<li>Create item object by parsing it’s representation from the incoming JSON</li>
+<li>Save item object to the data store as a record</li>
+<li>Return HTTP Response with status 201</li>
+</ol>
+</dd>
+<dt>HTTP Response:</dt>
+<dd><ul class="first last simple">
+<li>Status: 201</li>
+<li>JSON: None</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="testputitem">
+<h3>testPutItem<a class="headerlink" href="#testputitem" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>HTTP Request:</dt>
+<dd><ul class="first last simple">
+<li>Method: PUT</li>
+<li>Endpoint: <code class="docutils literal notranslate"><span class="pre">/api/items/{item_uid}</span></code></li>
+<li>JSON: Representation of an UPDATED Item object, optionally including the uid</li>
+</ul>
+</dd>
+<dt>Server Action:</dt>
+<dd><ol class="first last arabic simple">
+<li>Handle HTTP Request</li>
+<li>Retrieve item record with uid=item_uid from the datastore</li>
+<li>Convert item record to item object</li>
+<li>Update item object based on the incoming JSON that represents an item</li>
+<li>Save updated item object to datastore</li>
+<li>Create JSON representation of item object</li>
+<li>Return HTTP Response with newly created JSON</li>
+</ol>
+</dd>
+<dt>HTTP Response:</dt>
+<dd><ul class="first last simple">
+<li>Status: 200</li>
+<li>JSON: Representation of newly UPDATED Item record</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="testputnotfounditem">
+<h3>testPutNotFoundItem<a class="headerlink" href="#testputnotfounditem" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>HTTP Request:</dt>
+<dd><ul class="first last simple">
+<li>Method: PUT</li>
+<li>Endpoint: <code class="docutils literal notranslate"><span class="pre">/api/items/{item_uid}</span></code> – this item_uid doesn’t exist in our datastore</li>
+<li>JSON: Representation of an UPDATED Item object, optionally including the uid</li>
+</ul>
+</dd>
+<dt>Server Action:</dt>
+<dd><ol class="first last arabic simple">
+<li>Handle HTTP Request</li>
+<li>Recognize item_uid does not exist in datastore</li>
+<li>Return HTTP Response with status 404</li>
+</ol>
+</dd>
+<dt>HTTP Response:</dt>
+<dd><ul class="first last simple">
+<li>Status: 404</li>
+<li>JSON: None</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="testdeleteitem">
+<h3>testDeleteItem<a class="headerlink" href="#testdeleteitem" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>HTTP Request:</dt>
+<dd><ul class="first last simple">
+<li>Method: DELETE</li>
+<li>Endpoint: <code class="docutils literal notranslate"><span class="pre">/api/items/{item_uid}</span></code></li>
+<li>JSON: None</li>
+</ul>
+</dd>
+<dt>Server Action:</dt>
+<dd><ol class="first last arabic simple">
+<li>Handle HTTP Request</li>
+<li>Retrieve item record with uid=item_uid from datastore</li>
+<li>Convert item record to item object</li>
+<li>Use item object to delete item record from datastore</li>
+<li>Return HTTP Response with status 200</li>
+</ol>
+</dd>
+<dt>HTTP Response:</dt>
+<dd><ul class="first last simple">
+<li>Status: 200</li>
+<li>JSON: None</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="testdeletenotfounditem">
+<h3>testDeleteNotFoundItem<a class="headerlink" href="#testdeletenotfounditem" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>HTTP Request:</dt>
+<dd><ul class="first last simple">
+<li>Method: DELETE</li>
+<li>Endpoint: <code class="docutils literal notranslate"><span class="pre">/api/items/{item_uid}</span></code> – this item_uid does not exist in our datastore</li>
+<li>JSON: None</li>
+</ul>
+</dd>
+<dt>Server Action:</dt>
+<dd><ol class="first last arabic simple">
+<li>Handle HTTP Request</li>
+<li>Recognize no item matches the incoming item_uid</li>
+<li>Return HTTP Response with status 404</li>
+</ol>
+</dd>
+<dt>HTTP Response:</dt>
+<dd><ul class="first last simple">
+<li>Status: 404</li>
+<li>JSON: None</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="testfilteritemsbyprice">
+<h3>testFilterItemsByPrice<a class="headerlink" href="#testfilteritemsbyprice" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>HTTP Request:</dt>
+<dd><ul class="first last simple">
+<li>Method: GET</li>
+<li>Endpoint: <code class="docutils literal notranslate"><span class="pre">/api/items</span></code></li>
+<li>JSON: None</li>
+<li><strong>Query parameter</strong>: price</li>
+</ul>
+</dd>
+<dt>Server Action:</dt>
+<dd><ol class="first last arabic simple">
+<li>Handle HTTP Request</li>
+<li>Retrieve all item records, that have a price that matches the query parameter, from the datastore</li>
+<li>Convert item records to item objects</li>
+<li>Create representation of item objects as JSON</li>
+<li>Return HTTP Response with newly created JSON</li>
+</ol>
+</dd>
+<dt>HTTP Response:</dt>
+<dd><ul class="first last simple">
+<li>Status: 200</li>
+<li>JSON: Representation of ALL Item records with a price that matches the query parameter</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
 <div class="section" id="our-tasks">
 <h2>Our Tasks<a class="headerlink" href="#our-tasks" title="Permalink to this headline">¶</a></h2>
-<p>We will now implement the Item resource in the following ways:</p>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/items</span></code> (with parameter <code class="docutils literal notranslate"><span class="pre">price</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/items/{id}</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/api/items</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/api/items/{id}</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/api/items/{id}</span></code></li>
-</ul>
+<p>We will mainly be writing code in ItemRestController.java, the file we created a little earlier. This is the controller that will handle every request made to the base endpoint: <cite>/api/items</cite>.</p>
+<p>A typical <code class="docutils literal notranslate"><span class="pre">&#64;Controller</span></code> annotation in Spring is expecting each endpoint handler (method) to return a string representation of the location of an HTML file, that will be rendered by a web browser.</p>
+<p>Our <code class="docutils literal notranslate"><span class="pre">&#64;RestController</span></code> annotation in Spring is expecting each endpoint to return a representation of a resource, or at the very least an HTTP Response.</p>
+<p>All of our endpoints will be working with items in our datastore. So we will first need to configure this file to work with itemRepository. That’s our JpaRepository we configured to work with PostgreSQL.</p>
+<img alt="../../_images/item-repository.png" src="../../_images/item-repository.png" />
+<div class="section" id="getitems">
+<h3>getItems<a class="headerlink" href="#getitems" title="Permalink to this headline">¶</a></h3>
+<p>Spring also provides us with a class called ResponseEntity. It allows us to configure our own HTTP Responses, and include a representation of our resource as JSON if we want.</p>
+<p>Now for our first actual controller.</p>
+<img alt="../../_images/get-items.png" src="../../_images/get-items.png" />
+<p>Our method is for the endpoint <code class="docutils literal notranslate"><span class="pre">/api/items</span></code>. The method retreives all item records from the database, converts them to item objects, and stores them in a list all in the first line. It’s using the ORM Hibernate to do this with such a small amount of code. It is then returning a new ResponseEntity that is turning our list of item objects into JSON, and configuring the HTTP Reponse status code to 200.</p>
+<p>We didn’t have to write much code, because we are leveraging Spring Data JPA, Hibernate, RestController, and ResponseEntity.</p>
+<p>Let’s run our test file and see what happens!</p>
+<img alt="../../_images/test-get-all-items.png" src="../../_images/test-get-all-items.png" />
+<p>Our test passes! This method doesn’t handle a query parameter of price yet, but since this test doesn’t focus on that let’s keep moving.</p>
+</div>
+<div class="section" id="getitembyid">
+<h3>getItemById<a class="headerlink" href="#getitembyid" title="Permalink to this headline">¶</a></h3>
+<p>On to our next request handler.</p>
+<img alt="../../_images/get-item-by-id.png" src="../../_images/get-item-by-id.png" />
+<p>This controller just gets one item, and returns it to the user.</p>
+<p>Let’s test it out.</p>
+<img alt="../../_images/test-get-item-by-id.png" src="../../_images/test-get-item-by-id.png" />
+<p>It passes!</p>
+</div>
+<div class="section" id="getitembyid-404">
+<h3>getItemById - 404<a class="headerlink" href="#getitembyid-404" title="Permalink to this headline">¶</a></h3>
+<p>However, our testGetNotFoundItem fails, because we got an HTTP status code of 200, instead of a 404.</p>
+<img alt="../../_images/test-get-not-found-item.png" src="../../_images/test-get-not-found-item.png" />
+<p>Let’s refactor our controller, so that it returns an HTTP status of 404, if the requested resource doesn’t exist.</p>
+<img alt="../../_images/get-item-by-id-not-found.png" src="../../_images/get-item-by-id-not-found.png" />
+<p>We should re-run both of these tests, we want to ensure our new functionality doesn’t fail our old test.</p>
+<img alt="../../_images/test-get-item-by-id-tests.png" src="../../_images/test-get-item-by-id-tests.png" />
+<p>Now all of the tests we have written so far pass! Time to move on.</p>
+</div>
+<div class="section" id="post-put-and-delete-controllers">
+<h3>POST, PUT, and DELETE Controllers<a class="headerlink" href="#post-put-and-delete-controllers" title="Permalink to this headline">¶</a></h3>
+<p>The rest of the controllers are similar, and the instructor will write them one by one, but you can view them here:</p>
+<img alt="../../_images/post-put-delete.png" src="../../_images/post-put-delete.png" />
+<p>Now when running our tests, everything passes.</p>
+<img alt="../../_images/all-tests.png" src="../../_images/all-tests.png" />
+<p>Except for testFilterItemsByPrice, because it returns a representation of 4 items, instead of 2 items. Let’s refactor getItems so all our tests pass.</p>
+</div>
+<div class="section" id="refactor-getitems">
+<h3>Refactor getItems<a class="headerlink" href="#refactor-getitems" title="Permalink to this headline">¶</a></h3>
+<p>We need to refactor getItems() so that it can take an optional Query Parameter, and find records that match the price of the requested items.</p>
+<img alt="../../_images/get-items-refactor.png" src="../../_images/get-items-refactor.png" />
+<p>In refactoring getItems, we are calling a method that doesn’t exist. We will need to edit itemRepository so that it can return records that match the price column. Luckily JpaRepository is flexible, and will allow us to write basic queries very easily. In some cases you may need to write a more complex query in which case you will have to bind a SQL statement directly to method inside your JpaRepository. You can learn more about that by reading the <a class="reference external" href="https://www.baeldung.com/spring-data-jpa-query">&#64;Query Baeldung example</a> which will show you how to create a custom query.</p>
+<img alt="../../_images/item-repository-refactor.png" src="../../_images/item-repository-refactor.png" />
+<p>Now we can rerun our tests.</p>
+<img alt="../../_images/all-tests-pass.png" src="../../_images/all-tests-pass.png" />
+<p>And everything passes!</p>
+</div>
 </div>
 <div class="section" id="bonus-mission">
 <h2>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
