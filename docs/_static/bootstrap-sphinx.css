@@ -151,7 +151,7 @@ table.field-list {
 /* All levels of nav */
 .bs-sidenav .nav > li > a {
   display: block;
-  color: #354a5f;
+  color: #716b7a;
   padding: 5px 20px;
 }
 .bs-sidenav .nav > li > a:hover,
@@ -174,28 +174,21 @@ table.field-list {
   padding-bottom: 3px;
   padding-left: 30px;
   font-size: 90%;
-  color: #716b7a;
 }
 
-
 .bs-sidenav .nav .nav .nav > li > a {
-  display: none;
   padding-top:    3px;
   padding-bottom: 3px;
-  padding-left: 30px;
+  padding-left: 40px;
   font-size: 90%;
-  color: #716b7a;
 }
 
 .bs-sidenav .nav .nav .nav .nav > li > a {
-  display: none;
   padding-top:    3px;
   padding-bottom: 3px;
-  padding-left: 30px;
+  padding-left: 50px;
   font-size: 90%;
-  color: #716b7a;
 }
-
 
 /* Show and affix the side nav when space allows it */
 @media screen and (min-width: 992px) {
