@@ -8,11 +8,32 @@ Walkthrough: SwaggerUI
 
 In this walkthrough, the instructor will guide through adding API documentation using `SwaggerUI <https://swagger.io/swagger-ui/>`_.
 
+Concept
+=======
+
+REST allows us to programmatically utilize (Create, Read, Update, Delete) resources in a datastore. Anyone can make HTTP requests to our RESTful API to interact with our datastore, however how do we let them know which endpoints to access, and which HTTP verbs to use, and when to include query parameters, path variables, or JSON?
+
+Swagger to the rescue!
+
+Swagger is a documentation creation tool. Swagger is going to assist us in creating the documentation for our RESTful API. It will give users a webpage that contains all of the endpoints, which HTTP verbs they accept, if they take any additional information, and finally what happens when that HTTP request is made.
+
 Getting Started
 ===============
 
 The same Launchcart project and repo you used for the REST studio.
-Create and checkout a new branch named ``add-swagger`` with this command ``git checkout -b add-swagger``
+Create and checkout a new branch named ``my-rest-swagger-solution`` with this command ``git checkout -b my-rest-swagger-solution``
+
+Tasks
+=====
+
+#. Add SwaggerUI to our project
+#. Create swagger.yaml
+#. Edit swagger/index.html to point to our swagger.yaml file
+#. Edit swagger: info
+#. Edit swagger: tags
+#. Edit swagger: paths
+#. Edit swagger: definitions
+#. Add parameters to a swagger path
 
 Add SwaggerUI to the Project
 ----------------------------

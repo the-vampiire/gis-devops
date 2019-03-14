@@ -261,7 +261,9 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Walkthrough: SwaggerUI</a><ul>
-<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#concept">Concept</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#tasks">Tasks</a><ul>
 <li><a class="reference internal" href="#add-swaggerui-to-the-project">Add SwaggerUI to the Project</a><ul>
 <li><a class="reference internal" href="#setup-swagger-yaml-file">Setup Swagger <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> File</a></li>
 </ul>
@@ -287,10 +289,29 @@
   <div class="section" id="walkthrough-swaggerui">
 <span id="walkthrough-swagger"></span><h1>Walkthrough: SwaggerUI<a class="headerlink" href="#walkthrough-swaggerui" title="Permalink to this headline">¶</a></h1>
 <p>In this walkthrough, the instructor will guide through adding API documentation using <a class="reference external" href="https://swagger.io/swagger-ui/">SwaggerUI</a>.</p>
+<div class="section" id="concept">
+<h2>Concept<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h2>
+<p>REST allows us to programmatically utilize (Create, Read, Update, Delete) resources in a datastore. Anyone can make HTTP requests to our RESTful API to interact with our datastore, however how do we let them know which endpoints to access, and which HTTP verbs to use, and when to include query parameters, path variables, or JSON?</p>
+<p>Swagger to the rescue!</p>
+<p>Swagger is a documentation creation tool. Swagger is going to assist us in creating the documentation for our RESTful API. It will give users a webpage that contains all of the endpoints, which HTTP verbs they accept, if they take any additional information, and finally what happens when that HTTP request is made.</p>
+</div>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>The same Launchcart project and repo you used for the REST studio.
-Create and checkout a new branch named <code class="docutils literal notranslate"><span class="pre">add-swagger</span></code> with this command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">add-swagger</span></code></p>
+Create and checkout a new branch named <code class="docutils literal notranslate"><span class="pre">my-rest-swagger-solution</span></code> with this command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">my-rest-swagger-solution</span></code></p>
+</div>
+<div class="section" id="tasks">
+<h2>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Add SwaggerUI to our project</li>
+<li>Create swagger.yaml</li>
+<li>Edit swagger/index.html to point to our swagger.yaml file</li>
+<li>Edit swagger: info</li>
+<li>Edit swagger: tags</li>
+<li>Edit swagger: paths</li>
+<li>Edit swagger: definitions</li>
+<li>Add parameters to a swagger path</li>
+</ol>
 <div class="section" id="add-swaggerui-to-the-project">
 <h3>Add SwaggerUI to the Project<a class="headerlink" href="#add-swaggerui-to-the-project" title="Permalink to this headline">¶</a></h3>
 <p>Clone the <a class="reference external" href="https://github.com/swagger-api/swagger-ui/tree/2.x">SwaggerUI repository</a> from Github. Alternatively, download the code as a zip file and unzip it.</p>
