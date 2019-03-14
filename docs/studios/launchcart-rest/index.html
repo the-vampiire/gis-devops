@@ -262,6 +262,7 @@
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Studio: LaunchCart REST</a><ul>
 <li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#tasks">Tasks</a></li>
 <li><a class="reference internal" href="#add-new-parameter-to-api-items">Add <code class="docutils literal notranslate"><span class="pre">new</span></code> Parameter to <code class="docutils literal notranslate"><span class="pre">/api/items</span></code></a></li>
 <li><a class="reference internal" href="#add-api-customers-resources">Add <code class="docutils literal notranslate"><span class="pre">/api/customers</span></code> Resources</a></li>
 <li><a class="reference internal" href="#add-api-carts-resources">Add <code class="docutils literal notranslate"><span class="pre">/api/carts</span></code> Resources</a></li>
@@ -280,17 +281,26 @@
 <p>In this studio, we’ll add additional RESTful endpoints to the LaunchCart application. It builds upon the changes we added in the <a class="reference internal" href="../../walkthroughs/launchcart-rest/index.html#walkthrough-launchcart-rest"><span class="std std-ref">Walkthrough: LaunchCart REST</span></a>.</p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>From the same <code class="docutils literal notranslate"><span class="pre">launchcart</span></code> <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/launchcart">project/repository</a> that you used previously, make sure you are in the <code class="docutils literal notranslate"><span class="pre">rest-walkthrough</span></code> branch that you used earlier today.</p>
-<p>If you don’t have the walkthrough code, you can fetch changes from the remote and check out the <code class="docutils literal notranslate"><span class="pre">rest-studio</span></code> branch.</p>
+<p>From the same <code class="docutils literal notranslate"><span class="pre">launchcart</span></code> <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/launchcart">project/repository</a> that you used previously, make sure you are in the <code class="docutils literal notranslate"><span class="pre">rest-walkthrough-starter</span></code> branch that you used earlier today.</p>
+<p>If you don’t have the walkthrough code, you can fetch changes from the remote and check out the <code class="docutils literal notranslate"><span class="pre">rest-studio-starter</span></code> branch.</p>
 <p>Create a story branch:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(switch to the rest-studio branch)
-$ git checkout rest-studio
+$ git checkout rest-studio-starter
 
 (-b will create a branch and then checkout that new branch)
 $ git checkout -b rest-studio-solution
 </pre></div>
 </div>
 <p>Write integration tests before coding each controller method below. In doing so, you may find the documentation for <a class="reference external" href="https://goessner.net/articles/JsonPath/">JsonPath</a> to be useful. Also, refer to existing tests in <code class="docutils literal notranslate"><span class="pre">ItemRestControllerTests</span></code>.</p>
+</div>
+<div class="section" id="tasks">
+<h2>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Use TDD to write tests before writing code</li>
+<li><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/items</span></code> endpoint can take an additional optional parameter: new</li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">/api/customers</span></code> Resources</li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">/api/carts</span></code> Resources</li>
+</ul>
 </div>
 <div class="section" id="add-new-parameter-to-api-items">
 <h2>Add <code class="docutils literal notranslate"><span class="pre">new</span></code> Parameter to <code class="docutils literal notranslate"><span class="pre">/api/items</span></code><a class="headerlink" href="#add-new-parameter-to-api-items" title="Permalink to this headline">¶</a></h2>
