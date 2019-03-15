@@ -1,18 +1,17 @@
 :orphan:
 
-.. _docker-postgis:
+.. _docker-elasticsearch:
 
-============================
-Docker Installation: PostGIS
-============================
+===================================
+Docker Installation: Elasticsearch
+===================================
 
 Installation Steps: Mac
 -----------------------
 
-1. Create an env.list file
-2. Shutdown any other PSQL containers
-3. Create container
-4. Connect to psql
+#. Create env.list
+#. Create container
+#. CURL elasticsearch cluster
 
 Create env.list
 +++++++++++++++
@@ -26,25 +25,17 @@ Before we create our container we first need to create a temporary file that wil
 
 This small file will have postgres create a new user named psql_user, and allow all IP addresses to make requests to the container.
 
-Shutdown Other PSQL containers
-++++++++++++++++++++++++++++++
-
-Before we create and run our new container, let's make sure we don't have any other running PSQL containers.
-
-* From your terminal run ``$ docker ps -a``
-* If you have any running containers shut them down with ``$ docker stop [CONTAINER_NAME/ID]``
-
 Create Container
 ++++++++++++++++
 
-We can now create, and run our container with ``$ docker run --name "postgis" -p 5432:5432 -d -t --env-file ./env.list kartoza/postgis:9.4-2.1``
+We can now create, and run our container with ``$ docker run --name "es" -p 9200:9200 -p 9300:9300 -d -t --env-file ./env.list elasticsearch:6.5.4``
 
 * ``docker run`` runs a command in a container (in this case it creates the container since it doesn't already exist)
 * ``--name`` allows us to name our container (in this case we are naming our container "postgis")
 * ``-p`` allows us to *publish* a port (host_port:container_port in this case both are the psql default 5432)
 * ``-d`` starts our container in *detach* mode which means it will run in the background
 * ``-t`` allows us to run a terminal command (in this case adding the contents of our env.list file)
-* ``--env-file ./env.list`` the type of file, and the file from our computerres
+* ``--env-file ./env.list`` the type of file, and the file from our computers
 * ``kartoza/postgis:9.4-2.1`` the image of the container (in this case postgres version 9.4, with the postgis extension version 2.1)
 
 This command creates a container named "postgis" with the postgres:9.4 image, with postgis:2.1 that listens on port 5432, is detached from this command, and we are running a command to add the contents of env.list to our new "postgis" container.

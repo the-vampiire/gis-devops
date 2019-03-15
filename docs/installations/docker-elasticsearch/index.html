@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Docker Installation: Elasticsearch &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-logo.svg" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#slides">Slides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Security, Test-driven development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Integration testing, dependency injection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#studio">Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: Postgres, Spring Data, JPA, Hibernate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#studio">Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: AJAX, Open Layers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#additional-resources">Additional Resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/project/index.html">Week 2 - Project Week: Zika Mission Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-hints">Project Hints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#setup-project">Setup Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#setup-postgres">Setup Postgres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#turning-in-your-work">Turning In Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#bonus-missions">Bonus Missions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: RESTful web services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2 Swagger REST framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Intro to Elasticsearch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: More Elasticsearch, Integrating ES with Spring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: ES2015, ESLint, OpenLayers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/project/index.html">Week 4 - Project Week: Zika Mission Control Part 2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#getting-the-code">Getting the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#what-s-new-in-the-code">What’s new in the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#suggested-endpoints-parameters">Suggested Endpoints/Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#database-setup">Database Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#walkthrough-on-creating-the-location-data">Walkthrough on Creating the Location Data</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day1/index.html">Week 5 - Day 1: Intro to DevOps/AWS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#studio">Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day2/index.html">Week 5 - Day 2: More with AWS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day3/index.html">Week 5 - Day 3: 12 Factor Apps and Auto Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#studio">Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day4/index.html">Week 5 - Day 4: Gradle, Continuous Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day5/index.html">Week 5 - Day 5: Sonarqube</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#retro">Retro</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/project/index.html">Week 6 - Project Week: Zika Mission Control Part 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#new-stuff">New Stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#debrief">Debrief</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#bonus-missions">Bonus Missions</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/project/index.html">Week 8 - Project Week: Zika Mission Control Part 4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#normalizing-data">Normalizing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#integrating-geoserver">Integrating GeoServer</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html">Week 9 - Day 3: Intro to Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day3/index.html#studio">Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day4/index.html">Week 9 - Day 4: OAuth2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day5/index.html">Week 9 - Day 5: Certificates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#retro">Retro</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Docker Installation: Elasticsearch</a><ul>
+<li><a class="reference internal" href="#installation-steps-mac">Installation Steps: Mac</a><ul>
+<li><a class="reference internal" href="#create-env-list">Create env.list</a></li>
+<li><a class="reference internal" href="#create-container">Create Container</a></li>
+<li><a class="reference internal" href="#connect-to-psql">Connect to psql</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="docker-installation-elasticsearch">
+<span id="docker-elasticsearch"></span><h1>Docker Installation: Elasticsearch<a class="headerlink" href="#docker-installation-elasticsearch" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation-steps-mac">
+<h2>Installation Steps: Mac<a class="headerlink" href="#installation-steps-mac" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create env.list</li>
+<li>Create container</li>
+<li>CURL elasticsearch cluster</li>
+</ol>
+<div class="section" id="create-env-list">
+<h3>Create env.list<a class="headerlink" href="#create-env-list" title="Permalink to this headline">¶</a></h3>
+<p>Before we create our container we first need to create a temporary file that will create our containers first user, and configure the container to listen for requests.</p>
+<ul class="simple">
+<li>Create a new file in your terminal <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">nano</span> <span class="pre">env.list</span></code></li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">POSTGRES_USER=psql_user</span></code> to env.list</li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">ALLOW_IP_RANGE=&lt;0.0.0.0/0&gt;</span></code> to env.list</li>
+<li>Save env.list</li>
+</ul>
+<p>This small file will have postgres create a new user named psql_user, and allow all IP addresses to make requests to the container.</p>
+</div>
+<div class="section" id="create-container">
+<h3>Create Container<a class="headerlink" href="#create-container" title="Permalink to this headline">¶</a></h3>
+<p>We can now create, and run our container with <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--name</span> <span class="pre">&quot;es&quot;</span> <span class="pre">-p</span> <span class="pre">9200:9200</span> <span class="pre">-p</span> <span class="pre">9300:9300</span> <span class="pre">-d</span> <span class="pre">-t</span> <span class="pre">--env-file</span> <span class="pre">./env.list</span> <span class="pre">elasticsearch:6.5.4</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> runs a command in a container (in this case it creates the container since it doesn’t already exist)</li>
+<li><code class="docutils literal notranslate"><span class="pre">--name</span></code> allows us to name our container (in this case we are naming our container “postgis”)</li>
+<li><code class="docutils literal notranslate"><span class="pre">-p</span></code> allows us to <em>publish</em> a port (host_port:container_port in this case both are the psql default 5432)</li>
+<li><code class="docutils literal notranslate"><span class="pre">-d</span></code> starts our container in <em>detach</em> mode which means it will run in the background</li>
+<li><code class="docutils literal notranslate"><span class="pre">-t</span></code> allows us to run a terminal command (in this case adding the contents of our env.list file)</li>
+<li><code class="docutils literal notranslate"><span class="pre">--env-file</span> <span class="pre">./env.list</span></code> the type of file, and the file from our computers</li>
+<li><code class="docutils literal notranslate"><span class="pre">kartoza/postgis:9.4-2.1</span></code> the image of the container (in this case postgres version 9.4, with the postgis extension version 2.1)</li>
+</ul>
+<p>This command creates a container named “postgis” with the postgres:9.4 image, with postgis:2.1 that listens on port 5432, is detached from this command, and we are running a command to add the contents of env.list to our new “postgis” container.</p>
+<p>If you run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code> now you should see a new container named “postgres”.</p>
+</div>
+<div class="section" id="connect-to-psql">
+<h3>Connect to psql<a class="headerlink" href="#connect-to-psql" title="Permalink to this headline">¶</a></h3>
+<p>Now we will want to connect to postgres to make sure it installed correctly. To do this you will need the psql interactive terminal installed on your computer. This comes with every installation of Postgres. You can check that you have this by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">postgres</span> <span class="pre">--version</span></code> to verify postgres is installed on your computer.</p>
+<p>If it isn’t installed you will want to check out <a class="reference external" href="../../installations/postgres/">Postgres Installation</a> to install Postgres.</p>
+<p>Once you have Postgres installed on your local computer, and you have created the new “postgres” container we can connect to our “postgres” container by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">psql</span> <span class="pre">-h</span> <span class="pre">127.0.0.1</span> <span class="pre">-p</span> <span class="pre">5432</span> <span class="pre">-U</span> <span class="pre">psql_user</span> <span class="pre">-d</span> <span class="pre">postgres</span></code> into our terminal. This command will drop you into psql.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">psql</span></code> The command to access the PSQL Interactive Terminal</li>
+<li><code class="docutils literal notranslate"><span class="pre">-h</span> <span class="pre">127.0.0.1</span></code> The ip address of the host we are connecting to (in this case it’s localhost)</li>
+<li><code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">5432</span></code> The port of the machine we are accessing (in this case the psql default)</li>
+<li><code class="docutils literal notranslate"><span class="pre">-U</span> <span class="pre">psql_user</span></code> The user that is requesting access to the database (in this case the user we added with the env.list file)</li>
+<li><code class="docutils literal notranslate"><span class="pre">-d</span> <span class="pre">postgres</span></code> The name of the database we want to access (in this case the default database created by postgres)</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/installations/docker-elasticsearch/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
