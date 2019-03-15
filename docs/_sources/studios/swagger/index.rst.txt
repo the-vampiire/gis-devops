@@ -11,9 +11,9 @@ In this studio, we will be learning how to use Springfox to autogenerate the Swa
 Getting Started
 ===============
 
-Create a ``add-springfox`` branch off of your ``launchcart/rest-studio-solution`` branch.
+Create a ``rest-springfox-solution`` branch off of your ``launchcart/rest-studio-solution`` branch.
 
-.. warning:: Do *not* create the branch off of the walkthrough branch (``add-swagger``), since we manually created Swagger docs in that branch.
+.. warning:: Do *not* create the branch off of one of the walkthrough branches (``rest-swagger-starter`` or ``rest-swagger-solution``), since we manually created Swagger docs in that branch.
 
 .. warning::
 
@@ -79,6 +79,8 @@ Tasks
 
 Bypassing Login
 ---------------
+
+We provided a class for you called `AuthenticationInterceptor <https://gitlab.com/LaunchCodeTraining/launchcart/blob/rest-springfox-starter/src/main/java/org/launchcode/launchcart/AuthenticationInterceptor.java>`_ that handles what routes are allowed to users and non users alike. Take a look at the file to see what it is doing for you.
 
 Figure out how to change ``AuthenticationInterceptor.preHandle`` to allow the Swagger docs to load when you are NOT logged in.
 
