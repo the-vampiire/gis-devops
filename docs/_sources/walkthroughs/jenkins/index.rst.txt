@@ -49,7 +49,7 @@ Install and Configure Jenkins
 
 .. note::
 
-  Normally you would not install jenkins on your dev machine. You would isntall it on a server that would be continsouly running so that it could react to a commit at anytime.
+  Normally you would not install jenkins on your dev machine. You would install it on a server that would be continsouly running so that it could react to a commit at anytime.
 
 
 Configure Jenkins
