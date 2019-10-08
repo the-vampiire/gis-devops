@@ -191,13 +191,11 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Week 6 - Project Week: Zika Mission Control Part 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#project">Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#new-stuff">New Stuff</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#milestones">Milestones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#debrief">Debrief</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bonus-missions">Bonus Missions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-your-knowledge">Check Your Knowledge</a></li>
 </ul>
 </li>
 </ul>
@@ -261,43 +259,20 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Week 6 - Project Week: Zika Mission Control Part 3</a><ul>
-<li><a class="reference internal" href="#project">Project</a></li>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
-<li><a class="reference internal" href="#new-stuff">New Stuff</a><ul>
-<li><a class="reference internal" href="#specific-changes">Specific Changes</a></li>
+<li><a class="reference internal" href="#project-requirements">Project Requirements</a><ul>
+<li><a class="reference internal" href="#stakeholder-requirements">Stakeholder Requirements</a></li>
+<li><a class="reference internal" href="#technical-requirements">Technical Requirements</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#milestones">Milestones</a><ul>
-<li><a class="reference internal" href="#milestone-1-setup-locally">Milestone 1 - Setup Locally</a><ul>
-<li><a class="reference internal" href="#stop-elasticsearch-in-brew">1) Stop elasticsearch in brew</a></li>
-<li><a class="reference internal" href="#download-docker">2) Download docker</a></li>
-<li><a class="reference internal" href="#bring-in-week6-starter-code">3) Bring in week6-starter code</a></li>
-<li><a class="reference internal" href="#update-new-envrionment-variables">4) Update new envrionment variables</a></li>
-<li><a class="reference internal" href="#run-our-application">5) Run our application</a></li>
-<li><a class="reference internal" href="#run-our-tests">6) Run our tests</a></li>
+<li><a class="reference internal" href="#primary-objectives">Primary Objectives</a></li>
+<li><a class="reference internal" href="#secondary-objectives">Secondary Objectives</a></li>
+<li><a class="reference internal" href="#turning-in-your-work">Turning in Your Work</a><ul>
+<li><a class="reference internal" href="#code-review">Code Review</a></li>
+<li><a class="reference internal" href="#objective-checklist">Objective Checklist</a></li>
+<li><a class="reference internal" href="#presentation">Presentation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#milestone-2-setup-and-configure-vpc-on-aws">Milestone 2 - Setup and configure VPC on AWS</a><ul>
-<li><a class="reference internal" href="#create-a-vpc">1) Create a VPC</a></li>
-<li><a class="reference internal" href="#create-an-rds">2) Create an RDS</a></li>
-<li><a class="reference internal" href="#create-an-ubuntu-ec2">3) Create an Ubuntu EC2</a></li>
-<li><a class="reference internal" href="#send-your-app-jar-file-to-an-s3-bucket">4) Send your app.jar file to an S3 bucket</a></li>
-<li><a class="reference internal" href="#create-a-centos-ec2">5) Create a centos ec2</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#milestone-3-access-your-application-via-a-live-url">Milestone 3 - Access your application via a live URL</a><ul>
-<li><a class="reference internal" href="#view-base-map-at-live-url">1) View base map at live url</a></li>
-<li><a class="reference internal" href="#add-extensions-to-rds">2) Add extensions to RDS</a></li>
-<li><a class="reference internal" href="#populate-rds">3) Populate RDS</a></li>
-<li><a class="reference internal" href="#seed-elasticsearch">4) Seed elasticsearch</a></li>
-<li><a class="reference internal" href="#view-fully-functioning-app">5) View fully functioning app</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#debrief">Debrief</a></li>
-<li><a class="reference internal" href="#bonus-missions">Bonus Missions</a></li>
+<li><a class="reference internal" href="#check-your-knowledge">Check Your Knowledge</a></li>
 </ul>
 </li>
 </ul>
@@ -307,394 +282,80 @@
     <div class="col-md-9 content">
       
   <div class="section" id="week-6-project-week-zika-mission-control-part-3">
-<span id="week6-project"></span><h1>Week 6 - Project Week: Zika Mission Control Part 3<a class="headerlink" href="#week-6-project-week-zika-mission-control-part-3" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="project">
-<h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
-<p>Mission Briefing 3 : <a class="reference external" href="../../_static/images/zika_mission_briefing_3.pdf" target="_blank">pdf<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
-</div>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>The Zika Dashboard that your team has built is growing in popularity. In fact, the application is strained under increased load from CDC Scientists. Your team needs to find a way for you app to scale under increased load. The goals of this mission are as follows:</p>
-<ol class="arabic simple">
-<li>Deploy your application remotely using Amazon Web Services.</li>
-<li>Configure a Jenkins job to automatically build and test your code. Jenkins should save an executable JAR file to S3 if all of the relevant checkes pass.</li>
-</ol>
-</div>
-<div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<p>To complete this project, your app should meet the following requirements:</p>
-<ol class="arabic simple">
-<li>Your application is deployed via AWS at a live URL</li>
-<li>You use CentOS for your EC2 instances (details below)</li>
-<li>Setup a LaunchConfiguration to spin up new Web App EC2 instances</li>
-<li>You setup a VPC for your Web app, RDS, and Elasticsearch</li>
-<li>Elasticsearch is hosted on an EC2 inside your VPC</li>
-<li>Your VPC can Auto Scale under load</li>
-<li>Jenkins watches your repo pushes a release to S3 if all of the following pass:<ul>
-<li>All tests pass</li>
-</ul>
-</li>
-<li>ESLint has no warnings</li>
-</ol>
-</div>
-<div class="section" id="new-stuff">
-<h2>New Stuff<a class="headerlink" href="#new-stuff" title="Permalink to this headline">¶</a></h2>
-<p>There will be a few differences in this project compared to previous week’s studios/project.  You may want to copy over certain changes instead of merging <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/zika-cdc-dashboard/tree/week6-starter" target="_blank">Week 6 Starter<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. NOTE that the starter branch only contains config, property, and aws scripts. The starter branch does not contain a solution for week 4.</p>
-<p>Review the changes by looking at this branch comparison: <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/zika-cdc-dashboard/compare/week4-starter...week6-starter" target="_blank">week4 compared to week6<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
-<div class="section" id="specific-changes">
-<h3>Specific Changes<a class="headerlink" href="#specific-changes" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>For your <strong>Web App</strong> EC2 instances you will be using the <code class="docutils literal notranslate"><span class="pre">CentOS</span></code> operating system instead of <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code></li>
-<li>Using Spring Data 2.0.2 (dependencies have been updated in build.gradle)</li>
-<li>When running locally you will be running <strong>Elasticsearch</strong> inside a <strong>Docker</strong> instance (details below)</li>
-<li>When running in the cloud you will be running <strong>Elasticsearch</strong> on a <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code> EC2 instance</li>
-</ol>
-</div>
-</div>
-<div class="section" id="milestones">
-<h2>Milestones<a class="headerlink" href="#milestones" title="Permalink to this headline">¶</a></h2>
-<p>This week has us deploying our project to AWS. We recommend setting three milestones for yourself this week.</p>
-<ol class="arabic simple">
-<li>Setup and run your project locally with Docker.</li>
-<li>Setup and configure your VPC on AWS properly.</li>
-<li>Access your application via the live URL.</li>
-</ol>
-<div class="section" id="milestone-1-setup-locally">
-<h3>Milestone 1 - Setup Locally<a class="headerlink" href="#milestone-1-setup-locally" title="Permalink to this headline">¶</a></h3>
-<p>So far in this class we have been running Elasticsearch as an embedded instance inside of our Tomcat server. When we move to the cloud we will be moving Elasticsearch to it’s own EC2, and our web application will have to make requests to a server to function properly. This requires us to make some changes to our code.</p>
-<p>We want to make these changes in our local development environment to make it easier to troubleshoot. Our goal is to simulate this new process locally before moving it to the cloud.</p>
-<p>We will be using Docker to do this. Locally we will be running elasticsearch in it’s own Docker container, and our web application will make elasticsearch requests to this container. The functionality of our project will not change, how our web app communicates with elasticsearch will change. This new way more accurately reflects what is happening with our web app in AWS.</p>
-<p>To get our project up and running locally we will need to:</p>
-<ol class="arabic simple">
-<li>Stop the elasticsearch service in brew</li>
-<li>Download docker &amp; create new container</li>
-<li>Bring in the new week6-starter code</li>
-<li>Update new envrionment variables</li>
-<li>Run our application</li>
-<li>Run our tests</li>
-</ol>
-<div class="section" id="stop-elasticsearch-in-brew">
-<h4>1) Stop elasticsearch in brew<a class="headerlink" href="#stop-elasticsearch-in-brew" title="Permalink to this headline">¶</a></h4>
-<p>Our computer will throw a fit if we have to different versions of elasticsearch running at the same time, and listening on the same port. It would cause some issues that would be difficult to troubleshoot. So to kick things off let’s turn off the brew service we were using last week.:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ brew services list
-$ brew services stop elasticsearch
-$ brew services list
-</pre></div>
-</div>
-<p>This has stopped the version of elasticsearch we installed and ran through brew.</p>
-</div>
-<div class="section" id="download-docker">
-<h4>2) Download docker<a class="headerlink" href="#download-docker" title="Permalink to this headline">¶</a></h4>
+<span id="week4-project"></span><h1>Week 6 - Project Week: Zika Mission Control Part 3<a class="headerlink" href="#week-6-project-week-zika-mission-control-part-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="project-requirements">
+<h2>Project Requirements<a class="headerlink" href="#project-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Following are the requirements from our stakeholders, and our tech team.</p>
+<div class="section" id="stakeholder-requirements">
+<h3>Stakeholder Requirements<a class="headerlink" href="#stakeholder-requirements" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Download docker installer from <a class="reference external" href="https://store.docker.com/editions/community/docker-ce-desktop-mac" target="_blank">here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li>That will install docker as a service and an application that will run everytime your computer starts. (look for the whale icon in your menu bar at the top of your mac)</li>
-<li>Now you can run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span></code> commands in your terminal. Like the one below. (this runs a docker instance that contains Elasticsearch)</li>
-<li>The connection information for the docker version of Elasticsearch is contained in the comments of <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/zika-cdc-dashboard/blob/week6-starter/src/main/resources/application.properties" target="_blank">this file<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li>Application is live via a web browser</li>
+<li>Application includes a fuzzy search</li>
 </ul>
-<p>Create the container (NOTE: An id will be returned):</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker create -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot;  -e &quot;xpack.security.enabled=false&quot; docker.elastic.co/elasticsearch/elasticsearch:5.6.0
-63918ba7994482d94bdaf7bbc2005d91e0ac2f02a88039ebe2521ed9d9e8e8b8 &lt;----- this is returned after the above command, it&#39;s id of the container that is created COPY THIS SOMEHWERE
-</pre></div>
 </div>
-<p>This command creates a new docker container, tells it to listen on ports 9200, and 9300, and includes the image of what exists in the container. In this case that is elasticsearch 5.6.0.</p>
-<p>Start the container:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker start 63918ba7994482d94bdaf7bbc2005d91e0ac2f02a88039ebe2521ed9d9e8e8b8
-</pre></div>
-</div>
-<p>You can restart or stop the container as well:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker restart 63918ba7994482d94bdaf7bbc2005d91e0ac2f02a88039ebe2521ed9d9e8e8b8
-$ docker stop 63918ba7994482d94bdaf7bbc2005d91e0ac2f02a88039ebe2521ed9d9e8e8b8
-</pre></div>
-</div>
-<p>To view your current docker containers:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker ps -a
-</pre></div>
-</div>
-<p>This command will print out all containers and their current status.</p>
-<div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">The error <code class="docutils literal notranslate"><span class="pre">None</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">configured</span> <span class="pre">nodes</span> <span class="pre">are</span> <span class="pre">available</span></code> can be caused by starting up your Web App before Elasticsearch is running. This can also happen if you restart your Elasticsearch while your Web App is running.</p>
-</div>
-</div>
-<div class="section" id="bring-in-week6-starter-code">
-<h4>3) Bring in week6-starter code<a class="headerlink" href="#bring-in-week6-starter-code" title="Permalink to this headline">¶</a></h4>
-<p>Now that we have installed, and created a new Docker container for our elasticsearch, we need to bring in the new changes that will configure our application to work with this new containerized version of Elasticsearch.</p>
-<p>There will be a few differences in this project compared to previous week’s studios/project.  You may want to copy over certain changes instead of merging <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/zika-cdc-dashboard/tree/week6-starter" target="_blank">Week 6 Starter<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. NOTE that the starter branch only contains config, property, and aws scripts. The starter branch does not contain a solution for week 4.</p>
-<p>Review the changes by looking at this branch comparison: <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/zika-cdc-dashboard/compare/week4-starter...week6-starter" target="_blank">week4 compared to week6<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
-<div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">One of the changes updates our spring plugin from version 1.5.2 to 2.0.2. This changes the gradlewrapper of our project, which is what defines the gradle commands we can run. Last week we used the gradle command bootRepackage to build our .jar file. This week we will be using the gradle command bootJar to build our .jar file.</p>
-</div>
-</div>
-<div class="section" id="update-new-envrionment-variables">
-<h4>4) Update new envrionment variables<a class="headerlink" href="#update-new-envrionment-variables" title="Permalink to this headline">¶</a></h4>
-<p>One of our changed files is application.properties.</p>
-<p>At the bottom of this file there are three new application level variables being set:
-1. elasticsearch.transport-port
-2. elasticsearch.cluster-name
-3. elasticsearch.cluster-address</p>
-<p>All three of them are being set with environment variables under the tokens: ES_CLUSTER_PORT, ES_CLUSTER_NAME, and ES_CLUSTER_URL.</p>
-<p>We will need to add these new envrionment variables to our runtime configuration in order to run our project. In IntelliJ click the dropdown box for your runtime configurations. Edit, and add the new environment variables.</p>
+<div class="section" id="technical-requirements">
+<h3>Technical Requirements<a class="headerlink" href="#technical-requirements" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>ES_CLUSTER_NAME = docker-cluster</li>
-<li>ES_CLUSTER_PORT = 9300</li>
-<li>ES_CLUSTER_URL = localhost</li>
+<li>All AWS resources are to be secured within a VPC</li>
+<li>Access outside of the VPC should be restricted to one web server on port 80</li>
+<li>Separate EC2 for web app and Elasticsearch</li>
+<li>Database should use AWS RDS</li>
 </ul>
-<div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">When we move this project to the cloud we are going to update these values to match the values associated with the EC2 where elasticsearch lives.</p>
 </div>
 </div>
-<div class="section" id="run-our-application">
-<h4>5) Run our application<a class="headerlink" href="#run-our-application" title="Permalink to this headline">¶</a></h4>
-<p>Time to run our application locally to make sure everything was configured correctly.</p>
-<p>Our map should load from OSM, however our features won’t load because we are using a brand new version of Elasticsearch and it hasn’t been seeded yet.</p>
-<p>We will need to seed Elasticsearch from postgis before any of our features will be displayed.</p>
-<p>While our web application is running</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST http://localhost:8080/api/_cluster/reindex
-</pre></div>
-</div>
-<p>This is how we have been seeding Elasticsearch with this project. Our EsController file dictates that when a POST request is made to /api/_cluster/reindex anything inside of elasticsearch is deleted, and it is re-created from the reporst in the database.</p>
-<div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you have issues running your application locally, make sure elasticsearch isn’t running on brew, your docker container is running, you have brought in all week6-starter changes, and you have created new elasticsearch environment variables. If it still isn’t working delete, and re-create a docker container with elasticsearch in it.</p>
-</div>
-</div>
-<div class="section" id="run-our-tests">
-<h4>6) Run our tests<a class="headerlink" href="#run-our-tests" title="Permalink to this headline">¶</a></h4>
-<p>Now that we have our new version of elasticsearch running in docker, and it is populated we need to re-run our tests to ensure our changes didn’t break anything unexpectedly.</p>
-<p>Fix any tests that fail.</p>
-<p>Once your tests are passing, you have completed this milestone and are ready to take your project to AWS!</p>
-</div>
-</div>
-<div class="section" id="milestone-2-setup-and-configure-vpc-on-aws">
-<h3>Milestone 2 - Setup and configure VPC on AWS<a class="headerlink" href="#milestone-2-setup-and-configure-vpc-on-aws" title="Permalink to this headline">¶</a></h3>
-<p>Before we can deploy the local version of our application to the cloud we will need to create, and configure a VPC, an RDS, an Ubuntu EC2, and a CentOS EC2.</p>
-<p>Although we can create most of these things in any order, you must create your VPC first, and it’s easiest to create your CentOS last because it needs some information about the RDS, and the Ubuntu EC2.</p>
-<p>In the cloud folder of the week6-starter repo you will find some very handy scripts that will help you setup and configure your VPC, and EC2s.</p>
-<ol class="arabic simple">
-<li>Create a VPC</li>
-<li>Create an RDS</li>
-<li>Create an Ubuntu EC2</li>
-<li>Send your jar to an S3 bucket</li>
-<li>Create a CentOS EC2</li>
-</ol>
-<div class="section" id="create-a-vpc">
-<h4>1) Create a VPC<a class="headerlink" href="#create-a-vpc" title="Permalink to this headline">¶</a></h4>
-<p>During our instruction week we <a class="reference external" href="../../studios/aws-rds-vpc/" target="_blank">created a VPC<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> for our airwaze project. This week we will need to create a new VPC for our zika project.</p>
-<p>Review the instructions for last week, and use the <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/zika-cdc-dashboard/blob/week6-starter/cloud/zika_cloudformation.json" target="_blank">new configuration file<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> found on GitLab.</p>
-<p>This configuration creates:</p>
-<ol class="arabic simple">
-<li>Two public subnets with an internet gateway (each in their own availability zone).</li>
-<li>Two private subnets (each in their own availability zone).</li>
-<li>One security group for web servers (ports 80 and 22 open). <code class="docutils literal notranslate"><span class="pre">WebAppSecurityGroup</span></code></li>
-<li>One security group for databases (port 5432 open). <code class="docutils literal notranslate"><span class="pre">DatabaseSecurityGroup</span></code></li>
-<li>One security group for load balancers (port 80 open). <code class="docutils literal notranslate"><span class="pre">ELBSecurityGroup</span></code></li>
+<div class="section" id="primary-objectives">
+<h2>Primary Objectives<a class="headerlink" href="#primary-objectives" title="Permalink to this headline">¶</a></h2>
+<p>You should <strong>complete all primary objectives</strong> before working on any secondary objectives.</p>
+<p>For your primary objectives articles have been provided to help you think about what needs to be completed to pass the objective.</p>
+<ol class="arabic simple" start="0">
+<li><a class="reference internal" href="../aws-infrastructure/index.html#week6-aws-infrastructure"><span class="std std-ref">Setup AWS Infrastructure</span></a></li>
+<li><a class="reference internal" href="rds-setup/index.html#week6-rds-setup"><span class="std std-ref">RDS First Time Setup</span></a></li>
+<li><span class="xref std std-ref">week6-web-app-setup</span></li>
+<li><span class="xref std std-ref">week6-elasticsearch-setup</span></li>
 </ol>
 </div>
-<div class="section" id="create-an-rds">
-<h4>2) Create an RDS<a class="headerlink" href="#create-an-rds" title="Permalink to this headline">¶</a></h4>
-<p>We need a Postgres database to store our information on the cloud. We will need to setup a new RDS using our new VPC.</p>
-<p>Read over the <a class="reference external" href="../../studios/aws-rds-vpc/" target="_blank">steps we followed last instruction week<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to remind yourself how to create an RDS.</p>
-<p>Don’t forget to write down the RDS endpoint, the DB name, the RDS master user, and the RDS master user password. You will need these to configure your zika web app. They will eventually go in the zika.config file on the EC2 that serves the zika web app.</p>
-</div>
-<div class="section" id="create-an-ubuntu-ec2">
-<h4>3) Create an Ubuntu EC2<a class="headerlink" href="#create-an-ubuntu-ec2" title="Permalink to this headline">¶</a></h4>
-<p>In the cloud you will be running Elasticsearch on it’s own EC2 instance. So we will need to create a new Ubuntu EC2 using our new VPC. You should use the <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/zika-cdc-dashboard/blob/week6-starter/cloud/elastic_userdata.sh" target="_blank">elastic_userdata.sh<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> found on GitLab.</p>
+<div class="section" id="secondary-objectives">
+<h2>Secondary Objectives<a class="headerlink" href="#secondary-objectives" title="Permalink to this headline">¶</a></h2>
+<p>It takes a lot of work to manually configure AWS and to build, and deliver artifacts to our web server. Our bonus objectives revolve around automating the CI/CD pipeline.</p>
 <ul class="simple">
-<li>You will need to spin up a <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code> <code class="docutils literal notranslate"><span class="pre">t2.medium</span></code> EC2 instance to serve Elasticsearch (Elasticsearch requires lots of memory)</li>
-<li>Use the <code class="docutils literal notranslate"><span class="pre">startup_Elasticsearch.sh</span></code> <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/zika-cdc-dashboard/blob/week6-starter/cloud/elastic_userdata.sh" target="_blank">script<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> in the week6-starter project to configure a <code class="docutils literal notranslate"><span class="pre">t2.medium</span></code> machine.</li>
-<li>You can check on the status of Elasticsearch by sshing into the server and running <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">journalctl</span> <span class="pre">-f</span> <span class="pre">-u</span> <span class="pre">Elasticsearch</span></code></li>
-<li>If you get an “Out of Memory Exception”, be sure to increase the heap size by setting <code class="docutils literal notranslate"><span class="pre">Xms3g</span></code> and <code class="docutils literal notranslate"><span class="pre">Xmx4g</span></code> in the <code class="docutils literal notranslate"><span class="pre">/etc/Elasticsearch/jvm.options</span></code> file.</li>
+<li>Use S3 to deliver your jar file</li>
+<li>Use Jenkins to test, build, and deliver your web application</li>
+<li>Setup an auto-scaling group for your web app so that it scales under load</li>
+<li>Configure Sonarqube to improve the quality of your code</li>
+<li>Create and use a CloudFormation script to automate the infrastructure creation of your project</li>
 </ul>
-<p>Don’t forget to write down the private IP address of this EC2 instance. This will be used in the zika.config file so that our zika web app can talk to the elasticsearch stored on this EC2 instance.</p>
-<p>After setting this EC2 instance up, it would be a good idea to ssh into this instance, and then make a curl request to localhost:9200 which should return a response of information about this elasticsearch cluster, the name should be docker-cluster, and the version should be 5.6.0. If you don’t see this information look back at the elastic_userdata.sh script, and verify it ran correctly.</p>
 </div>
-<div class="section" id="send-your-app-jar-file-to-an-s3-bucket">
-<h4>4) Send your app.jar file to an S3 bucket<a class="headerlink" href="#send-your-app-jar-file-to-an-s3-bucket" title="Permalink to this headline">¶</a></h4>
-<p>In preparation to create the EC2 that will host our web app we need to send the .jar file to an S3 bucket.</p>
-<p>The centos_userscript we will run to setup our CentOS EC2 pulls from an S3 bucket. You will need to create a new S3 bucket, or use the one from last week.</p>
-<p>Refamilarize with <a class="reference external" href="../../studios/aws-auto-scaling/" target="_blank">S3 buckets<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, and then send your .jar file to the S3 bucket you will use for this project.</p>
-<p>After completing this step, make sure you have the endpoint of the S3 bucket that hosts your app.jar file, and that your app.jar file can be read.</p>
+<div class="section" id="turning-in-your-work">
+<h2>Turning in Your Work<a class="headerlink" href="#turning-in-your-work" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="code-review">
+<h3>Code Review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h3>
+<p>Let your instructor know When you complete the primary objectives. The instructor will need a link to your GitLab repo, and they will peform a code review, and leave you feedback.</p>
 </div>
-<div class="section" id="create-a-centos-ec2">
-<h4>5) Create a centos ec2<a class="headerlink" href="#create-a-centos-ec2" title="Permalink to this headline">¶</a></h4>
-<p>Our zika web application will live on a CentOS EC2 instance in our VPC. We will configure our CentOS EC2 to run the <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/zika-cdc-dashboard/blob/week6-starter/cloud/centos_userdata.sh" target="_blank">centos_userdata.sh<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> script found on GitLab.</p>
-<p>This script does a few things on startup:</p>
-<ol class="arabic simple">
-<li>Install java</li>
-<li>Install aws</li>
-<li>Open port 80</li>
-<li>Create zika user, zika user folders</li>
-<li>Get app.jar from YOUR-S3-BUCKET (you will have to change this line to point to your S3 bucket)</li>
-<li>Grant privileges to the zika user folders and the app.jar file, to the zika user</li>
-<li>Creates the zika.config file that contains all of our environment variables (You will have to change many of these to match your RDS, and Ubuntu EC2)</li>
-<li>Creates our systemd zika.service</li>
-<li>Enables, and starts our zika.service</li>
-</ol>
-<p>You can include this script to run on EC2 startup when you are creating your instance by clicking advanced configuration, and pasting in the contents of this script.</p>
-<p>It should be noted that your environment variables will be different than the example environment variables, and everyone else’s environment variables.</p>
-<ul class="simple">
-<li>APP_DB_HOST=YOUR-RDS-ENDPOINT</li>
-<li>APP_DB_NAME=YOUR-RDS-DB-NAME</li>
-<li>APP_DB_USER=YOUR-RDS-MASTER-USER</li>
-<li>APP_DB_PASS=YOUR-RDS-MASTER-USER-PASSWORD</li>
-<li>ES_CLUSTER_URL=YOUR-UBUNTU-EC2-PRIVATE-IP-ADDRESS</li>
+<div class="section" id="objective-checklist">
+<h3>Objective Checklist<a class="headerlink" href="#objective-checklist" title="Permalink to this headline">¶</a></h3>
+<p>As you work through the objectives for this week, keep track of them on your Checklist, your instructor will also confirm which objectives you completed in their code review. If you don’t pass an objective the instructor will give you feedback on what you need to do to complete that objective.</p>
+</div>
+<div class="section" id="presentation">
+<h3>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h3>
+<p>Friday afternoon, everyone will present their project to the class. This presentation is meant to be a celebration of your hard work throughout the week, and as a chance for you to share, and learn from the other students in the class.</p>
+<p>At the end of this course, during your graduation ceremony you will be expected to present your final project to the attendees. Every project week we will have a presentation as a way for you to practice for this final presentation.</p>
+</div>
+</div>
+<div class="section" id="check-your-knowledge">
+<h2>Check Your Knowledge<a class="headerlink" href="#check-your-knowledge" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>To reinforce your understanding of the concepts answer these questions to yourself:</dt>
+<dd><ul class="first last simple">
+<li>What is a VPC? Why is it beneficial to use one?</li>
+<li>How do you control access to your various AWS resources?</li>
+<li>What resources are publicly available?</li>
+<li>Which resources are not publicly available?</li>
+<li>Should you restrict access to any of your currently public resources?</li>
+<li>How does a user interface with your database? elasticsearch?</li>
+<li>What are the various means of project delivery we used this week?</li>
 </ul>
-<p><cite>CentOS`</cite> is a free, enterprise class, Linux distribution based on Red Hat Enterprise Linux. Most of the commands will be the same as Ubuntu, except the package manager will use <code class="docutils literal notranslate"><span class="pre">yum</span> <span class="pre">install</span></code> instead of <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span></code>. CentOS comes with less software installed than Ubuntu. For example <code class="docutils literal notranslate"><span class="pre">telnet</span></code> has to be installed via <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">telnet</span></code>. <a class="reference external" href="https://wiki.centos.org/Cloud/AWS" target="_blank">Info on Image of CentOS we will use<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
-<div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">To <code class="docutils literal notranslate"><span class="pre">ssh</span></code> into a CentOS instance, you will need to use the username <code class="docutils literal notranslate"><span class="pre">centos</span></code>.</p>
-</div>
-<p>How to manually create an AWS EC2 instance using CentOS</p>
-<ul class="simple">
-<li>Go to Oregon Region</li>
-<li>Click <strong>Launch Instance</strong> in the EC2 Dashboard</li>
-<li>Click <strong>My AMIs</strong></li>
-<li>Search for <strong>centos</strong></li>
-<li>Click <strong>CentOS Image</strong></li>
-</ul>
-<p>CentOS Image</p>
-<img alt="../../_images/centos-image.png" src="../../_images/centos-image.png" />
-<div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">After all of this, it is a great idea to ssh into your CentOS EC2, to make sure the configuration completed the steps listed above. If so run <cite>journalctl -u zika</cite> to see if the zika app started without any errors. At this point if you have errors, make sure your zika.config file matches the RDS, and EC2 information. Use telnet, and ssh to make sure the CentOS, Ubuntu, and RDS servers can all talk to each other.</p>
-</div>
-</div>
-</div>
-<div class="section" id="milestone-3-access-your-application-via-a-live-url">
-<h3>Milestone 3 - Access your application via a live URL<a class="headerlink" href="#milestone-3-access-your-application-via-a-live-url" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>View base map at live url</li>
-<li>Add extensions to RDS (Postgres)</li>
-<li>Populate RDS (Postgres)</li>
-<li>Seed elasticsearch</li>
-<li>View fully functioning app</li>
-</ol>
-<div class="section" id="view-base-map-at-live-url">
-<h4>1) View base map at live url<a class="headerlink" href="#view-base-map-at-live-url" title="Permalink to this headline">¶</a></h4>
-<p>Now that we setup our VPC, and spun up an RDS, CentOS EC2, and Ubuntu EC2. Our application should run.</p>
-<p>Go to <cite>http://your-centos-ec2-public-dns.com</cite> to see your application in action, via a live URL.</p>
-<p>We have yet to populate our database, and elasticsearch, so no features should be displayed. However, the base map from OSM should load properly. Just running your application shows us that we configured our VPC correctly, and that the 3 pieces can all talk to each other.</p>
-</div>
-<div class="section" id="add-extensions-to-rds">
-<h4>2) Add extensions to RDS<a class="headerlink" href="#add-extensions-to-rds" title="Permalink to this headline">¶</a></h4>
-<p>We created an RDS and put Postgres on it, however we did not add the extensions we need to create the tables that store GEOINT.</p>
-<p>We will need to login to our RDS from our CentOS application to create the extensions, and copy over data from our CSV files.</p>
-<p>From the terminal of your CentOS machine:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo yum install postgresql
-</pre></div>
-</div>
-<p>This install postgresql cli onto your centos machine.</p>
-<p>From the terminal of your CentOS machine:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ psql -h YOUR-RDS-ENDPOINT -p 5432 -U YOUR-RDS-MASTER-USER -d YOUR-RDS-DB-NAME
-</pre></div>
-</div>
-<p>This will drop us into the psql cli on our RDS. From here we can run any sql command we normally would, including our add extension commands.</p>
-<p>From the psqlcli inside your RDS:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ CREATE EXTENSION postgis;
-$ CREATE EXTENSION postgis_topology;
-$ CREATE EXTENSION fuzzystrmatch;
-$ CREATE EXTENSION postgis_tiger_geocoder;
-$ \q
-</pre></div>
-</div>
-<p>These are the extensions we needed to add to turn our postgres database to postgis which allows for storing location data. q simply drops you out of your RDS and back into your CentOS machine.</p>
-<p>Hibernate tries to create our report, and location tables for us, but before we added the postgis extensions, it was unable to do so properly. We will need to stop and re-start our zika.service so that it can create the tables correctly.</p>
-<p>From the terminal of your CentOS machine:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl stop zika
-$ sudo systemctl start zika
-$ sudo journalctl -f -u zika
-</pre></div>
-</div>
-<p>These commands stop and restart zika, and print out the journal entries of zika in real time. After the application has started again it should have created the location, and report tables for you. You should verify this by logging back into your RDS.</p>
-<p>From the terminal of your CentOS machine:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ psql -h YOUR-RDS-ENDPOINT -p 5432 -U YOUR-RDS-MASTER-USER -d YOUR-RDS-DB-NAME
-</pre></div>
-</div>
-<p>From the psqlcli inside your RDS:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ \dt
-</pre></div>
-</div>
-<p>You should see a report table, and a location table. They are still empty, but they should exist.</p>
-</div>
-<div class="section" id="populate-rds">
-<h4>3) Populate RDS<a class="headerlink" href="#populate-rds" title="Permalink to this headline">¶</a></h4>
-<p>Now that both of the tables exist, we need to populate them by copying over the information from our CSV files. If you haven’t used scp to copy your .csv files from your local machine to your CentOS machine do that now. We will need both location.csv, and all_reports.csv.</p>
-<p>From the terminal of your CentOS machine:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ psql -h YOUR-RDS-ENDPOINT -p 5432 -U YOUR-RDS-MASTER-USER -d YOUR-RDS-DB-NAME -c &quot;\copy location(ID_0,ISO,NAME_0,ID_1,NAME_1,HASC_1,CCN_1,CCA_1,TYPE_1,ENGTYPE_1,NL_NAME_1,VARNAME_1,geom) from STDIN WITH DELIMITER E&#39;\t&#39; CSV&quot; &lt; locations.csv
-$ psql -h YOUR-RDS-ENDPOINT -p 5432 -U YOUR-RDS-MASTER-USER -d YOUR-RDS-DB-NAME -c &quot;\copy report(report_date, location, location_type, data_field, data_field_code, time_period, time_period_type, value, unit) from STDIN WITH DELIMITER &#39;,&#39; CSV HEADER&quot; &lt; all_reports.csv
-</pre></div>
-</div>
-<p>These two commands copy our all_reports.csv, and locations.csv file into the database on our RDS. We should make sure it copied everything correctly, let’s drop back into our RDS psqlcli.</p>
-<p>From the psqlcli inside your RDS:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ SELECT COUNT(*) FROM reports;
-$ SELECT COUNT(*) FROM locations;
-</pre></div>
-</div>
-<p>You should see a total of 250 locations, and over 240000 reports. If you don’t see this number of reports, drop the report, and location tables, stop and start your zika service, run the copy commands again and check again.</p>
-<p>We have one final thing we need to do for our database to work correctly. We need to unaccent two of the columns on our location table. Our web app is expecting location names to not contain hyphens, but our tables currently have locations with hyphens. We need to unaccent them!</p>
-<p>From the psqlcli inside your RDS (after your tables have been populated):</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ CREATE EXTENSION unaccent;
-$ UPDATE location SET name_0_normalized = unaccent(name_0);
-$ UPDATE location SET name_1_normalized = unaccent(name_1);
-</pre></div>
-</div>
-<p>That’s it! We now have an RDS with postgres, postgis, data from csvs, and it has been properly unaccented. We can move to the next step.</p>
-</div>
-<div class="section" id="seed-elasticsearch">
-<h4>4) Seed elasticsearch<a class="headerlink" href="#seed-elasticsearch" title="Permalink to this headline">¶</a></h4>
-<p>Now that our database has been populated we can use it to seed our database. We have been using curl to send a POST request to the endpoint ‘/api/_cluster/reindex’ to seed our database. We still need to do this, but from the command line of our CentOS machine, while the app is running.</p>
-<p>If your zika aspp isn’t running, use systemctl, and journalctl to get it going and troubleshoot any issues.</p>
-<p>From the terminal of your CentOS machine:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST localhost:8080/api/_cluster/reindex
-</pre></div>
-</div>
-<p>This command should take a few seconds. It is deleting anything in our elasticsearch cluster, and then recreating it from the reports in the RDS.</p>
-<div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If it fails to run and you see an error like: ‘java heap size’ our CentOS instance does not have enough memory to process this command. You will need to increase the instance.type of this EC2, or change the code in EsUtil.</p>
-</div>
-<p>After it has run successfully you should check it out from your CentOS machine.</p>
-<p>From the terminal of your CentOS machine:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ curl http://YOUR-UBUNTU-PRIVATE-IP-ADDRESS:9200/report/_count
-</pre></div>
-</div>
-<p>This command will return a count of the number of documents in the report index on the Elasticsearch server.</p>
-<p>If you don’t see 240000+ records, or a java-heap error make sure your CentOS, and Ubuntu machines can talk to each other and have been configured properly.</p>
-</div>
-<div class="section" id="view-fully-functioning-app">
-<h4>5) View fully functioning app<a class="headerlink" href="#view-fully-functioning-app" title="Permalink to this headline">¶</a></h4>
-<p>Now that our RDS with Postgres, and our Ubuntu with Elasticsearch have data, our web app should display features correctly. Let’s check it out.</p>
-<p>In the browser of your local machine go to <cite>http://YOUR-CENTOS-PUBLIC-DNS.com/</cite></p>
-<p>You should see your map with features, and the full functionality of your local project.</p>
-<div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p class="last">If you make changes to your local project, you will need to rebuild your .jar file, and send it to your CentOS machine. You may have to remove the old app.jar file, restart the systemctl service, and generally troubleshoot as issues arise. If you change the .jar file on your CentOS machine you should also update the app.jar file in your S3 bucket.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="debrief">
-<h2>Debrief<a class="headerlink" href="#debrief" title="Permalink to this headline">¶</a></h2>
-<p>We did a lot this week!</p>
-<ol class="arabic simple">
-<li>We changed our local development environment to more closely match the AWS environment.</li>
-<li>We created a new VPC with an RDS, CentOS EC2, Ubuntu EC2</li>
-<li>We worked with an S3 bucket to host our app.jar file</li>
-<li>We manually populated the report, and location table in RDS Postgres database</li>
-<li>We used our RDS Postgres database to seed elasticsearch that lives on it’s own EC2</li>
-<li>We configured a CentOS EC2 to run our web application, and communicate with Elasticsearch (Ubuntu EC2) and Postgis (RDS Postgres)</li>
-</ol>
-<p>Working with AWS, and cloud computing in general can be frustrating. We have so many technologies all working together, and if one thing is misconfigured, or forgotten it can bring the whole application crashing down.</p>
-<p>You should be proud of what you have accomplised this week!</p>
-</div>
-<div class="section" id="bonus-missions">
-<h2>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
-<p>After you completed the three milestones above, and you are happy with your project. You should add a load balancer to your VPC.</p>
-<p>Read over <a class="reference external" href="../../studios/aws-auto-scaling/" target="_blank">the instructions<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> for how we did this last week, and then give it a shot!</p>
-<p>You can think implement Jenkins to automatically push an app.jar file to your S3 when all of the tests pass.</p>
-<p>You can use ESLint to ensure your JavaScript is up to par.</p>
+</dd>
+</dl>
 </div>
 </div>
 
