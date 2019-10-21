@@ -8,7 +8,7 @@ install: # install dependencies (cached)
   - pip install --upgrade git+https://github.com/LaunchCodeEducation/sphinx-bootstrap-theme.git@master
 
 script:
-  - build -c # run clean build
+  - ./build -c # run clean build
 
 deploy:
   provider: pages # github pages provider
