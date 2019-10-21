@@ -9,12 +9,12 @@ install: # install dependencies (cached)
 
 script:
   - ./build -c # run clean build
-  - mv docs/ build/
+  - mv docs/ gh-pages/
 
 deploy:
   provider: pages # github pages provider
   skip_cleanup: true # save the build output (artifact)
-  local_dir: build # the directory to deploy to GH pages
+  local_dir: gh-pages # the directory to deploy to GH pages
   target_branch: gh-pages # branch to push to
   github_token: $GITHUB_ACCESS_TOKEN # access token with repo:public scope
   on:
