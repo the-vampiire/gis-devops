@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Walkthrough: OpenLayers and jQuery &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#slides">Slides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Security, Test-driven development</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Integration testing, dependency injection</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: Postgres, Spring Data, JPA, Hibernate</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: AJAX, Open Layers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#additional-resources">Additional Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/project/index.html">Week 2 - Project Week: Zika Mission Control</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#zika-mission-control">Zika Mission Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-overview">Project Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#bonus-resources">Bonus Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: RESTful web services</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2 Swagger REST framework</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Intro to Elasticsearch</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: More Elasticsearch, Integrating ES with Spring</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: ES2015, ESLint, OpenLayers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#resources">Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/project/index.html">Week 4 - Project Week: Zika Mission Control Part 2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day1/index.html">Week 5 - Day 1: Intro to DevOps/AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day2/index.html">Week 5 - Day 2: More with AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day3/index.html">Week 5 - Day 3: 12 Factor Apps and Auto Scaling</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day4/index.html">Week 5 - Day 4: Gradle, Continuous Integration</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day5/index.html">Week 5 - Day 5: Sonarqube</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/project/index.html">Week 6 - Project Week: Zika Mission Control Part 3</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#new-stuff">New Stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#debrief">Debrief</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#bonus-missions">Bonus Missions</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/project/index.html">Week 8 - Project Week: Zika Mission Control Part 4</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#normalizing-data">Normalizing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#integrating-geoserver">Integrating GeoServer</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html">STUFF WORKS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#week-9-day-3-intro-to-docker">Week 9 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day4/index.html">Week 9 - Day 4: OAuth2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day5/index.html">Week 9 - Day 5: Certificates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Walkthrough: OpenLayers and jQuery</a><ul>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#review-the-code">Review the code</a></li>
+<li><a class="reference internal" href="#let-s-make-a-map-show-up">Let’s make a map show up</a><ul>
+<li><a class="reference internal" href="#what-your-code-should-look-like">What your code should look like</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#let-s-see-it-in-action">Let’s see it in action</a></li>
+<li><a class="reference internal" href="#now-show-a-list-of-airports">Now show a list of airports</a></li>
+<li><a class="reference internal" href="#add-airport-layer-to-the-map">Add Airport layer to the map</a></li>
+<li><a class="reference internal" href="#show-airports-when-a-city-is-clicked">Show Airports when a city is clicked</a><ul>
+<li><a class="reference internal" href="#example-report-html">Example Report HTML</a></li>
+<li><a class="reference internal" href="#javascript-template-literals">JavaScript Template Literals</a></li>
+<li><a class="reference internal" href="#show-airport-list-when-map-clicked">Show Airport List when Map Clicked</a></li>
+<li><a class="reference internal" href="#click-it">Click it!</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="walkthrough-openlayers-and-jquery">
+<span id="walkthrough-openlayers"></span><h1>Walkthrough: OpenLayers and jQuery<a class="headerlink" href="#walkthrough-openlayers-and-jquery" title="Permalink to this headline">¶</a></h1>
+<p>Follow along with the instructor as we get started with jQuery and OpenLayers.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fork and clone the <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/jquery-open-layers-starter" target="_blank">JQuery OpenLayers Starter repo<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li>Create a story branch named <code class="docutils literal notranslate"><span class="pre">day5-solution</span></code></li>
+<li>Open the repository folder with any editor you choose<ul>
+<li><a class="reference external" href="https://code.visualstudio.com/" target="_blank">Visual Studio Code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> works well because this project is JavaScript, CSS, and HTML</li>
+<li>The Community Edition(free version) of Intellij IDEA doesn’t handle JavaScript, CSS, and HTML very well</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="review-the-code">
+<h2>Review the code<a class="headerlink" href="#review-the-code" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">index.html</span></code> has a link to a script to <code class="docutils literal notranslate"><span class="pre">js/script.js</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">index.html</span></code> has a <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code> but not much else</li>
+<li><code class="docutils literal notranslate"><span class="pre">js/script.js</span></code> contains code to instantiate a map</li>
+<li><code class="docutils literal notranslate"><span class="pre">js/script.js</span></code> defines styles</li>
+<li><code class="docutils literal notranslate"><span class="pre">js/script.js</span></code> uses OpenLayers Tile layer Layer Types <a class="reference external" href="https://openlayers.org/en/v4.6.5/apidoc/ol.source.html" target="_blank">https://openlayers.org/en/v4.6.5/apidoc/ol.source.html<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">js/script.js</span></code> sets the <code class="docutils literal notranslate"><span class="pre">map.view</span></code> attribute which allows us to position the map at a certain lat long and zoom level using an <code class="docutils literal notranslate"><span class="pre">ol.View</span></code> object</li>
+</ul>
+</div>
+<div class="section" id="let-s-make-a-map-show-up">
+<h2>Let’s make a map show up<a class="headerlink" href="#let-s-make-a-map-show-up" title="Permalink to this headline">¶</a></h2>
+<p>Next, add OpenLayers to your project by including the JavaScript source in the head.</p>
+<ul class="simple">
+<li>OpenLayers is a JavaScript library that is used to show Maps, layers, and features</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">ol.js</span></code> files has alredy been downloaded. We need to add a link to it in our html</li>
+</ul>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ol-v5.3.0/build/ol.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;ol-v5.3.0/css/ol.css&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Add a link for JQuery JavaScript library</p>
+<ul class="simple">
+<li>We’ll use jQuery to make things like AJAX calls and DOM manipulation a bit easier.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">jquery-3.3.1.min.js</span></code> files has alredy been downloaded. We need to add a link to it in our html</li>
+</ul>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/jquery-3.3.1.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>We need to create a <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> that will contain our Map</p>
+<ul class="simple">
+<li>This <code class="docutils literal notranslate"><span class="pre">div</span></code> will be replaced with the contents of the rendered map.</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> inside of the <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code></li>
+</ul>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mapPlaceholder&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;map&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Then set the size for the map, by adding this to the <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code></p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="p">.</span><span class="nc">map</span> <span class="p">{</span>
+        <span class="k">height</span><span class="p">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="what-your-code-should-look-like">
+<h3>What your code should look like<a class="headerlink" href="#what-your-code-should-look-like" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><img alt="../../_images/open-layers-resources.png" src="../../_images/open-layers-resources.png" />
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="let-s-see-it-in-action">
+<h2>Let’s see it in action<a class="headerlink" href="#let-s-see-it-in-action" title="Permalink to this headline">¶</a></h2>
+<p>Start a web server using <code class="docutils literal notranslate"><span class="pre">python</span></code> using one of the below commands.</p>
+<ul class="simple">
+<li>Open a terminal in the folder where you cloned the starter repo</li>
+<li>Check python version via:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-V</span></code></li>
+</ul>
+</li>
+<li>If Python version returned above is 3.X:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-m</span> <span class="pre">http.server</span> <span class="pre">7070</span></code></li>
+</ul>
+</li>
+<li>If Python version returned above is 2.X:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-m</span> <span class="pre">SimpleHTTPServer</span> <span class="pre">7070</span></code></li>
+</ul>
+</li>
+<li>In a browser go to <code class="docutils literal notranslate"><span class="pre">http://localhost:7070/index.html</span></code><ul>
+<li>You should see a map that includes Germany.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="now-show-a-list-of-airports">
+<h2>Now show a list of airports<a class="headerlink" href="#now-show-a-list-of-airports" title="Permalink to this headline">¶</a></h2>
+<p>Add the following HTML to <code class="docutils literal notranslate"><span class="pre">index.html</span></code></p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;list-all-airports&quot;</span><span class="p">&gt;</span>list airports<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;airports&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>We need to GET the data by making an AJAX request to <code class="docutils literal notranslate"><span class="pre">http://localhost:7070/json/german_airports.geojson</span></code>. For this we will use jQuery. Add
+the below code to <code class="docutils literal notranslate"><span class="pre">script.js</span></code>. Then click the button and see what was logged in the console.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#list-all-airports&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;pulling data&#39;</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#airports&#39;</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">&#39;http://localhost:7070/json/german_airports.geojson&#39;</span><span class="p">,</span> <span class="p">{}).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Now let’s loop over the results and add each feature to the airport list. Edit the onclick handler to append a <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> for each feature returned.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#list-all-airports&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;pulling data&#39;</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#airports&#39;</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">&#39;http://localhost:7070/json/german_airports.geojson&#39;</span><span class="p">,</span> <span class="p">{}).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">json</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#airports&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;li&gt;&#39;</span> <span class="o">+</span> <span class="nx">json</span><span class="p">.</span><span class="nx">features</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">properties</span><span class="p">.</span><span class="nx">dataField</span> <span class="o">+</span> <span class="s1">&#39;&lt;/li&gt;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-airport-layer-to-the-map">
+<h2>Add Airport layer to the map<a class="headerlink" href="#add-airport-layer-to-the-map" title="Permalink to this headline">¶</a></h2>
+<p>Paste this JS into <code class="docutils literal notranslate"><span class="pre">js/script.js</span></code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">vectorSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+    <span class="nx">format</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">(),</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://localhost:7070/json/german_airports.geojson&#39;</span>
+<span class="p">});</span>
+<span class="nx">vectorLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="nx">vectorSource</span><span class="p">,</span>
+    <span class="nx">style</span><span class="o">:</span> <span class="nx">styleFunction</span>
+<span class="p">});</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">vectorLayer</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-airports-when-a-city-is-clicked">
+<h2>Show Airports when a city is clicked<a class="headerlink" href="#show-airports-when-a-city-is-clicked" title="Permalink to this headline">¶</a></h2>
+<p>Let’s add a click handler to the map. First, let’s try it out in the console. Paste the following code in your browser’s dev tools console:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">map</span><span class="p">.</span><span class="nx">forEachFeatureAtPixel</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">pixel</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">,</span> <span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">feature</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Now when you click on the map, it will print that feature to the console.</li>
+<li>Inspect the object to make sure it is what you expected. Next take a look at the documentation for ol.Feature <a class="reference external" href="https://openlayers.org/en/latest/apidoc/ol.Feature.html" target="_blank">https://openlayers.org/en/latest/apidoc/ol.Feature.html<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.<ul>
+<li>How can you access the data on that object?</li>
+</ul>
+</li>
+</ul>
+<p>Try out the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method on <code class="docutils literal notranslate"><span class="pre">ol.Feature</span></code> by pasting this into <code class="docutils literal notranslate"><span class="pre">js/script.js</span></code>. Click on the map and view results in your js console (in your brwoser’s dev tools).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">map</span><span class="p">.</span><span class="nx">forEachFeatureAtPixel</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">pixel</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">,</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;dataField&#39;</span><span class="p">));</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="section" id="example-report-html">
+<h3>Example Report HTML<a class="headerlink" href="#example-report-html" title="Permalink to this headline">¶</a></h3>
+<p>We want to add data about this report to our map dashboard. Here is an example of what we want to show:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;airports&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Aalen-Heidenheim/Elchingen Airport<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>ICAO: EPDA<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Location: Aalen-heidenheim, Germany<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Altitude: 1916<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Time Zone: Europe/Berlin<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>A Second Airpot in Clicked City<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>ICAO2: EPDA2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Location: Aalen-heidenheimXYZ, Germany<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Altitude: 1200<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Time Zone: Europe/Berlin<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>For starters let’s add an empty &lt;ul&gt;&lt;/ul&gt; tag to our index.html file.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;airports&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="javascript-template-literals">
+<h3>JavaScript Template Literals<a class="headerlink" href="#javascript-template-literals" title="Permalink to this headline">¶</a></h3>
+<p>For the next feature we will need to use <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">Javascript Template Literals<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. Template literals example below.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Jasmine&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="o">=</span> <span class="sb">`Template literals start and end with ticks and you can includes variables like so. Hello </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">.</span>
+<span class="sb">You can include &#39; and &quot; inside of the template literals. And you can break into multiple lines.</span>
+<span class="sb">`</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-airport-list-when-map-clicked">
+<h3>Show Airport List when Map Clicked<a class="headerlink" href="#show-airport-list-when-map-clicked" title="Permalink to this headline">¶</a></h3>
+<p>Update the Map onclick code to display. For each feature at a certain pixel, we want to add that feature to the list below the map. OpenLayers will handle some of this work for us via <code class="docutils literal notranslate"><span class="pre">map.forEachFeatureAtPixel()</span></code>. Remember that the features in this case are airports and we are styling them to be displayed as red circles:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#airports&#39;</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span>
+    <span class="nx">map</span><span class="p">.</span><span class="nx">forEachFeatureAtPixel</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">pixel</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">,</span><span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#airports&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="sb">`</span>
+<span class="sb">            &lt;li&gt;</span>
+<span class="sb">                &lt;h3&gt;</span><span class="si">${</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;locationType&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/h3&gt;</span>
+<span class="sb">                &lt;p&gt;ICAO: </span><span class="si">${</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;icao&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/p&gt;&lt;p&gt;Location: </span><span class="si">${</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;dataField&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
+<span class="sb">                &lt;p&gt;Altitude: </span><span class="si">${</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
+<span class="sb">                &lt;p&gt;Time Zone: </span><span class="si">${</span><span class="nx">feature</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;tz&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
+<span class="sb">            &lt;/li&gt;`</span>
+        <span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="click-it">
+<h3>Click it!<a class="headerlink" href="#click-it" title="Permalink to this headline">¶</a></h3>
+<p>Click on the city and be awed at your development skills.</p>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>Invalid JSON will cause the jQuery callback to not fire. If you are having an issue, validate the JSON that you are sending across the wire. Here is a JSON Validator <a class="reference external" href="https://jsonlint.com/" target="_blank">https://jsonlint.com/<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>Invalid GeoJSON will not show up on your map. You will see the data pull back, but you will not see any data displayed. Validate your GeoJSON. Here is a GeoJSON Validator <a class="reference external" href="http://geojson.io/o" target="_blank">http://geojson.io/o<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>If you get the message <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">element</span> <span class="pre">type</span> <span class="pre">&quot;link&quot;</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">terminated</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">matching</span> <span class="pre">end-tag</span> <span class="pre">&quot;&lt;/link&gt;&quot;.</span></code>, then add the following tag:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org/&quot;&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://openlayers.org/en/latest/apidoc/" target="_blank">OpenLayers Docs<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://openlayers.org/en/latest/examples/" target="_blank">OpenLayers Examples<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/walkthroughs/openlayers/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

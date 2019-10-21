@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Walkthrough: Unit Tests &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#slides">Slides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Security, Test-driven development</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Integration testing, dependency injection</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: Postgres, Spring Data, JPA, Hibernate</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: AJAX, Open Layers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#additional-resources">Additional Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/project/index.html">Week 2 - Project Week: Zika Mission Control</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#zika-mission-control">Zika Mission Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-overview">Project Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#bonus-resources">Bonus Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: RESTful web services</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2 Swagger REST framework</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Intro to Elasticsearch</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: More Elasticsearch, Integrating ES with Spring</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: ES2015, ESLint, OpenLayers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#resources">Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/project/index.html">Week 4 - Project Week: Zika Mission Control Part 2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day1/index.html">Week 5 - Day 1: Intro to DevOps/AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day2/index.html">Week 5 - Day 2: More with AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day3/index.html">Week 5 - Day 3: 12 Factor Apps and Auto Scaling</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day4/index.html">Week 5 - Day 4: Gradle, Continuous Integration</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day5/index.html">Week 5 - Day 5: Sonarqube</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/project/index.html">Week 6 - Project Week: Zika Mission Control Part 3</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#new-stuff">New Stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#debrief">Debrief</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#bonus-missions">Bonus Missions</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/project/index.html">Week 8 - Project Week: Zika Mission Control Part 4</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#normalizing-data">Normalizing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#integrating-geoserver">Integrating GeoServer</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html">STUFF WORKS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#week-9-day-3-intro-to-docker">Week 9 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day4/index.html">Week 9 - Day 4: OAuth2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day5/index.html">Week 9 - Day 5: Certificates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Walkthrough: Unit Tests</a><ul>
+<li><a class="reference internal" href="#concept-unit-testing">Concept: Unit Testing</a></li>
+<li><a class="reference internal" href="#fork-clone-and-open-project-in-intellij">Fork, Clone, and Open Project in IntelliJ</a></li>
+<li><a class="reference internal" href="#configure-intellij-for-java-8">Configure IntelliJ for Java 8</a></li>
+<li><a class="reference internal" href="#add-an-empty-test">Add an Empty Test</a></li>
+<li><a class="reference internal" href="#create-a-new-runtime-configuration">Create a New Runtime Configuration</a></li>
+<li><a class="reference internal" href="#write-and-run-our-unit-tests">Write and Run our Unit Tests</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="walkthrough-unit-tests">
+<span id="walkthrough-unittest"></span><h1>Walkthrough: Unit Tests<a class="headerlink" href="#walkthrough-unit-tests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="concept-unit-testing">
+<h2>Concept: Unit Testing<a class="headerlink" href="#concept-unit-testing" title="Permalink to this headline">¶</a></h2>
+<p>A unit is a single, clearly stated behavior. In many cases it will be one funciton, or method.</p>
+<p>A unit test is an automated test that verifies that one unit behaves correctly.</p>
+<p>We will be writing unit tests using JUnit 4 in IntelliJ. Some example code has been provided for us. We will be writing unit tests for the code that currently exists.</p>
+</div>
+<div class="section" id="fork-clone-and-open-project-in-intellij">
+<h2>Fork, Clone, and Open Project in IntelliJ<a class="headerlink" href="#fork-clone-and-open-project-in-intellij" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://gitlab.com/LaunchCodeTraining/car-unit-tests-starter" target="_blank">Fork this repo<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li>Clone your forked version of the repo locally</li>
+<li>Create a new branch for the new unit tests we will be writing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">my-unit-test-solution</span></code></li>
+<li>Open IntelliJ</li>
+<li>Choose <strong>open folder</strong> and navigate to and choose folder <strong>car-unit-test-starter</strong></li>
+</ul>
+</div>
+<div class="section" id="configure-intellij-for-java-8">
+<h2>Configure IntelliJ for Java 8<a class="headerlink" href="#configure-intellij-for-java-8" title="Permalink to this headline">¶</a></h2>
+<p>Before we can write any unit tests we need to configure this project for Java 8.</p>
+<p>Check out the <a class="reference external" href="../../configurations/intellij/" target="_blank">Configure IntelliJ<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> article for detailed steps.</p>
+<dl class="docutils">
+<dt>As a reminder from that configuration article you will need to</dt>
+<dd><ul class="first last simple">
+<li>Set our Project SDK</li>
+<li>Set our Project language level</li>
+<li>Set our Project compiler output</li>
+<li>Mark the main directory as Source Root</li>
+<li>Mark the test directory as Test Sources Root</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="add-an-empty-test">
+<h2>Add an Empty Test<a class="headerlink" href="#add-an-empty-test" title="Permalink to this headline">¶</a></h2>
+<p>We need to create an empty test so that we can create our testing runtime configuration. However, IntelliJ will only find our test class if it has a valid test in the class body.</p>
+<ul class="simple">
+<li>In CarTest.java add an empty test</li>
+</ul>
+<img alt="../../_images/empty-test.png" src="../../_images/empty-test.png" />
+<ul class="simple">
+<li>Add JUnit 4 to your class path (click &#64;Test and then option+enter)</li>
+</ul>
+<img alt="../../_images/junit4-classpath.png" src="../../_images/junit4-classpath.png" />
+<ul class="simple">
+<li>Import Test, and AssertEquals</li>
+</ul>
+<img alt="../../_images/import-assertequals.png" src="../../_images/import-assertequals.png" />
+</div>
+<div class="section" id="create-a-new-runtime-configuration">
+<h2>Create a New Runtime Configuration<a class="headerlink" href="#create-a-new-runtime-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Checkout the <a class="reference external" href="../../configurations/runtime-configuration/" target="_blank">runtime configuration<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> guide for a step-by-step guide for getting your runtime configuration created</p>
+<dl class="docutils">
+<dt>As a reminder from the runtime configuration article you will need to</dt>
+<dd><ul class="first last simple">
+<li>Add a new configuration</li>
+<li>Name the configuration</li>
+<li>Select the class file for our tests</li>
+<li>Apply the configuration</li>
+<li>Run new configuration by clicking the green arrow</li>
+<li>View test results</li>
+</ul>
+</dd>
+</dl>
+<img alt="../../_images/first-test-results.png" src="../../_images/first-test-results.png" />
+<p>Currently our one test passes, because emptyTest is our only test, and it’s checking if 10 is 10, which is true.</p>
+</div>
+<div class="section" id="write-and-run-our-unit-tests">
+<h2>Write and Run our Unit Tests<a class="headerlink" href="#write-and-run-our-unit-tests" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Write tests</li>
+</ul>
+<img alt="../../_images/completed-tests.png" src="../../_images/completed-tests.png" />
+<p>Our first three tests are very similar to one another. They each have a test_car object, and are checking that the gas tank level is correct after instantiating the car, driving the car within the range, and driving the car exceeding the range.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">assertEquals()</span></code> method takes three parameters: The value we want to test, What it’s value should be, and the delta (how much the actual, and expected values can differ and still return true).</p>
+<p>Our fourth test is a little different. We are going to perform an action to our car object, and we are expecting the object to throw an error. In this case we are going to attempt to add gas to our car that exceeds the gas tank size.</p>
+<img alt="../../_images/test-expected-exception.png" src="../../_images/test-expected-exception.png" />
+<p>We are able to expect an exception to be thrown by adding (expected = IllegalArgumentException.class) after our &#64;Test annotation. This is our way of telling Junit 4 that this test should pass if an IllegalArgumentException is thrown at any point during this test.</p>
+<p>We also are calling the addGas method which has not yet been added to the Car class, we will need to add this functionality to run our test.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">fail()</span></code> message will be displayed if the test fails. We have to import the fail method into this class to use it.</p>
+<p>Let’s add the addGas method to our Car class so we can finish this final test.</p>
+<ul class="simple">
+<li>Add the addGas method to Car.java</li>
+</ul>
+<img alt="../../_images/test-add-gas.png" src="../../_images/test-add-gas.png" />
+<ul class="simple">
+<li>Run your tests</li>
+</ul>
+<img alt="../../_images/failed-car-test.png" src="../../_images/failed-car-test.png" />
+<p>My new test failed! In the output I got an unexpected exception. This test was expecting an IllegalArgumentException, but it got an AssertionError execption. This caused my test to fail. Further down in the output log we can see that our <code class="docutils literal notranslate"><span class="pre">fail()</span></code> statement printed out the statement about not being able to add more gas to the gastank than is possible.</p>
+<ul class="simple">
+<li>Refactor our Car class to throw an exception when too much gas is added to the gas tank</li>
+</ul>
+<img alt="../../_images/test-set-gastank-level.png" src="../../_images/test-set-gastank-level.png" />
+<p>We added some code to our setGasTankLevel method that checks if the new gas tank level is greater than the gas tank size, and if it is it throws an IllegalArgumentException.</p>
+<ul class="simple">
+<li>Rerun our tests</li>
+</ul>
+<img alt="../../_images/passed-car-test.png" src="../../_images/passed-car-test.png" />
+<p>This time our test passed, and nothing was printed out to the output log! We have successfully written 4 unit tests in this walkthrough!</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">You can open a TODO window by going to <strong>View</strong> then <strong>Tool Windows</strong> then seelct <strong>TODO</strong> this opens a box at the bottom of IntelliJ showing you all the TODOs in the project.</p>
+</div>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://junit.org/junit4/" target="_blank">JUnit 4 Site<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="ttps://github.com/junit-team/junit4/wiki/Assertions" target="_blank">Examples of Assertions<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/walkthroughs/unit-tests/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

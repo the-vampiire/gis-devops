@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Week 8 - Project Week: Zika Mission Control Part 4 &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="STUFF WORKS" href="../../week09/day3/index.html" />
+    <link rel="prev" title="Week 6 - Project Week: Zika Mission Control Part 3" href="../../week06/project/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#slides">Slides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Security, Test-driven development</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Integration testing, dependency injection</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: Postgres, Spring Data, JPA, Hibernate</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: AJAX, Open Layers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#additional-resources">Additional Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/project/index.html">Week 2 - Project Week: Zika Mission Control</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#zika-mission-control">Zika Mission Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-overview">Project Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#bonus-resources">Bonus Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: RESTful web services</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2 Swagger REST framework</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Intro to Elasticsearch</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: More Elasticsearch, Integrating ES with Spring</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: ES2015, ESLint, OpenLayers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#resources">Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/project/index.html">Week 4 - Project Week: Zika Mission Control Part 2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day1/index.html">Week 5 - Day 1: Intro to DevOps/AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day2/index.html">Week 5 - Day 2: More with AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day3/index.html">Week 5 - Day 3: 12 Factor Apps and Auto Scaling</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day4/index.html">Week 5 - Day 4: Gradle, Continuous Integration</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day5/index.html">Week 5 - Day 5: Sonarqube</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/project/index.html">Week 6 - Project Week: Zika Mission Control Part 3</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#new-stuff">New Stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#debrief">Debrief</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#bonus-missions">Bonus Missions</a></li>
+</ol>
+</li>
+</ol>
+<ol class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Week 8 - Project Week: Zika Mission Control Part 4</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#normalizing-data">Normalizing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integrating-geoserver">Integrating GeoServer</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html">STUFF WORKS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#week-9-day-3-intro-to-docker">Week 9 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day4/index.html">Week 9 - Day 4: OAuth2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day5/index.html">Week 9 - Day 5: Certificates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Week 8 - Project Week: Zika Mission Control Part 4</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#normalizing-data">Normalizing Data</a></li>
+<li><a class="reference internal" href="#setup">Setup</a><ul>
+<li><a class="reference internal" href="#change-virtualbox-port-mapping">Change VirtualBox Port Mapping</a></li>
+<li><a class="reference internal" href="#change-tomcat-port">Change Tomcat Port</a></li>
+<li><a class="reference internal" href="#add-foreign-keys-to-reports">Add foreign keys to reports</a></li>
+<li><a class="reference internal" href="#database-and-layer-setup">Database and Layer Setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#integrating-geoserver">Integrating GeoServer</a><ul>
+<li><a class="reference internal" href="#create-data-store-and-layers-in-geoserver">Create Data Store and Layers in GeoServer</a></li>
+<li><a class="reference internal" href="#updating-openlayers-code">Updating OpenLayers Code</a></li>
+<li><a class="reference internal" href="#bonus-mission">Bonus Mission</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="week-8-project-week-zika-mission-control-part-4">
+<span id="week8-project"></span><h1>Week 8 - Project Week: Zika Mission Control Part 4<a class="headerlink" href="#week-8-project-week-zika-mission-control-part-4" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="../../_static/images/zika_mission_briefing_4.pdf" target="_blank">Read Mission Briefing 4<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>You will be adding GeoServer to your local and deployed application. This will require several steps, including setting up a GeoServer instance, connecting it to a PostGIS store, and creating a new layer from existing data.</p>
+<p>After you have this new system fully set up, you’ll be able to add additional layers in GeoServer and show them using OpenLayers.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Use GeoServer to display the report features.</li>
+<li>Incorporate additional layers using external data (e.g. elevation, temperature, natural earth).</li>
+<li>Deploy your application to AWS, including a EC2 instance running GeoServer.</li>
+</ol>
+</div>
+<div class="section" id="normalizing-data">
+<h2>Normalizing Data<a class="headerlink" href="#normalizing-data" title="Permalink to this headline">¶</a></h2>
+<p>Before we get to integrating GeoServer, we need to do a fair amount of prep work.</p>
+<p>The first change we want to make has to do with normalizing the report data. In the data set that we have been using up to this point, each row of the <code class="docutils literal notranslate"><span class="pre">report</span></code> table has the location stored as a string. This means that locations are repeated for each report in a given location. For example, the value <code class="docutils literal notranslate"><span class="pre">United_States-Puerto_Rico</span></code> shows up in the <code class="docutils literal notranslate"><span class="pre">location</span></code> column of 1216 reports. Rather than have this value repeated, it would be better for each such report to have a foreign key reference to a single location.</p>
+<p>We want to set up the Java code to “normalize” the report and location data. This means that locations and reports will be stored in separate tables, and each report will have a foreign key to the location that it belongs to.</p>
+<p>To accomplish this, we will create a relationship between <code class="docutils literal notranslate"><span class="pre">Report</span></code> and <code class="docutils literal notranslate"><span class="pre">Location</span></code> via a new field, <code class="docutils literal notranslate"><span class="pre">Report.state</span></code>. This will be a many-to-one relationship configured via Hibernate.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">ReportRepository</span></code>, add the following new method:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Report</span><span class="o">&gt;</span> <span class="nf">findByLocationStartingWithIgnoreCase</span><span class="o">(</span><span class="n">String</span> <span class="n">location</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Next, create a <code class="docutils literal notranslate"><span class="pre">ReportController</span></code> class with the following contents:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">* In src/main/java/com/launchcode/gisdevops/</span>
+<span class="cm">*/</span>
+<span class="nd">@Controller</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;/api/report&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReportController</span> <span class="o">{</span>
+
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">ReportRepository</span> <span class="n">reportRepository</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">LocationRepository</span> <span class="n">locationRepository</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">ReportDocumentRepository</span> <span class="n">reportDocumentRepository</span><span class="o">;</span>
+
+    <span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;/assignStates&quot;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">assignStates</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Location</span><span class="o">&gt;</span> <span class="n">locations</span> <span class="o">=</span> <span class="n">locationRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">();</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="n">Location</span> <span class="n">location</span> <span class="o">:</span> <span class="n">locations</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">countryPart</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="na">getCountryNormalized</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">,</span> <span class="s">&quot;_&quot;</span><span class="o">);</span>
+            <span class="n">String</span> <span class="n">statePart</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="na">getStateNormalized</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">,</span> <span class="s">&quot;_&quot;</span><span class="o">);</span>
+            <span class="n">List</span><span class="o">&lt;</span><span class="n">Report</span><span class="o">&gt;</span> <span class="n">matchingReports</span> <span class="o">=</span> <span class="n">reportRepository</span><span class="o">.</span><span class="na">findByLocationStartingWithIgnoreCase</span><span class="o">(</span><span class="n">countryPart</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="n">statePart</span><span class="o">);</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Report</span> <span class="n">report</span> <span class="o">:</span> <span class="n">matchingReports</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">report</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="n">location</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">reportRepository</span><span class="o">.</span><span class="na">saveAll</span><span class="o">(</span><span class="n">matchingReports</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ResponseEntity</span><span class="o">&lt;&gt;(</span><span class="s">&quot;Complete&quot;</span><span class="o">,</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="na">OK</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Take a minute to review these methods. The <code class="docutils literal notranslate"><span class="pre">assignStates</span></code> method will loop over all reports, looking for an appropriate <code class="docutils literal notranslate"><span class="pre">Location</span></code> object for each and saving it in the <code class="docutils literal notranslate"><span class="pre">state</span></code> field of <code class="docutils literal notranslate"><span class="pre">Report</span></code>. (We haven’t created this field yet, so you’ll see a red compiler error.)</p>
+<p>Let’s now create the relationship between reports and locations.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Report</span></code>, add the following field:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ManyToOne</span>
+<span class="kd">private</span> <span class="n">Location</span> <span class="n">state</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Add a getter and setter for this field as well.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Location</span></code>, add the other side of the relationship:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@OneToMany</span>
+<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;state_id&quot;</span><span class="o">)</span>
+<span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Report</span><span class="o">&gt;</span> <span class="n">reports</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</pre></div>
+</div>
+<p>Add a getter and setter for this field too.</p>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s move closer to integrating GeoServer. We need to do a few setup tasks first.</p>
+<div class="section" id="change-virtualbox-port-mapping">
+<h3>Change VirtualBox Port Mapping<a class="headerlink" href="#change-virtualbox-port-mapping" title="Permalink to this headline">¶</a></h3>
+<p>Our GeoServer virtual machine has some port mappings set up that allow the “host” (our macOS) and the “guest” (the virtual Linux machine running GeoServer) to communicate. One of these will conflict with our local Postgres server.</p>
+<p>From VirtualBox, right-click on your GeoServer VM and select <em>Settings</em>. Choose the <em>Network</em> tab, then <em>Adapter 1</em>. Expande the <em>Advanced</em> section and click the <em>Port Forwarding</em> button. Change the <em>Host Port</em> value for the <strong>postgres</strong> entry from <code class="docutils literal notranslate"><span class="pre">5432</span></code> to <code class="docutils literal notranslate"><span class="pre">5433</span></code>.</p>
+<img alt="../../_images/vbox-port-mapping.png" src="../../_images/vbox-port-mapping.png" />
+</div>
+<div class="section" id="change-tomcat-port">
+<h3>Change Tomcat Port<a class="headerlink" href="#change-tomcat-port" title="Permalink to this headline">¶</a></h3>
+<p>Tomcat is the Java application server that Spring Boot runs within. Its default port is 8080.</p>
+<p>Before we can run our Spring app, we need to configure Tomcat to run on a port other than 8080. Recall that we set up the GeoServer container to bind to port 8080 on our localhost. We can easily adjust the port that Tomcat/Spring Boot will run on by adding <code class="docutils literal notranslate"><span class="pre">server.port=9090</span></code> to <code class="docutils literal notranslate"><span class="pre">application.properties</span></code>.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">You may also need to change the port referenced in <code class="docutils literal notranslate"><span class="pre">script.js</span></code>. <code class="docutils literal notranslate"><span class="pre">url:</span> <span class="pre">'http://localhost:9090/api/es/report/?date=2016-03-05'</span></code>. Another solution for this is to use a relative path <code class="docutils literal notranslate"><span class="pre">url:</span> <span class="pre">'/api/es/report/?date=2016-03-05'</span></code></p>
+</div>
+<p>Start up your Spring app. Verify that the app started up cleanly.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">From now on, your Spring Boot app will be hosted at <code class="docutils literal notranslate"><span class="pre">localhost:9090</span></code>. Be sure to use the new port when viewing your app!</p>
+</div>
+</div>
+<div class="section" id="add-foreign-keys-to-reports">
+<h3>Add foreign keys to reports<a class="headerlink" href="#add-foreign-keys-to-reports" title="Permalink to this headline">¶</a></h3>
+<p>We want to set up explicit relationships between reports and locations in the database. To do this, we’ve created an endpoint to help us. Calling this endpoint will result in a <code class="docutils literal notranslate"><span class="pre">Location</span></code> object being found for each <code class="docutils literal notranslate"><span class="pre">Report</span></code> object, and being attached to the report via the <code class="docutils literal notranslate"><span class="pre">state</span></code> field. This creates a reference/foreign key relationship.</p>
+<p>Start up your Spring app and hit the endpoint from the command line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ curl -XPOST http://localhost:9090/api/report/assignStates
+</pre></div>
+</div>
+<p>This will take a few minutes to run. When the request is complete, all <code class="docutils literal notranslate"><span class="pre">Report</span></code> objects for which there is a corresponding <code class="docutils literal notranslate"><span class="pre">Location</span></code> will have the relationship stored as a foreign key in the <code class="docutils literal notranslate"><span class="pre">report.state_id</span></code> column.</p>
+</div>
+<div class="section" id="database-and-layer-setup">
+<h3>Database and Layer Setup<a class="headerlink" href="#database-and-layer-setup" title="Permalink to this headline">¶</a></h3>
+<p>Normalizing our application data in PostGIS is good for our Java app, but we need to do a bit of additional work to get data in the data in a format that makes it easily usable by GeoServer.</p>
+<p>In particular, we will create some views that pull in data from different tables that we want to be available as features. These views will allow us to create a layer in GeoServer that will allow us to query location geometries with case totals by date.</p>
+<p>Using either <code class="docutils literal notranslate"><span class="pre">psql</span></code> or a Postgres graphical client to connect to your PostGIS database. Create two views:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">view</span> <span class="n">cases_by_state_and_date</span> <span class="k">AS</span>
+  <span class="k">SELECT</span> <span class="n">state_id</span><span class="p">,</span><span class="n">report_date</span><span class="p">,</span><span class="k">sum</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">AS</span> <span class="n">cases</span> <span class="k">FROM</span> <span class="n">report</span>
+  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">state_id</span><span class="p">,</span><span class="n">report_date</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">view</span> <span class="n">states_with_cases_by_date</span> <span class="k">AS</span>
+  <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">location</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">cases_by_state_and_date</span> <span class="k">ON</span> <span class="k">location</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">cases_by_state_and_date</span><span class="p">.</span><span class="n">state_id</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="integrating-geoserver">
+<h2>Integrating GeoServer<a class="headerlink" href="#integrating-geoserver" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-data-store-and-layers-in-geoserver">
+<h3>Create Data Store and Layers in GeoServer<a class="headerlink" href="#create-data-store-and-layers-in-geoserver" title="Permalink to this headline">¶</a></h3>
+<p>For this step, we’ll need to know the IP address of our host system (macOS) as seen by the GeoServer VM. To find this, first SSH into the VM:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ssh -p 2020 root@localhost
+</pre></div>
+</div>
+<p>Recall that the password for the root account on the server is <strong>boundless123</strong>.</p>
+<p>One you have a shell within the VM, run <code class="docutils literal notranslate"><span class="pre">netstat</span> <span class="pre">-rn</span></code>. You will see something like this:</p>
+<img alt="../../_images/netstat-rn.png" src="../../_images/netstat-rn.png" />
+<p>Look for the row with <code class="docutils literal notranslate"><span class="pre">0.0.0.0</span></code> in the Destination column. The Gateway value of that row (in this case, <code class="docutils literal notranslate"><span class="pre">10.0.2.2</span></code>) is the IP address that you would use to communicate with the host machine from within the virtual machine. Make a note of the IP. We’ll use it shortly.</p>
+<ul class="simple">
+<li>Create a workspace in GeoServer (we recommend <code class="docutils literal notranslate"><span class="pre">lc/https://launchcode.org</span></code>)</li>
+<li>Create a PostGIS data store<ul>
+<li>Use <code class="docutils literal notranslate"><span class="pre">zika</span></code> as the database name and the host IP that you looked up a few minutes ago (<code class="docutils literal notranslate"><span class="pre">10.0.2.2</span></code> in our example) as the hostname</li>
+</ul>
+</li>
+<li>Create a new layer from the <code class="docutils literal notranslate"><span class="pre">states_with_cases_by_date</span></code> table<ul>
+<li>Make sure Native and Declared SRS are set to <strong>EPSG:4326</strong></li>
+<li>For Native Bounding Box, click on <strong>Compute from data</strong></li>
+<li>For Lat/Lon Bounding Box, click on <strong>Compute from native bounds</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="updating-openlayers-code">
+<h3>Updating OpenLayers Code<a class="headerlink" href="#updating-openlayers-code" title="Permalink to this headline">¶</a></h3>
+<p>Following the <a class="reference external" href="https://openlayers.org/en/latest/examples/vector-wfs-getfeature.html" target="_blank">OpenLayers example<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> for querying <code class="docutils literal notranslate"><span class="pre">GetFeature</span></code>, update your OpenLayers code to query GeoServer to get locations with report totals by date. You’ll need to use the <code class="docutils literal notranslate"><span class="pre">ol.format.filter.equalTo</span></code> filter.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">For the geometries in your layer to be rendered properly on the map, the spatial reference systems (SRS) must match. You can control the SRS that is used to generate the returned features using the <code class="docutils literal notranslate"><span class="pre">srsName</span></code> parameter when create the request in OpenLayers.</p>
+</div>
+</div>
+<div class="section" id="bonus-mission">
+<h3>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h3>
+<p>When you complete all of these instructions, check out the <a class="reference external" href="https://github.com/ngageoint/elasticgeo" target="_blank">ElasticGeo Plugin<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. It is an Elasticsearch plugin that allows you to integrate Elasticsearch into GeoServer. The great thing is that you can do Elasticsearch queries directly through GeoServer via WFS calls. Here are the setup instructions and instructions on how to make the calls: <a class="reference external" href="https://github.com/ngageoint/elasticgeo/blob/master/gs-web-elasticsearch/doc/index.rst" target="_blank">ElasticGeo Instructions<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/week08/project/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Walkthrough: PostgreSQL &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#slides">Slides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Security, Test-driven development</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Integration testing, dependency injection</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: Postgres, Spring Data, JPA, Hibernate</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: AJAX, Open Layers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#additional-resources">Additional Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/project/index.html">Week 2 - Project Week: Zika Mission Control</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#zika-mission-control">Zika Mission Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-overview">Project Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#bonus-resources">Bonus Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: RESTful web services</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2 Swagger REST framework</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Intro to Elasticsearch</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: More Elasticsearch, Integrating ES with Spring</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: ES2015, ESLint, OpenLayers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#resources">Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/project/index.html">Week 4 - Project Week: Zika Mission Control Part 2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day1/index.html">Week 5 - Day 1: Intro to DevOps/AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day2/index.html">Week 5 - Day 2: More with AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day3/index.html">Week 5 - Day 3: 12 Factor Apps and Auto Scaling</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day4/index.html">Week 5 - Day 4: Gradle, Continuous Integration</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day5/index.html">Week 5 - Day 5: Sonarqube</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/project/index.html">Week 6 - Project Week: Zika Mission Control Part 3</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#new-stuff">New Stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#debrief">Debrief</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#bonus-missions">Bonus Missions</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/project/index.html">Week 8 - Project Week: Zika Mission Control Part 4</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#normalizing-data">Normalizing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#integrating-geoserver">Integrating GeoServer</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html">STUFF WORKS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#week-9-day-3-intro-to-docker">Week 9 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day4/index.html">Week 9 - Day 4: OAuth2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day5/index.html">Week 9 - Day 5: Certificates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Walkthrough: PostgreSQL</a><ul>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#concepts">Concepts</a></li>
+<li><a class="reference internal" href="#let-s-run-some-postgres-commands">Let’s Run Some Postgres Commands</a><ul>
+<li><a class="reference internal" href="#create-a-database">Create a Database</a></li>
+<li><a class="reference internal" href="#create-a-schema">Create a Schema</a></li>
+<li><a class="reference internal" href="#create-a-table">Create a Table</a></li>
+<li><a class="reference internal" href="#create-record-insert-into">Create Record - Insert Into</a></li>
+<li><a class="reference internal" href="#read-record-select">Read Record - Select</a></li>
+<li><a class="reference internal" href="#alter-table">Alter Table</a></li>
+<li><a class="reference internal" href="#update-record-s">Update Record(s)</a></li>
+<li><a class="reference internal" href="#delete-record-s">Delete Record(s)</a></li>
+<li><a class="reference internal" href="#foreign-key">Foreign Key</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="walkthrough-postgresql">
+<span id="postgres-walkthrough"></span><h1>Walkthrough: PostgreSQL<a class="headerlink" href="#walkthrough-postgresql" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Check that you have postgres installed by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">postgres</span> <span class="pre">--version</span></code> into your terminal</li>
+<li>Check that you have docker installed by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">--version</span></code></li>
+<li>Check that you have a running docker container for psql by typing <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code></li>
+</ul>
+<p>If you are missing any of the three things above please fix them before we continue with the walkthrough.</p>
+<ul class="simple">
+<li><a class="reference internal" href="../../installations/postgres/index.html#postgres"><span class="std std-ref">Installation: PostgreSQL</span></a></li>
+<li><a class="reference internal" href="../../installations/docker/index.html#docker"><span class="std std-ref">Installation: Docker</span></a></li>
+<li><a class="reference internal" href="../../installations/docker-psql/index.html#docker-psql"><span class="std std-ref">Installation: Docker PSQL Container</span></a></li>
+</ul>
+</div>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Database</li>
+<li>Schema</li>
+<li>Table</li>
+<li>Record</li>
+<li>CRUD – Create, Read, Update, Delete</li>
+<li>Primary Key</li>
+<li>Foreign Key</li>
+</ul>
+</div>
+<div class="section" id="let-s-run-some-postgres-commands">
+<h2>Let’s Run Some Postgres Commands<a class="headerlink" href="#let-s-run-some-postgres-commands" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Connect to PSQL interactive terminal <code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">-h</span> <span class="pre">IP_ADDRESS</span> <span class="pre">-p</span> <span class="pre">PORT</span> <span class="pre">-U</span> <span class="pre">USER_NAME</span> <span class="pre">-d</span> <span class="pre">DATABASE_NAME</span></code></li>
+</ul>
+<div class="section" id="create-a-database">
+<h3>Create a Database<a class="headerlink" href="#create-a-database" title="Permalink to this headline">¶</a></h3>
+<p>A database is a collection of schemas and tables. A database may have any number of schemas, and those schemas may have any number of tables. Tables may, or may not have various relationships with other tables. One database will not have any relationship with any other database. In essence databases are isolated. One database cannot communicate with any other databases.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">DATABASE</span> <span class="pre">sports;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">\l</span></code> – command to list all databases</li>
+<li><code class="docutils literal notranslate"><span class="pre">\c</span> <span class="pre">sports</span></code> – command to connect to the new sports database</li>
+</ul>
+</div>
+<div class="section" id="create-a-schema">
+<h3>Create a Schema<a class="headerlink" href="#create-a-schema" title="Permalink to this headline">¶</a></h3>
+<p>A schema is a collection of tables, relationships, data types, functions, and operators. Schemas are not isolated like databases are. One schema can reference other schemas in the same database.</p>
+<dl class="docutils">
+<dt>Other benefits of schemas include:</dt>
+<dd><ul class="first last simple">
+<li>Multiple users can access the same database without conflict</li>
+<li>Better organization of databases</li>
+<li>Third party application management</li>
+</ul>
+</dd>
+<dt>Let’s create a schema, and view it.</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">SCHEMA</span> <span class="pre">baseball;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">\dn</span></code> – command to list all schemas on the currently connected database</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="create-a-table">
+<h3>Create a Table<a class="headerlink" href="#create-a-table" title="Permalink to this headline">¶</a></h3>
+<p>A table has columns that contain a column name, and a data type. Some columns have constraints which allow us to add some additional rules to our table. <code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">null</span></code>, <code class="docutils literal notranslate"><span class="pre">Unique</span></code>, <code class="docutils literal notranslate"><span class="pre">Primary</span> <span class="pre">Key</span></code>, and <code class="docutils literal notranslate"><span class="pre">Foreign</span> <span class="pre">Key</span></code> are examples of constraints. Using the <code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">null</span></code> constraint requires that column must contain data when a record is being inserted into the table.</p>
+<p>Each individual piece of data added to a table is called a record.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">baseball.teams</span> <span class="pre">(id</span> <span class="pre">SERIAL,</span> <span class="pre">name</span> <span class="pre">varchar(50),</span> <span class="pre">league</span> <span class="pre">varchar(25),</span> <span class="pre">PRIMARY</span> <span class="pre">KEY</span> <span class="pre">(id));</span></code> – create a new table on the baseball schema with three columns: id, name, and league</li>
+<li><code class="docutils literal notranslate"><span class="pre">\dt</span> <span class="pre">baseball.*;</span></code> – command to list all tables on the baseball schema</li>
+</ul>
+<p>We are using the PRIMARY KEY constraint on the id column. A <strong>primary key</strong> is the unique identifier for a record. In this example our Primary Key is the SERIAL type. The SERIAL type is incrementing integers starting at 1. Every time a new record is added to this table, the next integer will be assigned as it’s primary key.</p>
+</div>
+<div class="section" id="create-record-insert-into">
+<h3>Create Record - Insert Into<a class="headerlink" href="#create-record-insert-into" title="Permalink to this headline">¶</a></h3>
+<p>We can create records, by inserting them into a table.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">baseball.teams(name,</span> <span class="pre">league)</span> <span class="pre">VALUES</span> <span class="pre">('St.</span> <span class="pre">Louis</span> <span class="pre">Cardinals',</span> <span class="pre">'National');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code></li>
+</ul>
+<p>We can insert as many records as we want with one INSERT INTO statement.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">baseball.teams(name,</span> <span class="pre">league)</span> <span class="pre">VALUES</span> <span class="pre">('Washington</span> <span class="pre">Nationals',</span> <span class="pre">'National'),</span> <span class="pre">('Chicago</span> <span class="pre">Cubs',</span> <span class="pre">'National'),</span> <span class="pre">('New</span> <span class="pre">York</span> <span class="pre">Mets',</span> <span class="pre">'National'),</span> <span class="pre">('New</span> <span class="pre">York</span> <span class="pre">Yankees',</span> <span class="pre">'American');</span></code></li>
+</ul>
+</div>
+<div class="section" id="read-record-select">
+<h3>Read Record - Select<a class="headerlink" href="#read-record-select" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code> – SELECT all the columns from all the teams</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">name</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code> – SELECT only the name column from all the teams</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">league='National';</span></code> – SELECT all the columns from all the teams in the ‘National’ league</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">name</span> <span class="pre">FROM</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">league='National';</span></code> – SELECT only the name column from teams in the ‘National’ league</li>
+</ul>
+</div>
+<div class="section" id="alter-table">
+<h3>Alter Table<a class="headerlink" href="#alter-table" title="Permalink to this headline">¶</a></h3>
+<p>A table can be changed. We can add, or drop columns, or change constraints.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">baseball.teams</span> <span class="pre">ADD</span> <span class="pre">COLUMN</span> <span class="pre">dvsn</span> <span class="pre">VARCHAR(10);</span></code> – Add the ‘dvsn’ column to baseball.teams</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">baseball.teams</span> <span class="pre">DROP</span> <span class="pre">COLUMN</span> <span class="pre">IF</span> <span class="pre">EXISTS</span> <span class="pre">dvsn</span></code>; – Let’s drop that change, and rename it division</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">baseball.teams</span> <span class="pre">ADD</span> <span class="pre">COLUMN</span> <span class="pre">division</span> <span class="pre">VARCHAR(10);</span></code> – Add the ‘division’ column to baseball.teams</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code></li>
+</ul>
+</div>
+<div class="section" id="update-record-s">
+<h3>Update Record(s)<a class="headerlink" href="#update-record-s" title="Permalink to this headline">¶</a></h3>
+<p>We can update the individual records in our table with the UPDATE statement. Each UPDATE statement must contain a SET statement which defines which column(s) will be updated, and a WHERE clause which defines which records will be updated.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">baseball.teams</span> <span class="pre">SET</span> <span class="pre">division='Central'</span> <span class="pre">WHERE</span> <span class="pre">name='St.</span> <span class="pre">Louis</span> <span class="pre">Cardinals';</span></code> – Update the record that matches the WHERE clause</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">baseball.teams</span> <span class="pre">SET</span> <span class="pre">division='East'</span> <span class="pre">WHERE</span> <span class="pre">name='Washington</span> <span class="pre">Nationals'</span> <span class="pre">OR</span> <span class="pre">name='New</span> <span class="pre">York</span> <span class="pre">Mets'</span> <span class="pre">OR</span> <span class="pre">name='New</span> <span class="pre">York</span> <span class="pre">Yankees';</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">baseball.teams</span> <span class="pre">SET</span> <span class="pre">divison='Central'</span> <span class="pre">WHERE</span> <span class="pre">name='Chicago</span> <span class="pre">Cubs';</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code></li>
+</ul>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Any record that matches the WHERE clause will be updated!</p>
+</div>
+</div>
+<div class="section" id="delete-record-s">
+<h3>Delete Record(s)<a class="headerlink" href="#delete-record-s" title="Permalink to this headline">¶</a></h3>
+<p>We can also delete individual records. Before we do let’s add a team that no longer plays in the MLB, so we can delete them.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">baseball.teams(name,</span> <span class="pre">league)</span> <span class="pre">VALUES</span> <span class="pre">('St.</span> <span class="pre">Louis</span> <span class="pre">Brown</span> <span class="pre">Stockings',</span> <span class="pre">'National');</span></code> – Adding a team we are about to delete</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">FROM</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">id=6;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams;</span></code></li>
+</ul>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Any record that matches the WHERE clause will be deleted! Since we deleted by the id, which is a primary key we are ensuring that only 1 record is affected.</p>
+</div>
+</div>
+<div class="section" id="foreign-key">
+<h3>Foreign Key<a class="headerlink" href="#foreign-key" title="Permalink to this headline">¶</a></h3>
+<p>We recently learned that a Primary Key is the unique identifier for one record in a table. A Foreign Key is a reference to another record on another table.</p>
+<p>What if we were to create a new table called baseball.players and filled it with various MLB players. It would be nice to include data about the team the player currently plays for. However in the MLB players are traded, retire, enter Free Agency, etc, and their team affiliations change. Instead of changing all of that data for each player every time a team change happens we should use the data that already exists in the baseball.teams table.</p>
+<p>We can do this by creating a reference to the baseball.teams table within our new table.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">baseball.players</span> <span class="pre">(id</span> <span class="pre">SERIAL</span> <span class="pre">PRIMARY</span> <span class="pre">KEY,</span> <span class="pre">team_id</span> <span class="pre">INTEGER</span> <span class="pre">REFERENCES</span> <span class="pre">baseball.teams(id),</span> <span class="pre">first_name</span> <span class="pre">VARCHAR(50),</span> <span class="pre">last_name</span> <span class="pre">VARCHAR(50));</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.players;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">baseball.players</span> <span class="pre">(team_id,</span> <span class="pre">first_name,</span> <span class="pre">last_name)</span> <span class="pre">VALUES</span> <span class="pre">(1,</span> <span class="pre">'Albert',</span> <span class="pre">'Pujols'),</span> <span class="pre">(1,</span> <span class="pre">'Yadier',</span> <span class="pre">'Molina'),</span> <span class="pre">(5,</span> <span class="pre">'Alex',</span> <span class="pre">'Rodriguez');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.players;</span></code></li>
+</ul>
+<p>Now we can join these tables together, and view it all at the same time.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.teams,</span> <span class="pre">baseball.players</span> <span class="pre">WHERE</span> <span class="pre">baseball.teams.id=baseball.players.team_id;</span></code> – view team info first</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.players,</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">baseball.players.team_id=baseball.teams.id;</span></code> – view player info first</li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.players,</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">baseball.players.team_id=baseball.teams.id</span> <span class="pre">AND</span> <span class="pre">baseball.players.team_id=1;</span></code> – only select players on the St. Louis Cardinals</li>
+</ul>
+<p>Albert Pujols signed with the Los Angeles Angels after playing for the St. Louis Cardinals, so we need to change his <code class="docutils literal notranslate"><span class="pre">team_id</span></code>.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span> <span class="pre">baseball.teams(name,</span> <span class="pre">league,</span> <span class="pre">division)</span> <span class="pre">VALUES</span> <span class="pre">('Los</span> <span class="pre">Angeles</span> <span class="pre">Angels',</span> <span class="pre">'American',</span> <span class="pre">'West');</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">id</span> <span class="pre">from</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">name='Los</span> <span class="pre">Angeles</span> <span class="pre">Angels';</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">id</span> <span class="pre">from</span> <span class="pre">baseball.players</span> <span class="pre">WHERE</span> <span class="pre">first_name='Albert'</span> <span class="pre">AND</span> <span class="pre">last_name='Pujols';</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">baseball.players</span> <span class="pre">SET</span> <span class="pre">team_id=7</span> <span class="pre">WHERE</span> <span class="pre">id=1;</span></code></li>
+</ul>
+<p>Now when we select all the players on the Cardinals roster we don’t see Albert Pujols, because his <code class="docutils literal notranslate"><span class="pre">team_id</span></code> changed.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.players,</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">baseball.players.team_id=baseball.teams.id</span> <span class="pre">AND</span> <span class="pre">baseball.players.team_id=1;</span></code></li>
+</ul>
+<p>When we look at all players with team info we can see the data associated with Albert Pujols has changed. Albert Pujols is now refrencing the Los Angeles Angels.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">baseball.players,</span> <span class="pre">baseball.teams</span> <span class="pre">WHERE</span> <span class="pre">baseball.players.team_id=baseball.teams.id;</span></code></li>
+</ul>
+<p>When a column references another tables PRIMARY KEY we call it a FOREIGN KEY. In the example we have worked on so far <code class="docutils literal notranslate"><span class="pre">team_id</span></code> on the baseball.players table is a Foreign Key that references the Primary Key on the baseball.teams table.</p>
+</div>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>We have barely touched the surface of Postgres, or SQL. You can find more information by reading the <a class="reference external" href="https://www.postgresql.org/docs/" target="_blank">Postgres documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>We have covered everything that you will need to know for this class, but if you are hungry for more you should research JOIN statements.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/walkthroughs/postgress/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

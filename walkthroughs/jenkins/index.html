@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Walkthrough: Jenkins &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#slides">Slides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Security, Test-driven development</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Integration testing, dependency injection</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: Postgres, Spring Data, JPA, Hibernate</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: AJAX, Open Layers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#additional-resources">Additional Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/project/index.html">Week 2 - Project Week: Zika Mission Control</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#zika-mission-control">Zika Mission Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-overview">Project Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#bonus-resources">Bonus Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: RESTful web services</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2 Swagger REST framework</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Intro to Elasticsearch</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: More Elasticsearch, Integrating ES with Spring</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: ES2015, ESLint, OpenLayers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#resources">Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/project/index.html">Week 4 - Project Week: Zika Mission Control Part 2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day1/index.html">Week 5 - Day 1: Intro to DevOps/AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day2/index.html">Week 5 - Day 2: More with AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day3/index.html">Week 5 - Day 3: 12 Factor Apps and Auto Scaling</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day4/index.html">Week 5 - Day 4: Gradle, Continuous Integration</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day5/index.html">Week 5 - Day 5: Sonarqube</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/project/index.html">Week 6 - Project Week: Zika Mission Control Part 3</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#new-stuff">New Stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#debrief">Debrief</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#bonus-missions">Bonus Missions</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/project/index.html">Week 8 - Project Week: Zika Mission Control Part 4</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#normalizing-data">Normalizing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#integrating-geoserver">Integrating GeoServer</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html">STUFF WORKS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#week-9-day-3-intro-to-docker">Week 9 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day4/index.html">Week 9 - Day 4: OAuth2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day5/index.html">Week 9 - Day 5: Certificates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Walkthrough: Jenkins</a><ul>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#our-continous-integration-goals">Our Continous Integration Goals</a></li>
+<li><a class="reference internal" href="#install-and-configure-jenkins">Install and Configure Jenkins</a><ul>
+<li><a class="reference internal" href="#configure-jenkins">Configure Jenkins</a></li>
+<li><a class="reference internal" href="#install-plugins">Install Plugins</a></li>
+<li><a class="reference internal" href="#create-a-jenkins-user">Create a Jenkins User</a></li>
+<li><a class="reference internal" href="#login-to-jenkins">Login to Jenkins</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-project-to-compile-airwaze">Create Project to Compile Airwaze</a><ul>
+<li><a class="reference internal" href="#configure-the-compile-project">Configure the Compile Project</a></li>
+<li><a class="reference internal" href="#let-s-build-it-and-see-what-happens">Let’s Build It and See What Happens</a></li>
+<li><a class="reference internal" href="#we-need-to-install-a-plugin">We Need to Install a Plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-test-createjar-and-deliver-projects">Create Test, CreateJar, and Deliver Projects</a></li>
+<li><a class="reference internal" href="#edit-the-compile-project">Edit the Compile Project</a><ul>
+<li><a class="reference internal" href="#configure-test-project">Configure Test Project</a></li>
+<li><a class="reference internal" href="#run-the-compile-project-which-runs-the-test-project">Run the Compile Project, which runs the Test Project</a></li>
+<li><a class="reference internal" href="#configure-the-tests-results-to-be-published-automatically">Configure the Tests Results to be Published Automatically</a></li>
+<li><a class="reference internal" href="#configure-createjar-project">Configure CreateJar Project</a></li>
+<li><a class="reference internal" href="#setup-s3-bucket-needed-so-we-can-configure-the-next-project">Setup S3 Bucket (Needed so we can configure the next project)</a></li>
+<li><a class="reference internal" href="#configure-deliver-project">Configure Deliver Project</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#that-s-it">That’s It!</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="walkthrough-jenkins">
+<span id="id1"></span><h1>Walkthrough: Jenkins<a class="headerlink" href="#walkthrough-jenkins" title="Permalink to this headline">¶</a></h1>
+<p>Follow along with the instructor as we configure Jenkins.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>For this to work your Airwaze tests need to pass.</p>
+<ul class="simple">
+<li>Open your Airwaze project and run the tests</li>
+<li>If they don’t pass, then fix them ;)</li>
+</ul>
+</div>
+<div class="section" id="our-continous-integration-goals">
+<h2>Our Continous Integration Goals<a class="headerlink" href="#our-continous-integration-goals" title="Permalink to this headline">¶</a></h2>
+<p>After a branch/story is merged into our <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. We want…</p>
+<ol class="arabic simple">
+<li>Make sure the master branch still compiles after the merge</li>
+<li>Make sure the tests still pass</li>
+<li>Deliver a <code class="docutils literal notranslate"><span class="pre">.jar</span></code> file that is ready to be deployed</li>
+</ol>
+</div>
+<div class="section" id="install-and-configure-jenkins">
+<h2>Install and Configure Jenkins<a class="headerlink" href="#install-and-configure-jenkins" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Go to <a class="reference external" href="https://jenkins.io/download/" target="_blank">jenkins home page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</li>
+<li><p class="first">Download jenkins war from  by clicking <strong>Generic Java War</strong>  (note: scroll to the bottom of the page)</p>
+<blockquote>
+<div><img alt="../../_images/download-jenkins.png" src="../../_images/download-jenkins.png" />
+</div></blockquote>
+</li>
+<li><p class="first">Move <code class="docutils literal notranslate"><span class="pre">jenkins.war</span></code> to folder <code class="docutils literal notranslate"><span class="pre">~/jenkins</span></code></p>
+</li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir ~/jenkins
+$ mv ~/Downloads/jenkins.war ~/jenkins
+</pre></div>
+</div>
+<ul class="simple">
+<li>Now start jenkins via terminal</li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ java -jar ~/jenkins/jenkins.war --httpPort=9090
+</pre></div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Normally you would not install jenkins on your dev machine. You would isntall it on a server that would be continsouly running so that it could react to a commit at anytime.</p>
+</div>
+<div class="section" id="configure-jenkins">
+<h3>Configure Jenkins<a class="headerlink" href="#configure-jenkins" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Copy the password or access the file listed in the terminal and copy the password inside it</li>
+</ul>
+<img alt="../../_images/jenkins-password.png" src="../../_images/jenkins-password.png" />
+<ul class="simple">
+<li>Go to <a class="reference external" href="http://localhost:9090" target="_blank">http://localhost:9090<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li>You should see screen asking for an admin key</li>
+<li>Paste that key into the input box</li>
+</ul>
+</div>
+<div class="section" id="install-plugins">
+<h3>Install Plugins<a class="headerlink" href="#install-plugins" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Click install suggested plugins (this will take a couple minutes)</li>
+</ul>
+</div>
+<div class="section" id="create-a-jenkins-user">
+<h3>Create a Jenkins User<a class="headerlink" href="#create-a-jenkins-user" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>This will be how you login to jenkins going forward</li>
+<li>Be sure to remember the username and password</li>
+<li>All fields are required</li>
+<li>Click <strong>Save and Continue</strong></li>
+<li>Click <strong>Save</strong></li>
+<li>Click <strong>Start using Jenkins</strong><ul>
+<li>You may have to stop Jenkins and restart it</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="login-to-jenkins">
+<h3>Login to Jenkins<a class="headerlink" href="#login-to-jenkins" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Enter the username and password you just created</li>
+</ul>
+</div>
+</div>
+<div class="section" id="create-project-to-compile-airwaze">
+<h2>Create Project to Compile Airwaze<a class="headerlink" href="#create-project-to-compile-airwaze" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Click <strong>New Item</strong></li>
+<li>Enter name <code class="docutils literal notranslate"><span class="pre">Airwaze</span> <span class="pre">Compile</span></code></li>
+<li>Click <strong>Freestyle Project</strong></li>
+<li>Click <strong>Ok</strong> at bottom</li>
+</ul>
+<div class="section" id="configure-the-compile-project">
+<h3>Configure the Compile Project<a class="headerlink" href="#configure-the-compile-project" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>In <strong>Source Code Management</strong> click <strong>Git</strong></li>
+<li>Post your SSH gitlab repo url into <strong>Repository URL</strong>. Example: <a class="reference external" href="mailto:git&#37;&#52;&#48;gitlab&#46;com" target="_blank">git<span>&#64;</span>gitlab<span>&#46;</span>com<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>:welzie/airwaze-studio.git</li>
+<li>Make sure you the branch you want to compile is in the <strong>Branch Specifier</strong> field</li>
+<li>Go to the <strong>Build Triggers</strong> section</li>
+<li>Select <strong>Poll SCM</strong> and enter <code class="docutils literal notranslate"><span class="pre">H/5</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*</span></code> into the <strong>Schedule</strong> input</li>
+<li>Go to the <strong>Build</strong> section</li>
+<li>Click <strong>Add build step</strong></li>
+<li>Click <strong>Invoke Gradle script</strong></li>
+<li>Select <strong>Use Graddle Wrapper</strong></li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">clean</span> <span class="pre">compileJava</span></code> into the <strong>Tasks</strong> input</li>
+<li>Click <strong>Save</strong><ul>
+<li>You will be taken to the <strong>Project Airwaze Compile</strong> page</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="let-s-build-it-and-see-what-happens">
+<h3>Let’s Build It and See What Happens<a class="headerlink" href="#let-s-build-it-and-see-what-happens" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Can we build it? Yes we can!</li>
+<li>Click <strong>Build Now</strong> in the left menu<ul>
+<li>The #1 build can be seen running in the build window</li>
+</ul>
+</li>
+<li>Click on the <strong>#1</strong> in the <strong>Build History</strong> when the build has finished<ul>
+<li>You will be taken to the <strong>Build #1</strong> page</li>
+<li>This page has all the details for what happened on this build</li>
+</ul>
+</li>
+<li>Click on <strong>Console Output</strong> in the left menu<ul>
+<li>Here you can see exactly what commands were executed</li>
+</ul>
+</li>
+<li>Click <strong>Airwaze Compile</strong> in the top menu under the Jenkins logo<ul>
+<li>This will take you back to the Project page</li>
+<li>On the project page you can run another build or see the history for other builds</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="we-need-to-install-a-plugin">
+<h3>We Need to Install a Plugin<a class="headerlink" href="#we-need-to-install-a-plugin" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Click <strong>Jenkins</strong> in the top menu, the menu below the Jenkins logo</li>
+<li>Click <strong>Manage Jenkins</strong> on the left</li>
+<li>Click <strong>Manage Plugins</strong> on the right</li>
+<li>Click <strong>Available</strong></li>
+<li>Enter <strong>Parameterized Trigger</strong> in search box</li>
+<li>Check the checkbox next to the one result that matches</li>
+<li>Click Install <strong>Parameterized Trigger plugin</strong> without restarting</li>
+<li>Click <strong>Back to Dashboard</strong></li>
+</ul>
+</div>
+</div>
+<div class="section" id="create-test-createjar-and-deliver-projects">
+<h2>Create Test, CreateJar, and Deliver Projects<a class="headerlink" href="#create-test-createjar-and-deliver-projects" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Create three more <strong>Freestyle</strong> projects</li>
+<li><code class="docutils literal notranslate"><span class="pre">Airwaze</span> <span class="pre">Test</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Airwaze</span> <span class="pre">CreateJar</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Airwaze</span> <span class="pre">Deliver</span></code></li>
+<li>Don’t do anything but give these a name and click <strong>Save</strong><ul>
+<li>We will configure them next</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="edit-the-compile-project">
+<h2>Edit the Compile Project<a class="headerlink" href="#edit-the-compile-project" title="Permalink to this headline">¶</a></h2>
+<p>We need the <strong>Compile Project</strong> to kick off the <strong>Test Project</strong> when it’s done. We also want the two projects to share the same work space, so that the repo doesn’t have to be checked out again.</p>
+<ul class="simple">
+<li>Go back to the <strong>Dashboard</strong></li>
+<li>Click the <strong>Airwaze Compile</strong> Project</li>
+<li>Click <strong>Configure</strong></li>
+<li>Go to <strong>Post Build Actions</strong></li>
+<li>Select <strong>Trigger parameterized build on other projects</strong> from the select box</li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">Airwaze</span> <span class="pre">Test</span></code> as the project to build</li>
+<li>Click <strong>Add Parameters</strong> and select <strong>Build on the same node</strong></li>
+<li>Click <strong>Add Parameters</strong> again and select <strong>Predefined parameters</strong></li>
+<li>Enter this <code class="docutils literal notranslate"><span class="pre">AIRWAZE_WORKSPACE=${WORKSPACE}</span></code> into input</li>
+<li>Click save</li>
+</ul>
+<div class="section" id="configure-test-project">
+<h3>Configure Test Project<a class="headerlink" href="#configure-test-project" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Navigate to project <code class="docutils literal notranslate"><span class="pre">http://localhost:9090/job/Airwaze%20Test/</span></code></p>
+</li>
+<li><p class="first">Click <strong>Configure</strong></p>
+</li>
+<li><p class="first">In <strong>General</strong> select <strong>This project is parameterized</strong>
+String Parameter</p>
+<img alt="../../_images/parameter-project-1.png" src="../../_images/parameter-project-1.png" />
+</li>
+<li><p class="first">Paste this <code class="docutils literal notranslate"><span class="pre">AIRWAZE_WORKSPACE</span></code> into <strong>name</strong> input</p>
+</li>
+</ul>
+<p>Enter parameter name</p>
+<blockquote>
+<div><img alt="../../_images/parameter-project-2.png" src="../../_images/parameter-project-2.png" />
+</div></blockquote>
+<ul class="simple">
+<li>Click <strong>Advanced</strong> button and select <strong>Custom Workspace</strong></li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">${AIRWAZE_WORKSPACE}</span></code> in the input</li>
+</ul>
+<p>Custom Workspace Direstory</p>
+<blockquote>
+<div><img alt="../../_images/parameter-project-3.png" src="../../_images/parameter-project-3.png" />
+</div></blockquote>
+<ul class="simple">
+<li>Go to the <strong>Build</strong> section</li>
+<li>Click <strong>Add build step</strong></li>
+<li>Click <strong>Invoke Gradle script</strong></li>
+<li>Select <strong>Use Graddle Wrapper</strong></li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">clean</span> <span class="pre">test</span></code> into the <strong>Tasks</strong> input</li>
+</ul>
+<p>Now we need to kick off the <strong>CreateJar Project</strong></p>
+<ul class="simple">
+<li>Go to <strong>Post Build Actions</strong></li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">Airwaze</span> <span class="pre">CreateJar</span></code> as the project to build</li>
+<li>Click <strong>Add Parameters</strong> and select <strong>Build on the same node</strong></li>
+<li>Click <strong>Add Parameters</strong> again and select <strong>Predefined parameters</strong></li>
+<li>Enter this <code class="docutils literal notranslate"><span class="pre">AIRWAZE_WORKSPACE=${WORKSPACE}</span></code> into input</li>
+<li>Click save</li>
+</ul>
+</div>
+<div class="section" id="run-the-compile-project-which-runs-the-test-project">
+<h3>Run the Compile Project, which runs the Test Project<a class="headerlink" href="#run-the-compile-project-which-runs-the-test-project" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Run the Compile Project<ul>
+<li>Go to the <strong>Dashboard</strong></li>
+<li>Click the <strong>Compile Project</strong></li>
+<li>Click <strong>Build Now</strong></li>
+</ul>
+</li>
+<li>After both the Compile Project and Test Project have finished</li>
+<li>You can view the tests by finding the test results in the project work space</li>
+<li>Naviage to project works space by clicking <strong>Work Space</strong> in the left menu of a project. Example: <a class="reference external" href="http://localhost:9090/job/Airwaze%20Test/ws/" target="_blank">http://localhost:9090/job/Airwaze%20Test/ws/<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li>Once on the <strong>Work Space</strong> page click on the folder names and navigate to <code class="docutils literal notranslate"><span class="pre">/build/reports/tests/test/index.html</span></code></li>
+<li>Clicking on <code class="docutils literal notranslate"><span class="pre">index.html</span></code> should open up the junit test results. Example: <a class="reference external" href="http://localhost:9090/job/Airwaze%20Test/ws/build/reports/tests/test/index.html" target="_blank">http://localhost:9090/job/Airwaze%20Test/ws/build/reports/tests/test/index.html<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ul>
+</div>
+<div class="section" id="configure-the-tests-results-to-be-published-automatically">
+<h3>Configure the Tests Results to be Published Automatically<a class="headerlink" href="#configure-the-tests-results-to-be-published-automatically" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>We can configure the tests results to be pushlised on the project results after every run</li>
+<li>Go to the <strong>Post build actions</strong> for the <strong>Test Project</strong></li>
+<li>Select <strong>Publish JUnit test result report</strong> and input this <code class="docutils literal notranslate"><span class="pre">build/test-results/test/*.xml</span></code> into input</li>
+<li>Run the project again and you will see a link named <strong>Latest Test Results</strong> on the project page</li>
+<li>You can also click on a specific build and see a link named <strong>Test Results</strong></li>
+<li>NOTE: a graph will appear on the project page that shows a history of test results</li>
+</ul>
+</div>
+<div class="section" id="configure-createjar-project">
+<h3>Configure CreateJar Project<a class="headerlink" href="#configure-createjar-project" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Same configuration as the <strong>Test Project</strong>, with these exceptions</li>
+<li>In the <strong>Build</strong> section</li>
+<li>Enter this gradle command <code class="docutils literal notranslate"><span class="pre">bootRepackage</span></code> into <strong>Tasks</strong> input</li>
+<li>Select <strong>Use Graddle Wrapper</strong></li>
+<li>Go to <strong>Post Build Actions</strong></li>
+<li>Select <strong>Trigger parameterized build on other projects</strong> from the select box</li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">Airwaze</span> <span class="pre">Deliver</span></code> as the project to build</li>
+<li>Click <strong>Add Parameters</strong> and select <strong>Build on the same node</strong></li>
+<li>Click <strong>Add Parameters</strong> again and select <strong>Predefined parameters</strong></li>
+<li>Enter this <code class="docutils literal notranslate"><span class="pre">AIRWAZE_WORKSPACE=${WORKSPACE}</span></code> into input</li>
+<li>Click save</li>
+</ul>
+</div>
+<div class="section" id="setup-s3-bucket-needed-so-we-can-configure-the-next-project">
+<h3>Setup S3 Bucket (Needed so we can configure the next project)<a class="headerlink" href="#setup-s3-bucket-needed-so-we-can-configure-the-next-project" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>If you haven’t already, you need to install <code class="docutils literal notranslate"><span class="pre">awscli</span></code>. Instructions can be found in the <a class="reference external" href="https://education.launchcode.org/gis-devops/studios/AWS3/" target="_blank">AWS3 Studio<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li>Create a new S3 bucket that will be used for the <code class="docutils literal notranslate"><span class="pre">.jar</span></code> files your jenkins builds produce</li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ aws s3 mb s3://launchcode-gis-c3-blake-airwaze
+</pre></div>
+</div>
+<ul class="simple">
+<li>Go to the AWS website and enable <strong>VERSIONING</strong></li>
+</ul>
+<p>Make sure your s3 bucket shows up when you run this command in terminal:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ aws s3 ls
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-deliver-project">
+<h3>Configure Deliver Project<a class="headerlink" href="#configure-deliver-project" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Same configuration as <strong>CreateJar Project</strong>, with these two exceptions</li>
+<li>In the <em>Build</em> section select <strong>Execute shell</strong></li>
+<li>Enter this into input <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">cp</span> <span class="pre">build/libs/app-0.0.1-SNAPSHOT.jar</span> <span class="pre">s3://YOUR-S3-BUCKET/</span></code></li>
+<li>There are NO <strong>Post Build Actions</strong></li>
+</ul>
+</div>
+</div>
+<div class="section" id="that-s-it">
+<h2>That’s It!<a class="headerlink" href="#that-s-it" title="Permalink to this headline">¶</a></h2>
+<p>Now run the <strong>Airwaze Compile</strong> project now and watch it kick off the other projects automatically!</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/walkthroughs/jenkins/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

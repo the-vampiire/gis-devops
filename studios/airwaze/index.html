@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Studio: Airwaze &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#slides">Slides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Security, Test-driven development</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Integration testing, dependency injection</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: Postgres, Spring Data, JPA, Hibernate</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day4/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: AJAX, Open Layers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week01/day5/index.html#additional-resources">Additional Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/project/index.html">Week 2 - Project Week: Zika Mission Control</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#zika-mission-control">Zika Mission Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-overview">Project Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week02/project/index.html#bonus-resources">Bonus Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: RESTful web services</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day1/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2 Swagger REST framework</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Intro to Elasticsearch</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day3/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: More Elasticsearch, Integrating ES with Spring</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#walkthroughs">Walkthroughs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: ES2015, ESLint, OpenLayers</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#retro">Retro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week03/day5/index.html#resources">Resources</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/project/index.html">Week 4 - Project Week: Zika Mission Control Part 2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#project-requirements">Project Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#primary-objectives">Primary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#secondary-objectives">Secondary Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#turning-in-your-work">Turning in Your Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week04/project/index.html#check-your-knowledge">Check Your Knowledge</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day1/index.html">Week 5 - Day 1: Intro to DevOps/AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day1/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day2/index.html">Week 5 - Day 2: More with AWS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#studio">Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day2/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day3/index.html">Week 5 - Day 3: 12 Factor Apps and Auto Scaling</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day3/index.html#studio">Studio</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day4/index.html">Week 5 - Day 4: Gradle, Continuous Integration</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/day5/index.html">Week 5 - Day 5: Sonarqube</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week05/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/project/index.html">Week 6 - Project Week: Zika Mission Control Part 3</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#new-stuff">New Stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#debrief">Debrief</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week06/project/index.html#bonus-missions">Bonus Missions</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/project/index.html">Week 8 - Project Week: Zika Mission Control Part 4</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#normalizing-data">Normalizing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week08/project/index.html#integrating-geoserver">Integrating GeoServer</a></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html">STUFF WORKS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#week-9-day-3-intro-to-docker">Week 9 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day3/index.html#studio">Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day4/index.html">Week 9 - Day 4: OAuth2</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#lesson">Lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day4/index.html#resources">Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/day5/index.html">Week 9 - Day 5: Certificates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#lesson-content">Lesson Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#walkthrough">Walkthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../week09/day5/index.html#retro">Retro</a></li>
+</ol>
+</li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Studio: Airwaze</a><ul>
+<li><a class="reference internal" href="#set-up-project">Set Up Project</a></li>
+<li><a class="reference internal" href="#what-is-postgis">What is PostGIS?</a></li>
+<li><a class="reference internal" href="#install-postgis-container">Install PostGIS Container</a></li>
+<li><a class="reference internal" href="#create-a-database-for-the-airwaze-data">Create a Database for the Airwaze Data</a><ul>
+<li><a class="reference internal" href="#connect-to-the-postgis-container">Connect to the PostGIS Container</a></li>
+<li><a class="reference internal" href="#run-the-create-command">Run the Create Command</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enable-geospatial-extensions-in-the-airwaze-database">Enable Geospatial Extensions in the Airwaze Database</a></li>
+<li><a class="reference internal" href="#create-users-and-grant-access-rights">Create Users and Grant Access Rights</a></li>
+<li><a class="reference internal" href="#now-let-s-use-the-new-database">Now Let’s Use the New Database</a></li>
+<li><a class="reference internal" href="#review-import-sql-and-csv-files">Review import.sql and CSV files</a></li>
+<li><a class="reference internal" href="#run-the-application-and-populate-the-database">Run the Application and Populate the Database</a></li>
+<li><a class="reference internal" href="#review-the-tables-and-data-in-postgis">Review the Tables and Data in Postgis</a></li>
+<li><a class="reference internal" href="#review-airportcontroller">Review AirportController</a></li>
+<li><a class="reference internal" href="#tasks">Tasks</a></li>
+<li><a class="reference internal" href="#bonus-missions">Bonus Missions</a></li>
+<li><a class="reference internal" href="#solution-screen-shot">Solution Screen Shot</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="studio-airwaze">
+<span id="airwaze-studio"></span><h1>Studio: Airwaze<a class="headerlink" href="#studio-airwaze" title="Permalink to this headline">¶</a></h1>
+<p>Your goal is to add an additional layer that shows flight routes and display it on the map.  This time we will incorporate our map into a Spring Boot project. We will store geographic data in our Postgresql database. Some starter code has been provided for you.</p>
+<div class="section" id="set-up-project">
+<h2>Set Up Project<a class="headerlink" href="#set-up-project" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fork and clone this <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/airwaze-studio" target="_blank">Gitlab project<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
+<li>Then open the project in IntelliJ</li>
+<li>Create a story branch <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">day5-solution</span></code></li>
+</ul>
+</div>
+<div class="section" id="what-is-postgis">
+<h2>What is PostGIS?<a class="headerlink" href="#what-is-postgis" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://postgis.net/" target="_blank">PostGIS<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> is a spatial database extension for PostgreSQL object-relational database. PostGIS adds support for geographic objects in Postgresql. This includes features such as georgraphic data types, location functions, and location based querying.</p>
+</div>
+<div class="section" id="install-postgis-container">
+<h2>Install PostGIS Container<a class="headerlink" href="#install-postgis-container" title="Permalink to this headline">¶</a></h2>
+<p>If you don’t already have a PostGIS container installed checkout the <a class="reference internal" href="../../installations/docker-postgis/index.html#docker-postgis"><span class="std std-ref">Docker Installation: PostGIS</span></a>.</p>
+</div>
+<div class="section" id="create-a-database-for-the-airwaze-data">
+<h2>Create a Database for the Airwaze Data<a class="headerlink" href="#create-a-database-for-the-airwaze-data" title="Permalink to this headline">¶</a></h2>
+<p>Make sure the PostGIS container is the only container running that is listening on port 5432. You can check this with <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code></p>
+<div class="section" id="connect-to-the-postgis-container">
+<h3>Connect to the PostGIS Container<a class="headerlink" href="#connect-to-the-postgis-container" title="Permalink to this headline">¶</a></h3>
+<p>Run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">psql</span> <span class="pre">-h</span> <span class="pre">127.0.0.1</span> <span class="pre">-U</span> <span class="pre">psq_user</span> <span class="pre">-d</span> <span class="pre">postgres</span></code> to access the PSQL CLI.</p>
+</div>
+<div class="section" id="run-the-create-command">
+<h3>Run the Create Command<a class="headerlink" href="#run-the-create-command" title="Permalink to this headline">¶</a></h3>
+<p>Then in the postgres termainl run this to create a new database:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>postgres=# CREATE DATABASE airwaze;
+</pre></div>
+</div>
+<p>Also create a database for your tests:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>postgres=# CREATE DATABASE airwaze_test;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="enable-geospatial-extensions-in-the-airwaze-database">
+<h2>Enable Geospatial Extensions in the Airwaze Database<a class="headerlink" href="#enable-geospatial-extensions-in-the-airwaze-database" title="Permalink to this headline">¶</a></h2>
+<p>Now we want to install the geospatial extensions to Postgres for the <code class="docutils literal notranslate"><span class="pre">airwaze</span></code> db.</p>
+<p>From the PSQL CLI:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># CONNECT TO AIRWAZE DB
+postgres=# \c airwaze;
+
+# CREATE GEOSPATIAL EXTENSIONS
+airwaze=# CREATE EXTENSION postgis;
+airwaze=# CREATE EXTENSION postgis_topology;
+airwaze=# CREATE EXTENSION fuzzystrmatch;
+airwaze=# CREATE EXTENSION postgis_tiger_geocoder;
+</pre></div>
+</div>
+<p>Make sure that everything installed correctly by running this query
+- Remember to do that for your test database <code class="docutils literal notranslate"><span class="pre">airwaze_test</span></code> as well!:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>airwaze=# SELECT POSTGIS_FULL_VERSION();
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-users-and-grant-access-rights">
+<h2>Create Users and Grant Access Rights<a class="headerlink" href="#create-users-and-grant-access-rights" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Create users <code class="docutils literal notranslate"><span class="pre">airwaze_user</span></code> and <code class="docutils literal notranslate"><span class="pre">airwaze_test_user</span></code></li>
+<li>Grant the users access to only what they need <code class="docutils literal notranslate"><span class="pre">airwaze_user</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">airwaze</span></code> and <code class="docutils literal notranslate"><span class="pre">airwaze_test_user</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">airewaze_test</span></code></li>
+<li>For hints on above, go look at Week 1 Day 4 Walkthrough</li>
+<li>After you have created the users, you need to grant special <code class="docutils literal notranslate"><span class="pre">superuser</span></code> rights because we are going to be running a file with <code class="docutils literal notranslate"><span class="pre">postgres</span></code></li>
+</ul>
+</div>
+<div class="section" id="now-let-s-use-the-new-database">
+<h2>Now Let’s Use the New Database<a class="headerlink" href="#now-let-s-use-the-new-database" title="Permalink to this headline">¶</a></h2>
+<p>Notice in <code class="docutils literal notranslate"><span class="pre">application.properties</span></code> and <code class="docutils literal notranslate"><span class="pre">application-test.properties</span></code> that the db configurtion refers to token values like <code class="docutils literal notranslate"><span class="pre">${APP_DB_NAME}</span></code> and <code class="docutils literal notranslate"><span class="pre">${APP_DB_HOST}</span></code>.</p>
+<ul class="simple">
+<li>Define each in environmment variables OR in Intellij run configurations</li>
+<li>Do not commit db config information to source control</li>
+</ul>
+</div>
+<div class="section" id="review-import-sql-and-csv-files">
+<h2>Review import.sql and CSV files<a class="headerlink" href="#review-import-sql-and-csv-files" title="Permalink to this headline">¶</a></h2>
+<p>This application uses Spring Boot and Spring Data.  When the project boots up, <strong>if</strong> you have a <code class="docutils literal notranslate"><span class="pre">src/main/resources/import.sql</span></code> file, it will automatically be executed against your database by hibernate.</p>
+<ul class="simple">
+<li><strong>NOTE</strong> <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> only runs if <code class="docutils literal notranslate"><span class="pre">ddl-auto=create</span> <span class="pre">or</span> <span class="pre">create-drop</span></code> in <code class="docutils literal notranslate"><span class="pre">application.properties</span></code></li>
+<li><a class="reference external" href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html#howto-initialize-a-database-using-hibernate" target="_blank">More information on Spring Data initialization<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> file in this project contains SQL statements that import CSV data into SQL tables. Please take a minute to review <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> and the two <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files.</p>
+<ul class="simple">
+<li>Review the <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> file in the airwaze project</li>
+</ul>
+<p>We are using a PostGIS docker container. Althought it is installed on our computer, docker is a virtualization/containerization tool, so our PostGIS container is unaware of any other files on our computer. We will need to COPY our CSV files to a location our PostGIS container can work with.</p>
+<p>Luckily docker gives us an easy way to do this.</p>
+<ul class="simple">
+<li>From the root directory of airwaze-studio run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">Airports.csv</span> <span class="pre">postgis:/tmp</span></code></li>
+<li>And also run <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">routes.csv</span> <span class="pre">postgis:/tmp</span></code></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">cp</span></code> command in docker stands for copy. We are copying the two CSV files into a directory called /tmp inside of our container.</p>
+<ul class="simple">
+<li>Be sure that the <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> points to the copies of <code class="docutils literal notranslate"><span class="pre">airports.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">routes.csv</span></code> in your container</li>
+<li>Open the <code class="docutils literal notranslate"><span class="pre">csv</span></code> files to see what data is being imported for routes and airports</li>
+</ul>
+</div>
+<div class="section" id="run-the-application-and-populate-the-database">
+<h2>Run the Application and Populate the Database<a class="headerlink" href="#run-the-application-and-populate-the-database" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Run the <code class="docutils literal notranslate"><span class="pre">bootRun</span></code> gradle task to build and run the web application</li>
+<li>Make sure there aren’t any errors in the log.</li>
+<li>When the Spring Boot application starts it will execute the <code class="docutils literal notranslate"><span class="pre">import.sql</span></code> file and populate the related tables</li>
+<li>Then go to <code class="docutils literal notranslate"><span class="pre">http://localhost:8080</span></code> in your browser. You should see a map with Mexico on it that includes a map layer for airports as red circles.</li>
+</ul>
+<img alt="../../_images/airwaze-example.png" src="../../_images/airwaze-example.png" />
+</div>
+<div class="section" id="review-the-tables-and-data-in-postgis">
+<h2>Review the Tables and Data in Postgis<a class="headerlink" href="#review-the-tables-and-data-in-postgis" title="Permalink to this headline">¶</a></h2>
+<p>Open a <code class="docutils literal notranslate"><span class="pre">psql</span></code> prompt connected to <code class="docutils literal notranslate"><span class="pre">airwaze</span></code> database and then run these commands one at a time:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>airwaze=# select count(*) from route;
+airwaze=# select count(*) from airport;
+airwaze=# \d
+airwaze=# \d airport
+airwaze=# \d route
+</pre></div>
+</div>
+</div>
+<div class="section" id="review-airportcontroller">
+<h2>Review AirportController<a class="headerlink" href="#review-airportcontroller" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Visit this url in your browser: <a class="reference external" href="http://localhost:8080/airport/" target="_blank">http://localhost:8080/airport/<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.  Note the trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> is important.</li>
+<li>Then look at the code that returns that data.</li>
+</ul>
+</div>
+<div class="section" id="tasks">
+<h2>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><strong>Understand provided tests and get them to pass</strong></p>
+<ul class="simple">
+<li>IntegrationTestConfig</li>
+<li>GeoJSONSerializerTest</li>
+<li>AirportControllerTest</li>
+<li>RouteControllerTest</li>
+<li>RouteRepositoryTest</li>
+</ul>
+<blockquote>
+<div><div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">To pass these tests you will need to create a new Repository, and a new Controller. Read the tests to figure out how to get them to pass.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>When the map is clicked, list all airports that are at that pixel</strong></p>
+<ul class="simple">
+<li>You will need to add more code to the function <code class="docutils literal notranslate"><span class="pre">map.forEachFeatureAtPixel(event.pixel,</span> <span class="pre">function(feature,layer)</span></code> in <code class="docutils literal notranslate"><span class="pre">resources/static/js/scripts.js</span></code></li>
+</ul>
+</li>
+<li><p class="first"><strong>Create a route endpoint that returns routes for a certain srcId</strong></p>
+<ul class="simple">
+<li>Example: <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/route/?srcId=12</span></code></li>
+</ul>
+</li>
+<li><p class="first"><strong>When an airport feature is clicked on the map, show the routes for that airport</strong></p>
+<ul class="simple">
+<li>By adding a router layer that only contains routes connected to the clicked airport</li>
+<li>The data for the new layer will be provided by <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/route/?srcId=X</span></code>, where X will be the <code class="docutils literal notranslate"><span class="pre">airportId</span></code> from the feature</li>
+</ul>
+</li>
+<li><p class="first"><strong>Write integration tests for ``RouteController`` use ``AirportControllerTests`` as a guide</strong></p>
+</li>
+</ol>
+</div>
+<div class="section" id="bonus-missions">
+<h2>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Get this to work <strong>without</strong> jQuery. Hints: <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">fetch<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and <code class="docutils literal notranslate"><span class="pre">document.findElementById</span></code></li>
+<li>Change the style of the dots: color, size, fill in</li>
+<li>Sort airports by alpha order when they are displayed below the map</li>
+<li>Check what kind of feature was clicked when map.onclick runs</li>
+<li>Remove previous route layers when adding a new one</li>
+</ul>
+</div>
+<div class="section" id="solution-screen-shot">
+<h2>Solution Screen Shot<a class="headerlink" href="#solution-screen-shot" title="Permalink to this headline">¶</a></h2>
+<p>(Your list of airports can be organized and styled differently)</p>
+<img alt="../../_images/airwaze-solution-example.png" src="../../_images/airwaze-solution-example.png" />
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://macwright.org/2015/03/23/geojson-second-bite" target="_blank">Read about constructing GeoJSON<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://openlayers.org/en/latest/examples/" target="_blank">OpenLayers Examples<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="http://www.acuriousanimal.com/thebookofopenlayers3/chapter02_01_adding_removing_layers.html" target="_blank">Adding and Removing Layers with OpenLayers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="http://geojson.io" target="_blank">Validate your GeoJSON!<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="http://openlayers.org/en/latest/examples/geojson.html" target="_blank">OpenLayers Drawing Examples<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="http://goessner.net/articles/JsonPath/" target="_blank">JSONPath<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/studios/airwaze/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
