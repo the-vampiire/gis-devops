@@ -1,0 +1,18 @@
+sudo: true
+cache: pip
+language: python
+python: "3.7"
+before_install:
+  - pip install -r requirements.txt
+  - printf "installed base requirements"
+  - pip install --upgrade git+https://github.com/LaunchCodeEducation/sphinx-bootstrap-theme.git@master
+  - printf "installed custom sphinx theme"
+  - bash build
+  - printf "created github pages build"
+deploy:
+  provider: pages # github pages provider
+  skip_cleanup: true # save the build output (artifact)
+  local_dir: docs # the directory to deploy to GH pages
+  github_token: $GITHUB_ACCESS_TOKEN # access token with repo:public scope
+  on:
+    branch: master # deploy when changes are made to this branch (merging into master)
