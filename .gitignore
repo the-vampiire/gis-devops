@@ -9,3 +9,6 @@ pdf/
 
 # Paul's build script
 build-serve.sh
+
+# ignore build output (built in CI)
+docs/
